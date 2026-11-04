@@ -320,7 +320,7 @@ function Index() {
             {CATEGORIES.map((c) => (
               <div key={c.n} className="relative flex items-center gap-4 rounded-2xl bg-card p-5 shadow-card">
                 <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-muted">
-                  <Ingredient kind={c.k[0]} className="h-9 w-9" />
+                  <Ingredient kind={c.k[0] ?? "apple"} className="h-9 w-9" />
                 </div>
                 <div>
                   <p className="font-display text-sm font-extrabold text-coral">{c.n} · 10 recetas</p>
