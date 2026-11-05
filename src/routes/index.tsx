@@ -161,7 +161,7 @@ function HeroVisual() {
           <div className="mt-3 rounded-lg bg-white px-2 py-1.5 text-center text-[9px] font-extrabold uppercase tracking-wider text-primary sm:text-[10px]">Guía digital en PDF</div>
         </div>
         <div className="relative aspect-[4/5] overflow-hidden rounded-[1.8rem] border-[5px] border-white bg-card shadow-soft sm:rounded-[2.2rem]">
-          <img src="/images/child-snack.svg" alt="Niño disfrutando una mini pizza casera" loading="eager" decoding="async" className="h-full w-full object-cover" />
+          <img src="https://images.pexels.com/photos/5905694/pexels-photo-5905694.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Niña disfrutando una merienda saludable" loading="eager" decoding="async" className="h-full w-full object-cover" />
           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/85 to-transparent px-3 pb-4 pt-12 text-white sm:px-5 sm:pb-5">
             <p className="text-[9px] font-extrabold uppercase tracking-[0.16em] sm:text-xs">Más variedad, menos improvisación</p>
             <p className="mt-1 font-display text-base font-extrabold leading-tight sm:text-xl">Ideas para cada día</p>
@@ -224,10 +224,10 @@ const RECIPES: Recipe[] = [
 
 const CATEGORIES = [
   { n: "01", t: "Desayunos para comenzar el día", photo: FOOD_PHOTOS.miniPancakes, alt: "Mini pancakes dorados para el desayuno", school: false },
-  { n: "02", t: "Pequeños momentos de merienda", photo: FOOD_PHOTOS.lunchboxHands, alt: "Niña pequeña preparando pizza casera en la cocina", school: false },
+  { n: "02", t: "Pequeños momentos de merienda", photo: "https://images.pexels.com/photos/5593084/pexels-photo-5593084.jpeg?auto=compress&cs=tinysrgb&w=1800", alt: "Niña disfrutando frutas frescas en la cocina", school: false },
   { n: "03", t: "Snacks salados para cualquier momento", photo: FOOD_PHOTOS.snackTable, alt: "Variedad de snacks frescos y coloridos", school: true },
   { n: "04", t: "Preparaciones con mucho sabor", photo: FOOD_PHOTOS.lunchboxTop, alt: "Loncheras variadas con sándwiches y vegetales", school: true },
-  { n: "05", t: "Pequeños momentos dulces", photo: "https://raw.githubusercontent.com/BRAVONDIGITAL/Buen-Bocado/main/public/images/child-snack.svg", alt: "Niño disfrutando una mini pizza casera", school: false },
+  { n: "05", t: "Pequeños momentos dulces", photo: "https://images.pexels.com/photos/8763151/pexels-photo-8763151.jpeg?auto=compress&cs=tinysrgb&w=1800", alt: "Niña disfrutando un sándwich casero", school: false },
   { n: "06", t: "Favoritos para compartir", photo: FOOD_PHOTOS.lunchboxColorful, alt: "Lonchera moderna con compartimentos y variedad de bocadillos", school: false },
 ];
 
@@ -297,7 +297,7 @@ function Index() {
         <Section>
           <div className="grid items-center gap-10 md:grid-cols-2">
             <div className="grid grid-cols-2 gap-3">
-              <PhotoSlot label="Un pequeño disfrutando su merienda" src={"https://raw.githubusercontent.com/BRAVONDIGITAL/Buen-Bocado/main/public/images/child-snack.svg"} className="col-span-2 aspect-[16/10]" />
+              <PhotoSlot label="Un pequeño disfrutando su merienda" src={"https://images.pexels.com/photos/12788325/pexels-photo-12788325.jpeg?auto=compress&cs=tinysrgb&w=1800"} className="col-span-2 aspect-[16/10]" />
               <PhotoSlot label="Merienda fresca" src={FOOD_PHOTOS.freshFruit} className="aspect-square" />
               <PhotoSlot label="Bento para el recreo" src={FOOD_PHOTOS.bentoModern} className="aspect-square" />
             </div>
