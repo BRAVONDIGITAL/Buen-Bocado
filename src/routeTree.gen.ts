@@ -10,33 +10,76 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PoliticaDePrivacidadRouteImport } from './routes/politica-de-privacidad'
+import { Route as PoliticaDeReembolsoRouteImport } from './routes/politica-de-reembolso'
+import { Route as TerminosYCondicionesRouteImport } from './routes/terminos-y-condiciones'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PoliticaDePrivacidadRoute = PoliticaDePrivacidadRouteImport.update({
+  id: '/politica-de-privacidad',
+  path: '/politica-de-privacidad',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaDeReembolsoRoute = PoliticaDeReembolsoRouteImport.update({
+  id: '/politica-de-reembolso',
+  path: '/politica-de-reembolso',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TerminosYCondicionesRoute = TerminosYCondicionesRouteImport.update({
+  id: '/terminos-y-condiciones',
+  path: '/terminos-y-condiciones',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
+  '/politica-de-reembolso': typeof PoliticaDeReembolsoRoute
+  '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
+  '/politica-de-reembolso': typeof PoliticaDeReembolsoRoute
+  '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
+  '/politica-de-reembolso': typeof PoliticaDeReembolsoRoute
+  '/terminos-y-condiciones': typeof TerminosYCondicionesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/politica-de-privacidad'
+    | '/politica-de-reembolso'
+    | '/terminos-y-condiciones'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/politica-de-privacidad'
+    | '/politica-de-reembolso'
+    | '/terminos-y-condiciones'
+  id:
+    | '__root__'
+    | '/'
+    | '/politica-de-privacidad'
+    | '/politica-de-reembolso'
+    | '/terminos-y-condiciones'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  PoliticaDePrivacidadRoute: typeof PoliticaDePrivacidadRoute
+  PoliticaDeReembolsoRoute: typeof PoliticaDeReembolsoRoute
+  TerminosYCondicionesRoute: typeof TerminosYCondicionesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +91,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/politica-de-privacidad': {
+      id: '/politica-de-privacidad'
+      path: '/politica-de-privacidad'
+      fullPath: '/politica-de-privacidad'
+      preLoaderRoute: typeof PoliticaDePrivacidadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-reembolso': {
+      id: '/politica-de-reembolso'
+      path: '/politica-de-reembolso'
+      fullPath: '/politica-de-reembolso'
+      preLoaderRoute: typeof PoliticaDeReembolsoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terminos-y-condiciones': {
+      id: '/terminos-y-condiciones'
+      path: '/terminos-y-condiciones'
+      fullPath: '/terminos-y-condiciones'
+      preLoaderRoute: typeof TerminosYCondicionesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  PoliticaDePrivacidadRoute: PoliticaDePrivacidadRoute,
+  PoliticaDeReembolsoRoute: PoliticaDeReembolsoRoute,
+  TerminosYCondicionesRoute: TerminosYCondicionesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
