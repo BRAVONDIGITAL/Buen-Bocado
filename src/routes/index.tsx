@@ -46,10 +46,10 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-/* ---------- Editable footer fields ---------- */
-const PRIVACY_URL = "#"; // TODO
-const TERMS_URL = "#"; // TODO
-const REFUND_URL = "#"; // TODO: política de reembolso configurada en Cakto
+/* ---------- Legal pages ---------- */
+const PRIVACY_URL = "/politica-de-privacidad";
+const TERMS_URL = "/terminos-y-condiciones";
+const REFUND_URL = "/politica-de-reembolso";
 
 /* ---------- Shared UI ---------- */
 function CtaToPlans({ children, variant = "primary" }: { children: ReactNode; variant?: "primary" | "coral" }) {
@@ -499,6 +499,7 @@ function Index() {
           <div>
             <Logo />
             <p className="mt-2 text-sm text-muted-foreground">Producto digital · 60 Recetas Fáciles para Niños en Air Fryer</p>
+            <p className="mt-2 text-sm text-muted-foreground">Atención al cliente: <a className="font-semibold text-primary underline" href="mailto:neg.digital7@gmail.com">neg.digital7@gmail.com</a></p>
           </div>
           <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-primary" aria-label="Legal">
             <a href={PRIVACY_URL}>Política de privacidad</a>
@@ -507,7 +508,7 @@ function Index() {
           </nav>
         </div>
         <p className="mx-auto mt-6 max-w-6xl text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Buen Bocado. Todos los derechos reservados. Este producto no sustituye la orientación de profesionales de salud o nutrición.
+          © {new Date().getFullYear()} Buen Bocado. Todos los derechos reservados. Atención: neg.digital7@gmail.com. Este producto no sustituye la orientación de profesionales de salud o nutrición.
         </p>
       </footer>
     </div>
