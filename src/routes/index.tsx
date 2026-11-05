@@ -111,7 +111,7 @@ function HeroVisual() {
       <div className="relative aspect-[5/4] overflow-hidden rounded-[2.2rem] border-[7px] border-white bg-card shadow-soft">
         <img
           src={FOOD_PHOTOS.lunchboxes}
-          alt="Tres loncheras escolares con frutas, sándwiches y opciones variadas"
+          alt="Niño disfrutando su almuerzo escolar con una lonchera colorida"
           fetchPriority="high"
           decoding="async"
           className="h-full w-full object-cover"
@@ -184,7 +184,7 @@ const RECIPES: Recipe[] = [
 
 const CATEGORIES = [
   { n: "01", t: "Desayunos para comenzar el día", photo: FOOD_PHOTOS.muffins, alt: "Muffins recién horneados", school: false },
-  { n: "02", t: "Loncheras que inspiran", photo: FOOD_PHOTOS.lunchboxes, alt: "Loncheras variadas con frutas y sándwiches", school: true },
+  { n: "02", t: "Loncheras que inspiran", photo: FOOD_PHOTOS.lunchboxes, alt: "Niño disfrutando su almuerzo escolar con una lonchera colorida", school: true },
   { n: "03", t: "Snacks salados para cualquier momento", photo: FOOD_PHOTOS.cheeseSticks, alt: "Bastones de queso dorados", school: true },
   { n: "04", t: "Preparaciones con mucho sabor", photo: FOOD_PHOTOS.pizza, alt: "Mini pizzas con queso y vegetales", school: true },
   { n: "05", t: "Pequeños momentos dulces", photo: FOOD_PHOTOS.lunchboxHands, alt: "Bocadillos dulces y frutas en una lonchera", school: false },
@@ -257,7 +257,7 @@ function Index() {
         <Section>
           <div className="grid items-center gap-10 md:grid-cols-2">
             <div className="grid grid-cols-2 gap-3">
-              <PhotoSlot label="Loncheras variadas" src={FOOD_PHOTOS.lunchboxes} className="col-span-2 aspect-[16/10]" />
+              <PhotoSlot label="Hora de la lonchera" src={FOOD_PHOTOS.lunchboxes} className="col-span-2 aspect-[16/10]" />
               <PhotoSlot label="Muffins caseros" src={FOOD_PHOTOS.muffins} className="aspect-square" />
               <PhotoSlot label="Snacks para llevar" src={FOOD_PHOTOS.lunchboxDetail} className="aspect-square" />
             </div>
@@ -350,7 +350,7 @@ function Index() {
             <PhotoSlot label="Mini pizzas" src={FOOD_PHOTOS.pizza} />
             <PhotoSlot label="Muffins" src={FOOD_PHOTOS.muffins} />
             <PhotoSlot label="Preparación de mini pizzas" src={FOOD_PHOTOS.pizzaPrep} className="col-span-2" />
-            <PhotoSlot label="Loncheras con variedad" src={FOOD_PHOTOS.lunchboxes} className="col-span-2" />
+            <PhotoSlot label="Un recreo delicioso" src={FOOD_PHOTOS.lunchboxes} className="col-span-2" />
             <PhotoSlot label="Bastones de queso" src={FOOD_PHOTOS.cheeseSticks} />
             <PhotoSlot label="Snacks y frutas" src={FOOD_PHOTOS.lunchboxDetail} />
           </div>
@@ -405,7 +405,7 @@ function Index() {
             <PlanCard
               name="Plan Básico"
               image={FOOD_PHOTOS.lunchboxes}
-              imageAlt="Loncheras escolares variadas"
+              imageAlt="Niño disfrutando su almuerzo escolar con una lonchera colorida"
               price="9,90"
               plan="basic"
               cta="QUIERO EL PLAN BÁSICO."
