@@ -161,7 +161,7 @@ function HeroVisual() {
           <div className="mt-3 rounded-lg bg-white px-2 py-1.5 text-center text-[9px] font-extrabold uppercase tracking-wider text-primary sm:text-[10px]">Guía digital en PDF</div>
         </div>
         <div className="relative aspect-[4/5] overflow-hidden rounded-[1.8rem] border-[5px] border-white bg-card shadow-soft sm:rounded-[2.2rem]">
-          <img src={FOOD_PHOTOS.lunchboxModern} alt="Comida casera organizada en una lonchera de varios compartimentos" loading="eager" decoding="async" className="h-full w-full object-cover" />
+          <img src={FOOD_PHOTOS.lunchboxDetail} alt="Pequeño disfrutando una preparación casera" loading="eager" decoding="async" className="h-full w-full object-cover" />
           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/85 to-transparent px-3 pb-4 pt-12 text-white sm:px-5 sm:pb-5">
             <p className="text-[9px] font-extrabold uppercase tracking-[0.16em] sm:text-xs">Más variedad, menos improvisación</p>
             <p className="mt-1 font-display text-base font-extrabold leading-tight sm:text-xl">Ideas para cada día</p>
@@ -487,6 +487,39 @@ function Index() {
           <p className="mt-7 text-center text-xs text-muted-foreground">Fotografías ilustrativas de alimentos. El producto adquirido es una guía digital en PDF.</p>
         </Section>
 
+        {/* 10. GALERÍA DE INSPIRACIÓN Y ESPACIO PARA RESEÑAS REALES */}
+        <Section className="bg-secondary">
+          <Heading eyebrow="Ideas que abren el apetito" title="Pequeños momentos felices alrededor de la comida.">
+            <p>Recetas caseras, bocados doraditos y loncheras llenas de color: descubre ideas para preparar, compartir y adaptar a la rutina de tu familia.</p>
+          </Heading>
+          <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+            <PhotoSlot label="Mini pizzas recién hechas" src={FOOD_PHOTOS.pizza} className="aspect-[4/5]" />
+            <PhotoSlot label="Un pequeño disfrutando su comida" src={FOOD_PHOTOS.lunchboxes} className="aspect-[4/5]" />
+            <PhotoSlot label="Pancakes para una mañana especial" src={FOOD_PHOTOS.pancakePlate} className="aspect-[4/5]" />
+            <PhotoSlot label="Una lonchera llena de color" src={FOOD_PHOTOS.lunchboxColorful} className="aspect-[4/5]" />
+            <PhotoSlot label="Muffins caseros para la merienda" src={FOOD_PHOTOS.muffins} className="aspect-[4/5]" />
+            <PhotoSlot label="Bocados dorados para compartir" src={FOOD_PHOTOS.cheeseSticks} className="aspect-[4/5]" />
+            <PhotoSlot label="Frutas listas para llevar" src={FOOD_PHOTOS.freshFruit} className="aspect-[4/5]" />
+            <PhotoSlot label="Ideas para la lonchera escolar" src={FOOD_PHOTOS.proofLunchboxOne} className="aspect-[4/5]" />
+          </div>
+          <p className="mt-5 text-center text-xs text-muted-foreground">Fotografías ilustrativas para inspirarte. No representan necesariamente preparaciones realizadas por compradores de esta guía.</p>
+
+          <div className="mx-auto mt-16 max-w-4xl rounded-[2rem] border border-primary/10 bg-card p-7 text-center shadow-card sm:p-10">
+            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-secondary text-primary">
+              <Users className="h-7 w-7" aria-hidden />
+            </div>
+            <p className="eyebrow mt-5">Opiniones de la comunidad</p>
+            <h3 className="mt-3 font-display text-2xl font-extrabold text-primary sm:text-3xl">Las experiencias reales merecen ser contadas.</h3>
+            <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-muted-foreground">
+              Estamos preparando este espacio para compartir reseñas verificadas de familias que hayan utilizado Buen Bocado. Muy pronto podrás leer sus experiencias y descubrir qué recetas se convirtieron en favoritas en casa.
+            </p>
+            <div className="mt-7 inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-xs font-extrabold uppercase tracking-wide text-primary">
+              <ShieldCheck className="h-4 w-4" aria-hidden />
+              Solo opiniones auténticas
+            </div>
+          </div>
+        </Section>
+
         {/* BONOS PREMIUM */}
         <Section className="bg-background">
           <Heading eyebrow="Material extra exclusivo del Premium" title="Dos recursos complementarios para ampliar tus ideas."><p>El Plan Premium incluye estos dos bonos, además de las 60 recetas principales.</p></Heading>
@@ -547,7 +580,7 @@ function Index() {
           <a href={REFUND_URL} className="inline-flex min-h-11 items-center justify-center rounded-full border border-primary/20 px-6 py-3 text-sm font-extrabold text-primary hover:bg-secondary">Leer política de reembolso</a>
         </div></Section>
 
-        {/* 11. CONFIANZA */}
+        {/* 12. CONFIANZA */}
         <Section>
           <Heading eyebrow="Compra con claridad" title="Conoce lo que estás a punto de descubrir." />
           <div className="mt-12 grid gap-x-10 gap-y-7 sm:grid-cols-2">
@@ -570,7 +603,7 @@ function Index() {
           </div>
         </Section>
 
-        {/* 12. FAQ */}
+        {/* 13. FAQ */}
         <Section className="bg-secondary">
           <Heading eyebrow="Preguntas frecuentes" title="¿Tienes alguna duda?" />
           <Accordion type="single" collapsible className="mx-auto mt-10 max-w-3xl space-y-3">
@@ -583,7 +616,7 @@ function Index() {
           </Accordion>
         </Section>
 
-        {/* 13. CTA FINAL */}
+        {/* 14. CTA FINAL */}
         <Section className="bg-primary text-center text-primary-foreground">
           <div className="mx-auto max-w-3xl">
             <h2 className="text-3xl font-extrabold leading-tight md:text-5xl">¡Que la lonchera deje de ser un desafío cada mañana!</h2>
