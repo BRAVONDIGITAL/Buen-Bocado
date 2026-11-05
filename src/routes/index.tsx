@@ -31,10 +31,6 @@ const DESC = "Descubre 60 recetas fáciles para preparar loncheras escolares var
    RDNE Stock project: https://www.pexels.com/photo/little-girl-preparing-homemade-pizza-5593192/
    RDNE Stock project: https://www.pexels.com/photo/little-girl-showing-her-homemade-pizza-on-kitchen-counter-5593170/
    Thiago Lazaro: https://www.pexels.com/photo/hot-appetizers-with-tomatoes-and-cheese-on-wooden-table-7182999/
-   Anna Shvets: https://www.pexels.com/photo/boy-wearing-yellow-hoodie-eating-pizza-and-holding-a-glass-of-water-3905792/
-   Eileen Lamb: https://www.pexels.com/photo/selective-focus-photo-of-child-holding-muffin-3225513/
-   RDNE Stock project: https://www.pexels.com/photo/little-girl-preparing-homemade-pizza-5593192/
-   RDNE Stock project: https://www.pexels.com/photo/little-girl-showing-her-homemade-pizza-on-kitchen-counter-5593170/
    Lauren Diaz: https://www.pexels.com/photo/delicious-mini-pizzas-with-toppings-on-tray-34275219/
    Backen.de: https://www.pexels.com/photo/preparing-mini-pizza-7322629/
    alleksana: https://www.pexels.com/photo/close-up-photo-of-delicious-muffins-4051588/
