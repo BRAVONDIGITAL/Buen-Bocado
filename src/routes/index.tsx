@@ -15,6 +15,8 @@ const DESC = "Descubre 60 recetas fáciles para preparar loncheras escolares var
    Antoni Shkraba: https://www.pexels.com/photo/sliced-fruits-on-yellow-plastic-container-5852332/
    Antoni Shkraba: https://www.pexels.com/photo/an-assortment-of-healthy-snacks-in-plastic-containers-5852335/
    Antoni Shkraba: https://www.pexels.com/photo/food-in-containers-5852285/
+   Antoni Shkraba: https://www.pexels.com/photo/healthy-lunch-boxes-on-the-blue-surface-5852286/
+   Antoni Shkraba: https://www.pexels.com/photo/food-in-colorful-containers-5852331/
    Antoni Shkraba: https://www.pexels.com/photo/overhead-shot-of-healthy-snacks-in-plastic-containers-5852341/
    Elly Mar Tamayor: https://www.pexels.com/photo/healthy-lunch-with-sandwiches-and-salad-35482981/
    Bora C: https://www.pexels.com/photo/fresh-fruit-assortment-in-containers-on-white-background-35439983/
@@ -46,6 +48,8 @@ const FOOD_PHOTOS = {
   lunchboxFruit: "https://images.pexels.com/photos/5852332/pexels-photo-5852332.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxMix: "https://images.pexels.com/photos/5852335/pexels-photo-5852335.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxTop: "https://images.pexels.com/photos/5852285/pexels-photo-5852285.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  planBasicLunchbox: "https://images.pexels.com/photos/5852286/pexels-photo-5852286.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  planPremiumLunchbox: "https://images.pexels.com/photos/5852331/pexels-photo-5852331.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxBlue: "https://images.pexels.com/photos/5852341/pexels-photo-5852341.jpeg?auto=compress&cs=tinysrgb&w=2000",
   freshLunch: "https://images.pexels.com/photos/35482981/pexels-photo-35482981.jpeg?auto=compress&cs=tinysrgb&w=2000",
   freshFruit: "https://images.pexels.com/photos/35439983/pexels-photo-35439983.jpeg?auto=compress&cs=tinysrgb&w=2000",
@@ -438,8 +442,8 @@ function Index() {
           <div className="mx-auto mt-12 grid max-w-4xl items-stretch gap-6 md:grid-cols-2">
             <PlanCard
               name="Plan Básico"
-              image={FOOD_PHOTOS.lunchboxVibrant}
-              imageAlt="Mini pizzas doradas listas para la lonchera"
+              image={FOOD_PHOTOS.planBasicLunchbox}
+              imageAlt="Loncheras saludables con variedad de bocadillos para la escuela"
               price="9,90"
               plan="basic"
               cta="QUIERO EL PLAN BÁSICO."
@@ -456,8 +460,8 @@ function Index() {
             <PlanCard
               featured
               name="Plan Premium"
-              image={FOOD_PHOTOS.kidsSnacks}
-              imageAlt="Niña pequeña disfrutando una pizza casera"
+              image={FOOD_PHOTOS.planPremiumLunchbox}
+              imageAlt="Loncheras coloridas con alimentos variados y saludables"
               price="14,90"
               plan="premium"
               cta="QUIERO EL PLAN PREMIUM."
