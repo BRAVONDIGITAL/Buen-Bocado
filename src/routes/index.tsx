@@ -17,6 +17,7 @@ const DESC = "Descubre 60 recetas fáciles para preparar loncheras escolares var
    Antoni Shkraba: https://www.pexels.com/photo/food-in-containers-5852285/
    Antoni Shkraba: https://www.pexels.com/photo/healthy-lunch-boxes-on-the-blue-surface-5852286/
    Antoni Shkraba: https://www.pexels.com/photo/food-in-colorful-containers-5852331/
+   Antoni Shkraba: https://www.pexels.com/photo/packed-food-in-colorful-containers-5852326/
    Antoni Shkraba: https://www.pexels.com/photo/overhead-shot-of-healthy-snacks-in-plastic-containers-5852341/
    Elly Mar Tamayor: https://www.pexels.com/photo/healthy-lunch-with-sandwiches-and-salad-35482981/
    Bora C: https://www.pexels.com/photo/fresh-fruit-assortment-in-containers-on-white-background-35439983/
@@ -48,8 +49,8 @@ const FOOD_PHOTOS = {
   lunchboxFruit: "https://images.pexels.com/photos/5852332/pexels-photo-5852332.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxMix: "https://images.pexels.com/photos/5852335/pexels-photo-5852335.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxTop: "https://images.pexels.com/photos/5852285/pexels-photo-5852285.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  planBasicLunchbox: "https://images.pexels.com/photos/5852286/pexels-photo-5852286.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  planPremiumLunchbox: "https://images.pexels.com/photos/5852331/pexels-photo-5852331.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  proofLunchboxOne: "https://images.pexels.com/photos/5852326/pexels-photo-5852326.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  proofLunchboxTwo: "https://images.pexels.com/photos/5852457/pexels-photo-5852457.jpeg?auto=compress&cs=tinysrgb&w=1200",
   lunchboxBlue: "https://images.pexels.com/photos/5852341/pexels-photo-5852341.jpeg?auto=compress&cs=tinysrgb&w=2000",
   freshLunch: "https://images.pexels.com/photos/35482981/pexels-photo-35482981.jpeg?auto=compress&cs=tinysrgb&w=2000",
   freshFruit: "https://images.pexels.com/photos/35439983/pexels-photo-35439983.jpeg?auto=compress&cs=tinysrgb&w=2000",
@@ -388,7 +389,7 @@ function Index() {
             <PhotoSlot label="Ensalada y sándwich fresco" src={FOOD_PHOTOS.freshLunch} />
             <PhotoSlot label="Frutas listas para llevar" src={FOOD_PHOTOS.fruitPlate} />
             <PhotoSlot label="Snacks coloridos" src={FOOD_PHOTOS.lunchboxBlue} className="col-span-2" />
-            <PhotoSlot label="Bocados para compartir" src={FOOD_PHOTOS.lunchboxAlt} className="col-span-2" />
+            <PhotoSlot label="Bocados dorados para compartir" src={FOOD_PHOTOS.lunchboxVibrant} className="col-span-2" />
             <PhotoSlot label="Pancakes con frutos rojos" src={FOOD_PHOTOS.pancakePlate} />
             <PhotoSlot label="Snacks en recipientes modernos" src={FOOD_PHOTOS.lunchboxPurple} />
           </div>
@@ -436,14 +437,58 @@ function Index() {
           </div>
         </Section>
 
-        {/* 9. PLANES */}
+        {/* 9. EXPERIENCIAS — MOCKUPS ILUSTRATIVOS */}
+        <Section className="bg-muted">
+          <Heading eyebrow="Conversaciones de ejemplo" title="Más ideas para las mañanas, más variedad en cada lonchera.">
+            <p>Así podría verse el intercambio de mensajes de una familia que encuentra nuevas ideas para preparar sus loncheras con Buen Bocado.</p>
+          </Heading>
+          <div className="mt-5 text-center text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+            Demostraciones visuales · No son testimonios ni conversaciones de compradoras reales
+          </div>
+          <div className="mx-auto mt-10 grid max-w-5xl items-start gap-8 md:grid-cols-3">
+            <WhatsAppMockup
+              contact="Mariana · mamá de Nico"
+              photo={FOOD_PHOTOS.proofLunchboxOne}
+              photoAlt="Ejemplo de lonchera con bocadillos variados"
+              messages={[
+                { from: "them", text: "¡Mira la lonchera que preparé hoy! 🥰", time: "8:42" },
+                { from: "them", photo: true, text: "Hice varias opciones de la guía. Las mini pizzas quedaron preciosas.", time: "8:43" },
+                { from: "me", text: "¡Qué linda quedó! 💚", time: "8:45" },
+                { from: "them", text: "Y hoy no estuve improvisando a última hora. Dejé todo organizado anoche.", time: "8:46" },
+              ]}
+            />
+            <WhatsAppMockup
+              contact="Camila · mamá de Emma"
+              photo={FOOD_PHOTOS.proofLunchboxTwo}
+              photoAlt="Ejemplo de bocadillos organizados en una lonchera"
+              messages={[
+                { from: "them", text: "Te comparto lo que armamos para mañana 😍", time: "19:16" },
+                { from: "them", photo: true, text: "Usé las ideas de snacks salados y agregué unos bocaditos caseros.", time: "19:17" },
+                { from: "me", text: "¡Se ve delicioso!", time: "19:19" },
+                { from: "them", text: "Me ayuda mucho tener las recetas y cantidades en un solo lugar. Ya no pierdo tanto tiempo pensando qué preparar.", time: "19:20" },
+              ]}
+            />
+            <WhatsAppMockup
+              contact="Valentina · mamá de Leo"
+              messages={[
+                { from: "them", text: "Al final elegí el Premium y me gustó que venga con los dos materiales extra.", time: "10:08" },
+                { from: "them", text: "También me parece conveniente tener incluidas las futuras actualizaciones que se publiquen. Siento que aprovecho mejor la compra.", time: "10:09" },
+                { from: "me", text: "¡Qué bueno que te esté sirviendo! 💚", time: "10:11" },
+                { from: "them", text: "No me arrepiento. Tener más ideas y las guías adicionales en el mismo lugar me resulta muy práctico.", time: "10:12" },
+              ]}
+            />
+          </div>
+          <p className="mx-auto mt-8 max-w-3xl text-center text-xs leading-relaxed text-muted-foreground">
+            Los nombres, mensajes y situaciones de esta sección son ficticios y se muestran únicamente como ejemplos de presentación. Las fotografías son imágenes ilustrativas de loncheras y alimentos.
+          </p>
+        </Section>
+
+        {/* 10. PLANES */}
         <Section id="planes" className="bg-hero scroll-mt-14">
           <Heading eyebrow="Acceso inmediato tras el pago" title="¡Elige tu plan Buen Bocado!" />
           <div className="mx-auto mt-12 grid max-w-4xl items-stretch gap-6 md:grid-cols-2">
             <PlanCard
               name="Plan Básico"
-              image={FOOD_PHOTOS.planBasicLunchbox}
-              imageAlt="Loncheras saludables con variedad de bocadillos para la escuela"
               price="9,90"
               plan="basic"
               cta="QUIERO EL PLAN BÁSICO."
@@ -460,8 +505,6 @@ function Index() {
             <PlanCard
               featured
               name="Plan Premium"
-              image={FOOD_PHOTOS.planPremiumLunchbox}
-              imageAlt="Loncheras coloridas con alimentos variados y saludables"
               price="14,90"
               plan="premium"
               cta="QUIERO EL PLAN PREMIUM."
@@ -573,16 +616,66 @@ function Logo() {
   );
 }
 
-function PlanCard({
-  name, image, imageAlt, price, plan, cta, features, note, bonus, featured = false,
+function WhatsAppMockup({
+  contact, photo, photoAlt, messages,
 }: {
-  name: string; image: string; imageAlt: string; price: string; plan: "basic" | "premium"; cta: string; features: string[]; note?: string; bonus?: string[]; featured?: boolean;
+  contact: string;
+  photo?: string;
+  photoAlt?: string;
+  messages: { from: "me" | "them"; text: string; time: string; photo?: boolean }[];
+}) {
+  return (
+    <article className="mx-auto w-full max-w-[290px]">
+      <div className="rounded-[2.8rem] border-[7px] border-[#171717] bg-[#171717] p-[5px] shadow-[0_22px_55px_rgba(0,0,0,0.18)]">
+        <div className="overflow-hidden rounded-[2.25rem] bg-[#efeae2]">
+          <div className="relative flex h-8 items-center justify-center bg-[#075e54] text-[10px] font-semibold text-white">
+            <span className="absolute left-5">9:41</span>
+            <span className="h-[17px] w-[92px] rounded-full bg-black" aria-hidden="true" />
+            <span className="absolute right-5">5G · 100%</span>
+          </div>
+          <div className="flex h-14 items-center gap-2 bg-[#075e54] px-3 text-white">
+            <span className="text-2xl leading-none">‹</span>
+            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#d7e6dc] text-sm font-bold text-[#075e54]">♡</span>
+            <div className="min-w-0 flex-1">
+              <p className="truncate text-xs font-bold">{contact}</p>
+              <p className="text-[9px] text-white/75">en línea</p>
+            </div>
+            <span className="text-sm">▣</span><span className="text-base">☎</span>
+          </div>
+          <div className="min-h-[390px] space-y-2 bg-[#efeae2] px-2.5 py-3">
+            <div className="mx-auto mb-2 w-fit rounded-md bg-[#fff7d6] px-2 py-1 text-[9px] text-[#6b6257] shadow-sm">Hoy</div>
+            {messages.map((message, index) => (
+              <div key={index} className={`flex ${message.from === "me" ? "justify-end" : "justify-start"}`}>
+                <div className={`max-w-[88%] rounded-xl px-2.5 py-2 text-[10px] leading-[1.45] text-[#263238] shadow-sm ${message.from === "me" ? "rounded-tr-sm bg-[#d9fdd3]" : "rounded-tl-sm bg-white"}`}>
+                  {message.photo && photo && <img src={photo} alt={photoAlt || "Fotografía ilustrativa de una lonchera"} loading="lazy" className="mb-1.5 h-28 w-full rounded-lg object-cover" />}
+                  <p>{message.text}</p>
+                  <p className="mt-1 text-right text-[8px] text-[#718078]">{message.time} {message.from === "me" ? "✓✓" : ""}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex h-12 items-center gap-2 bg-[#f7f7f7] px-2.5">
+            <span className="text-lg text-[#64736c]">＋</span>
+            <div className="flex h-8 flex-1 items-center rounded-full bg-white px-3 text-[9px] text-[#9aa39e]">Mensaje</div>
+            <span className="text-sm text-[#64736c]">◉</span><span className="text-sm text-[#64736c]">●</span>
+          </div>
+        </div>
+      </div>
+      <div className="mt-3 flex items-center justify-center gap-2 text-center text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+        <span className="rounded-full bg-white px-2.5 py-1 shadow-sm">Ejemplo ilustrativo</span>
+        <span>WhatsApp · iPhone 18 Pro Max</span>
+      </div>
+    </article>
+  );
+}
+
+function PlanCard({
+  name, price, plan, cta, features, note, bonus, featured = false,
+}: {
+  name: string; price: string; plan: "basic" | "premium"; cta: string; features: string[]; note?: string; bonus?: string[]; featured?: boolean;
 }) {
   return (
     <div className={`relative flex flex-col rounded-3xl bg-card p-7 ${featured ? "border-2 border-primary shadow-soft" : "border shadow-card"}`}>
-      <div className="-mx-7 -mt-7 mb-6 h-36 overflow-hidden rounded-t-[1.35rem]">
-        <img src={image} alt={imageAlt} loading="lazy" decoding="async" className="h-full w-full object-cover" />
-      </div>
       {featured && (
         <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-coral px-4 py-1 text-xs font-extrabold uppercase tracking-widest text-coral-foreground">
           Más completo
