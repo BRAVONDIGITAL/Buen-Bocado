@@ -6,7 +6,7 @@ import { RecipeCard, type Recipe } from "@/components/pequesabor/RecipeCard";
 import { Ingredient, type IngredientKind } from "@/components/pequesabor/Ingredient";
 import { CHECKOUT, goToCheckout, track } from "@/lib/tracking";
 
-const TITLE = "PequeSabor | 60 Recetas para Loncheras Escolares en Air Fryer";
+const TITLE = "Buen Bocado | 60 Recetas para Loncheras Escolares en Air Fryer";
 const DESC = "Descubre 60 recetas fáciles para preparar loncheras escolares variadas con Air Fryer. Ideas dulces y saladas para los pequeños.";
 
 export const Route = createFileRoute("/")({
@@ -93,7 +93,7 @@ function Compartment({ kinds, label, className = "" }: { kinds: IngredientKind[]
 function Cover({ className = "" }: { className?: string }) {
   return (
     <div className={`flex aspect-[3/4] flex-col justify-between rounded-r-xl rounded-l-sm bg-primary p-4 text-primary-foreground shadow-soft ring-1 ring-primary/30 ${className}`}>
-      <div className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-80">PequeSabor</div>
+      <div className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-80">Buen Bocado</div>
       <div>
         <div className="font-display text-4xl font-extrabold leading-none text-butter">60</div>
         <div className="mt-1 font-display text-sm font-extrabold leading-tight">Recetas Fáciles para Niños en Air Fryer</div>
@@ -183,20 +183,20 @@ const CATEGORIES = [
 ];
 
 const FAQ = [
-  ["¿Qué es PequeSabor?", "PequeSabor es una guía digital con 60 recetas para preparar en Air Fryer, especialmente pensada para ayudarte a encontrar nuevas ideas para las loncheras escolares."],
-  ["¿Qué incluye el producto?", "Incluye 60 recetas con ingredientes, cantidades, instrucciones y orientaciones de preparación. El Plan Premium suma además dos materiales extra: “15 Snacks para Niños de Paladar Selectivo” y la “Guía de Cambios y Sustituciones”."],
+  ["¿Qué es Buen Bocado?", "Buen Bocado es una guía digital con 60 recetas para preparar en Air Fryer, especialmente pensada para ayudarte a encontrar nuevas ideas para las loncheras escolares."],
+  ["¿Qué incluye el producto?", "Incluye 60 recetas con ingredientes, cantidades, instrucciones y orientaciones de preparación. El Plan Premium suma además dos materiales extra: “15 Snacks para Niños con Paladar Selectivo” y la “Guía de Cambios y Sustituciones”."],
   ["¿Las recetas son solo para la escuela?", "No. Aunque la guía está enfocada en las loncheras escolares, también encontrarás ideas que puedes aprovechar para desayunos y meriendas en casa."],
   ["¿Necesito una Air Fryer?", "Sí. Las recetas están diseñadas para prepararse utilizando una Air Fryer."],
   ["¿Cómo recibiré el producto?", "Después de la confirmación del pago, recibirás las instrucciones para acceder al contenido a través de la plataforma de Cakto."],
   ["¿Puedo consultarlo desde mi celular?", "Sí. Puedes acceder al material desde dispositivos compatibles, como celulares, tablets y computadoras."],
   ["¿Cuál es la diferencia entre los planes?", "El Plan Premium incluye todo el contenido del Básico, acceso ilimitado, futuras actualizaciones cuando estén disponibles y los dos materiales extra. El Plan Básico tiene el período de acceso indicado en las condiciones de compra."],
-  ["¿Las recetas garantizan resultados nutricionales?", "No. PequeSabor es una guía de ideas culinarias y no sustituye la orientación individual de profesionales de salud o nutrición."],
+  ["¿Las recetas garantizan resultados nutricionales?", "No. Buen Bocado es una guía de ideas culinarias y no sustituye la orientación individual de profesionales de salud o nutrición."],
 ];
 
 /* ---------- Page ---------- */
 function Index() {
   useEffect(() => {
-    track("ViewContent", { content_name: "PequeSabor - 60 Recetas Air Fryer" });
+    track("ViewContent", { content_name: "Buen Bocado - 60 Recetas Air Fryer" });
   }, []);
 
   return (
@@ -258,7 +258,7 @@ function Index() {
                 <p>Pensar qué preparar, buscar nuevas ideas y evitar que los pequeños lleven siempre los mismos bocadillos a la escuela.</p>
                 <p>A veces parece que las opciones se terminan y la creatividad también.</p>
                 <p className="font-semibold text-foreground">
-                  Por eso creamos PequeSabor: una colección de 60 recetas para ayudarte a encontrar nuevas ideas y darle más variedad a las loncheras escolares.
+                  Por eso creamos Buen Bocado: una colección de 60 recetas para ayudarte a encontrar nuevas ideas y darle más variedad a las loncheras escolares.
                 </p>
               </Heading>
             </div>
@@ -271,7 +271,7 @@ function Index() {
             <p className="eyebrow">La solución</p>
             <h2 className="mt-3 text-3xl font-extrabold leading-tight md:text-5xl">¡Dile adiós a la falta de ideas para la lonchera!</h2>
             <p className="mt-5 text-lg leading-relaxed opacity-90">
-              Con PequeSabor tendrás una colección organizada de 60 recetas para descubrir nuevas preparaciones y variar las opciones que acompañan a los pequeños en la escuela. Ideas dulces, saladas y prácticas para preparar con tu Air Fryer.
+              Con Buen Bocado tendrás una colección organizada de 60 recetas para descubrir nuevas preparaciones y variar las opciones que acompañan a los pequeños en la escuela. Ideas dulces, saladas y prácticas para preparar con tu Air Fryer.
             </p>
           </div>
           <div className="mt-12 grid gap-5 md:grid-cols-3">
@@ -296,7 +296,7 @@ function Index() {
 
         {/* 4. POR DENTRO */}
         <Section id="por-dentro">
-          <Heading eyebrow="Así es por dentro" title="¡Mira lo que encontrarás dentro de PequeSabor!">
+          <Heading eyebrow="Así es por dentro" title="¡Mira lo que encontrarás dentro de Buen Bocado!">
             <p>No recibirás una simple lista de ideas.</p>
             <p>Tendrás una guía digital organizada, con recetas presentadas de forma visual, ingredientes, cantidades y preparación paso a paso.</p>
             <p>Cada ficha está pensada para que encuentres fácilmente lo que necesitas y puedas elegir nuevas opciones para las loncheras escolares.</p>
@@ -353,7 +353,7 @@ function Index() {
         {/* 7. MOMENTOS */}
         <Section className="bg-muted">
           <Heading eyebrow="Y además…" title="Más ideas para disfrutar en diferentes momentos.">
-            <p>Aunque PequeSabor está pensada para ayudarte con las loncheras escolares, sus recetas también pueden inspirarte para otros momentos del día.</p>
+            <p>Aunque Buen Bocado está pensada para ayudarte con las loncheras escolares, sus recetas también pueden inspirarte para otros momentos del día.</p>
           </Heading>
           <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
             {[
@@ -394,7 +394,7 @@ function Index() {
 
         {/* 9. PLANES */}
         <Section id="planes" className="bg-hero scroll-mt-14">
-          <Heading eyebrow="Acceso inmediato tras el pago" title="¡Elige tu plan PequeSabor!" />
+          <Heading eyebrow="Acceso inmediato tras el pago" title="¡Elige tu plan Buen Bocado!" />
           <div className="mx-auto mt-12 grid max-w-4xl items-stretch gap-6 md:grid-cols-2">
             <PlanCard
               name="Plan Básico"
@@ -422,7 +422,7 @@ function Index() {
                 "Acceso ilimitado al material adquirido.",
                 "Actualizaciones futuras cuando estén disponibles.",
               ]}
-              bonus={["15 Snacks para Niños de Paladar Selectivo", "Guía de Cambios y Sustituciones"]}
+              bonus={["15 Snacks para Niños con Paladar Selectivo", "Guía de Cambios y Sustituciones"]}
             />
           </div>
           <div className="mx-auto mt-8 flex max-w-3xl flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
@@ -454,7 +454,7 @@ function Index() {
           </div>
           <div className="mt-8 flex flex-col items-center gap-3 rounded-2xl border-2 border-dashed p-8 text-center text-muted-foreground">
             <MessageSquareQuote className="h-8 w-8" aria-hidden />
-            <p className="font-display font-bold">Pronto compartiremos aquí experiencias reales de familias que usan PequeSabor.</p>
+            <p className="font-display font-bold">Pronto compartiremos aquí experiencias reales de familias que usan Buen Bocado.</p>
             <a href="#por-dentro" className="text-sm font-bold text-primary underline underline-offset-4">Ver las fichas por dentro</a>
           </div>
         </Section>
@@ -477,9 +477,9 @@ function Index() {
           <div className="mx-auto max-w-3xl">
             <h2 className="text-3xl font-extrabold leading-tight md:text-5xl">¡Que la lonchera deje de ser un desafío cada mañana!</h2>
             <p className="mt-5 text-lg opacity-90">
-              Descubre 60 nuevas ideas para preparar, combinar y variar los bocadillos escolares de los pequeños. Con PequeSabor tendrás inspiración para salir de la rutina y encontrar nuevas opciones con tu Air Fryer.
+              Descubre 60 nuevas ideas para preparar, combinar y variar los bocadillos escolares de los pequeños. Con Buen Bocado tendrás inspiración para salir de la rutina y encontrar nuevas opciones con tu Air Fryer.
             </p>
-            <div className="mt-8"><CtaToPlans variant="coral">¡Quiero PequeSabor!</CtaToPlans></div>
+            <div className="mt-8"><CtaToPlans variant="coral">¡Quiero Buen Bocado!</CtaToPlans></div>
           </div>
         </Section>
       </main>
@@ -492,14 +492,14 @@ function Index() {
             <p className="mt-2 text-sm text-muted-foreground">Producto digital · 60 Recetas Fáciles para Niños en Air Fryer</p>
           </div>
           <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-primary" aria-label="Legal">
-            <a href={`mailto:${CONTACT_EMAIL}`} className="inline-flex items-center gap-1"><Mail className="h-4 w-4" aria-hidden />{CONTACT_EMAIL}</a>
+            <a href={`mailto:${CONTACT_EMAIL}`} className="inline-flex items-center gap-1"><Mail className="h-4 w-4" aria-hidden />Contacto</a>
             <a href={PRIVACY_URL}>Política de privacidad</a>
             <a href={TERMS_URL}>Términos y condiciones</a>
             <a href={REFUND_URL}>Política de reembolso</a>
           </nav>
         </div>
         <p className="mx-auto mt-6 max-w-6xl text-xs text-muted-foreground">
-          © {new Date().getFullYear()} PequeSabor. Todos los derechos reservados. Este producto no sustituye la orientación de profesionales de salud o nutrición.
+          © {new Date().getFullYear()} Buen Bocado. Todos los derechos reservados. Este producto no sustituye la orientación de profesionales de salud o nutrición.
         </p>
       </footer>
     </div>
@@ -508,7 +508,7 @@ function Index() {
 
 function Logo() {
   return (
-    <a href="#" className="flex items-center gap-2" aria-label="PequeSabor inicio">
+    <a href="#" className="flex items-center gap-2" aria-label="Buen Bocado inicio">
       <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary">
         <Ingredient kind="apple" className="h-5 w-5" />
       </span>
