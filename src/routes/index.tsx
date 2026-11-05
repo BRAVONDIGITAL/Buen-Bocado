@@ -3,7 +3,6 @@ import { useEffect, type ReactNode } from "react";
 import { Check, Sparkles, CalendarDays, Shuffle, BookOpen, Coffee, Apple, Home, Users, FileText, Smartphone, Lock, MessageSquareQuote, Gift } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { RecipeCard, type Recipe } from "@/components/pequesabor/RecipeCard";
-import { Ingredient, type IngredientKind } from "@/components/pequesabor/Ingredient";
 import { CHECKOUT, goToCheckout, track } from "@/lib/tracking";
 
 const TITLE = "Buen Bocado | 60 Recetas para Loncheras Escolares en Air Fryer";
@@ -399,6 +398,8 @@ function Index() {
           <div className="mx-auto mt-12 grid max-w-4xl items-stretch gap-6 md:grid-cols-2">
             <PlanCard
               name="Plan Básico"
+              image={FOOD_PHOTOS.lunchboxes}
+              imageAlt="Loncheras escolares variadas"
               price="9,90"
               plan="basic"
               cta="QUIERO EL PLAN BÁSICO."
@@ -415,6 +416,8 @@ function Index() {
             <PlanCard
               featured
               name="Plan Premium"
+              image={FOOD_PHOTOS.pizza}
+              imageAlt="Mini pizzas con queso y vegetales"
               price="14,90"
               plan="premium"
               cta="QUIERO EL PLAN PREMIUM."
@@ -526,12 +529,15 @@ function Logo() {
 }
 
 function PlanCard({
-  name, price, plan, cta, features, note, bonus, featured = false,
+  name, image, imageAlt, price, plan, cta, features, note, bonus, featured = false,
 }: {
-  name: string; price: string; plan: "basic" | "premium"; cta: string; features: string[]; note?: string; bonus?: string[]; featured?: boolean;
+  name: string; image: string; imageAlt: string; price: string; plan: "basic" | "premium"; cta: string; features: string[]; note?: string; bonus?: string[]; featured?: boolean;
 }) {
   return (
     <div className={`relative flex flex-col rounded-3xl bg-card p-7 ${featured ? "border-2 border-primary shadow-soft" : "border shadow-card"}`}>
+      <div className="-mx-7 -mt-7 mb-6 h-36 overflow-hidden rounded-t-[1.35rem]">
+        <img src={image} alt={imageAlt} loading="lazy" decoding="async" className="h-full w-full object-cover" />
+      </div>
       {featured && (
         <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-coral px-4 py-1 text-xs font-extrabold uppercase tracking-widest text-coral-foreground">
           Más completo
