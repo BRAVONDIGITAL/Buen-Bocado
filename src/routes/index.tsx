@@ -154,7 +154,7 @@ function HeroVisual() {
         <div className="relative z-10 -rotate-3 overflow-hidden rounded-[1.65rem] border-4 border-white bg-primary p-3 shadow-[0_24px_55px_rgba(25,55,42,0.24)] sm:rounded-[2rem] sm:p-4">
           <p className="text-center text-[9px] font-extrabold uppercase tracking-[0.2em] text-white/85 sm:text-xs">Buen Bocado</p>
           <div className="mt-3 overflow-hidden rounded-xl border border-white/20">
-            <img src={FOOD_PHOTOS.lunchboxColorful} alt="Lonchera colorida con diferentes preparaciones" loading="eager" decoding="async" className="aspect-[4/3] w-full object-cover" />
+            <img src={FOOD_PHOTOS.pizza} alt="Mini pizzas caseras para las loncheras" loading="eager" decoding="async" className="aspect-[4/3] w-full object-cover" />
           </div>
           <h3 className="mt-3 text-center font-display text-lg font-extrabold leading-tight text-white sm:text-2xl">60 recetas para loncheras escolares</h3>
           <p className="mt-2 text-center text-[9px] font-bold uppercase tracking-wide text-white/80 sm:text-[11px]">Ideas dulces y saladas en Air Fryer</p>
