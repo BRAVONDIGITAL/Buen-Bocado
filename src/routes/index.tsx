@@ -9,10 +9,6 @@ const TITLE = "Buen Bocado | 60 Recetas para Loncheras Escolares en Air Fryer";
 const DESC = "Descubre 60 recetas fáciles para preparar loncheras escolares variadas con Air Fryer. Ideas dulces y saladas para los pequeños.";
 
 /* Free-to-use Pexels photos. Creator and source pages:
-   Pavel Danilyuk: https://www.pexels.com/photo/students-eating-their-snacks-8423421/
-   Katerina Holmes: https://www.pexels.com/photo/cute-asian-girl-eating-tasty-organic-meal-in-plastic-container-5905694/
-   Katerina Holmes: https://www.pexels.com/photo/diverse-schoolchildren-preparing-for-lunch-in-school-5905676/
-   Pavel Danilyuk: https://www.pexels.com/photo/a-boy-eating-a-sandwich-from-a-lunchbox-8423428/
    Change C.C: https://www.pexels.com/photo/asian-lunch-bento-box-with-assorted-dishes-35211816/
    Manie Rehman Yousaf: https://www.pexels.com/photo/eco-friendly-double-layer-bento-lunch-box-35916884/
    Antoni Shkraba: https://www.pexels.com/photo/healthy-lunchboxes-5852270/
