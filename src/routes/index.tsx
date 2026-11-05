@@ -29,16 +29,21 @@ const DESC = "Descubre 60 recetas fáciles para preparar loncheras escolares var
    Valeria Boltneva: https://www.pexels.com/photo/mini-pancakes-and-berries-with-chocolates-on-ceramic-plate-beside-a-cup-of-coffee-12833165/
    Vanessa Loring: https://www.pexels.com/photo/food-inside-green-food-containers-on-purple-surface-5971998/
    Vanessa Loring: https://www.pexels.com/photo/orange-fruits-in-blue-plastic-container-5972002/
-   Yan Krukau: https://www.pexels.com/photo/children-eating-on-a-table-8617560/
+   Pavel Danilyuk: https://www.pexels.com/photo/kids-eating-bread-8763150/
+   KATRIN BOLOVTSOVA: https://www.pexels.com/photo/cute-toddler-in-white-holding-an-apple-indoors-with-fruits-on-a-wooden-table-4867904/
+   Pavel Danilyuk: https://www.pexels.com/photo/mother-and-child-sitting-on-bed-beside-the-crib-7938077/
+   Matheus Bertelli: https://www.pexels.com/photo/a-girl-smiling-with-curly-hair-13872218/
+   KATRIN BOLOVTSOVA: https://www.pexels.com/photo/child-eating-from-bowl-4867895/
+   Lisa from Pexels: https://www.pexels.com/photo/photo-of-toddler-holding-cookie-4124471/
    Lauren Diaz: https://www.pexels.com/photo/delicious-mini-pizzas-with-toppings-on-tray-34275219/
    Backen.de: https://www.pexels.com/photo/preparing-mini-pizza-7322629/
    alleksana: https://www.pexels.com/photo/close-up-photo-of-delicious-muffins-4051588/
    Elena Leya: https://www.pexels.com/photo/cooked-food-on-blue-ceramic-plate-9568318/ */
 const FOOD_PHOTOS = {
-  lunchboxes: "https://images.pexels.com/photos/8423421/pexels-photo-8423421.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  lunchboxDetail: "https://images.pexels.com/photos/5905694/pexels-photo-5905694.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  lunchboxHands: "https://images.pexels.com/photos/5905676/pexels-photo-5905676.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  schoolBoys: "https://images.pexels.com/photos/8423428/pexels-photo-8423428.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxes: "https://images.pexels.com/photos/8763150/pexels-photo-8763150.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxDetail: "https://images.pexels.com/photos/4867904/pexels-photo-4867904.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxHands: "https://images.pexels.com/photos/7938077/pexels-photo-7938077.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  schoolBoys: "https://images.pexels.com/photos/13872218/pexels-photo-13872218.jpeg?auto=compress&cs=tinysrgb&w=2000",
   bentoModern: "https://images.pexels.com/photos/35211816/pexels-photo-35211816.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxModern: "https://images.pexels.com/photos/35916884/pexels-photo-35916884.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxColorful: "https://images.pexels.com/photos/5852270/pexels-photo-5852270.jpeg?auto=compress&cs=tinysrgb&w=2000",
@@ -54,8 +59,8 @@ const FOOD_PHOTOS = {
   fruitPlate: "https://images.pexels.com/photos/16557594/pexels-photo-16557594.jpeg?auto=compress&cs=tinysrgb&w=2000",
   pancakePlate: "https://images.pexels.com/photos/12833165/pexels-photo-12833165.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxPurple: "https://images.pexels.com/photos/5971998/pexels-photo-5971998.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  lunchboxVibrant: "https://images.pexels.com/photos/5972002/pexels-photo-5972002.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  kidsSnacks: "https://images.pexels.com/photos/8617560/pexels-photo-8617560.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxVibrant: "https://images.pexels.com/photos/4867895/pexels-photo-4867895.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  kidsSnacks: "https://images.pexels.com/photos/4124471/pexels-photo-4124471.jpeg?auto=compress&cs=tinysrgb&w=2000",
   pizza: "https://images.pexels.com/photos/34275219/pexels-photo-34275219/free-photo-of-delicious-mini-pizzas-with-toppings-on-tray.jpeg?auto=compress&dpr=1&h=1100&w=1800",
   pizzaPrep: "https://images.pexels.com/photos/7322629/pexels-photo-7322629.jpeg?auto=compress&cs=tinysrgb&w=1800",
   muffins: "https://images.pexels.com/photos/4051588/pexels-photo-4051588.jpeg?auto=compress&cs=tinysrgb&w=1800",
@@ -147,7 +152,7 @@ function HeroVisual() {
       <div className="relative aspect-[5/4] overflow-hidden rounded-[2.2rem] border-[7px] border-white bg-card shadow-soft">
         <img
           src={FOOD_PHOTOS.lunchboxes}
-          alt="Niño disfrutando su almuerzo escolar con una lonchera colorida"
+          alt="Dos niños pequeños disfrutando juntos de una merienda"
           fetchPriority="high"
           decoding="async"
           className="h-full w-full object-cover"
@@ -217,10 +222,10 @@ const RECIPES: Recipe[] = [
 
 const CATEGORIES = [
   { n: "01", t: "Desayunos para comenzar el día", photo: FOOD_PHOTOS.miniPancakes, alt: "Mini pancakes dorados para el desayuno", school: false },
-  { n: "02", t: "Loncheras que inspiran", photo: FOOD_PHOTOS.lunchboxHands, alt: "Compañeros preparando sus loncheras en la escuela", school: true },
+  { n: "02", t: "Pequeños momentos de merienda", photo: FOOD_PHOTOS.lunchboxHands, alt: "Madre acompañando a su pequeño durante la merienda", school: false },
   { n: "03", t: "Snacks salados para cualquier momento", photo: FOOD_PHOTOS.snackTable, alt: "Variedad de snacks frescos y coloridos", school: true },
   { n: "04", t: "Preparaciones con mucho sabor", photo: FOOD_PHOTOS.lunchboxTop, alt: "Loncheras variadas con sándwiches y vegetales", school: true },
-  { n: "05", t: "Pequeños momentos dulces", photo: FOOD_PHOTOS.schoolBoys, alt: "Dos estudiantes compartiendo una merienda", school: false },
+  { n: "05", t: "Pequeños momentos dulces", photo: FOOD_PHOTOS.schoolBoys, alt: "Niña pequeña de cabello rizado sonriendo", school: false },
   { n: "06", t: "Favoritos para compartir", photo: FOOD_PHOTOS.lunchboxModern, alt: "Lonchera moderna reutilizable de doble compartimento", school: false },
 ];
 
@@ -290,7 +295,7 @@ function Index() {
         <Section>
           <div className="grid items-center gap-10 md:grid-cols-2">
             <div className="grid grid-cols-2 gap-3">
-              <PhotoSlot label="Una lonchera llena de color" src={FOOD_PHOTOS.lunchboxDetail} className="col-span-2 aspect-[16/10]" />
+              <PhotoSlot label="Un pequeño disfrutando su merienda" src={FOOD_PHOTOS.lunchboxDetail} className="col-span-2 aspect-[16/10]" />
               <PhotoSlot label="Merienda fresca" src={FOOD_PHOTOS.freshFruit} className="aspect-square" />
               <PhotoSlot label="Bento para el recreo" src={FOOD_PHOTOS.bentoModern} className="aspect-square" />
             </div>
@@ -438,7 +443,7 @@ function Index() {
             <PlanCard
               name="Plan Básico"
               image={FOOD_PHOTOS.lunchboxVibrant}
-              imageAlt="Loncheras coloridas con frutas y snacks"
+              imageAlt="Pequeño disfrutando un desayuno casero"
               price="9,90"
               plan="basic"
               cta="QUIERO EL PLAN BÁSICO."
@@ -456,7 +461,7 @@ function Index() {
               featured
               name="Plan Premium"
               image={FOOD_PHOTOS.kidsSnacks}
-              imageAlt="Niños compartiendo snacks en la escuela"
+              imageAlt="Manos pequeñas sosteniendo una galleta durante la merienda"
               price="14,90"
               plan="premium"
               cta="QUIERO EL PLAN PREMIUM."
