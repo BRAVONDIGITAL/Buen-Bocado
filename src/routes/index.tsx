@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
-import { Check, Sparkles, CalendarDays, Shuffle, BookOpen, Coffee, Apple, Home, Users, FileText, Smartphone, Lock, Gift, ShieldCheck } from "lucide-react";
+import { Check, Sparkles, CalendarDays, Shuffle, BookOpen, Coffee, Apple, Home, FileText, Smartphone, Lock, Gift, ShieldCheck } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { RecipeCard, type Recipe } from "@/components/pequesabor/RecipeCard";
 import { CHECKOUT, goToCheckout, track } from "@/lib/tracking";
