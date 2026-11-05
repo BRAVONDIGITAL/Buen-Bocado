@@ -518,12 +518,14 @@ function Logo() {
   return (
     <a href="#" className="flex items-center gap-3" aria-label="Buen Bocado, inicio">
       <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary shadow-soft">
-        <svg viewBox="0 0 48 48" className="h-8 w-8" aria-hidden="true">
-          <path d="M9 25h30l-3.2 10.2a5 5 0 0 1-4.8 3.5H17a5 5 0 0 1-4.8-3.5L9 25Z" fill="#FFF8ED" />
-          <path d="M13 24c2.8-5.5 7.2-8.2 11-8.2s8.2 2.7 11 8.2" fill="none" stroke="#F28A70" strokeWidth="3.2" strokeLinecap="round" />
-          <path d="M24 15c-.2-5 3.4-8 8.5-8-1 4.8-4 7.8-8.5 8Z" fill="#DDEBDD" />
-          <path d="M24 15c-4.5-4.5-9.2-4.3-12.2-.8 3.3 3.4 7.5 4.2 12.2.8Z" fill="#F5D985" />
-          <path d="M16 29h16" stroke="#285B48" strokeWidth="2.4" strokeLinecap="round" />
+        <svg viewBox="0 0 48 48" className="h-9 w-9" aria-hidden="true">
+          <path d="M10 18.5c0-5 3.8-8.5 9-8.5h10c5.2 0 9 3.5 9 8.5v13c0 4.2-3.3 7.5-7.5 7.5h-13c-4.2 0-7.5-3.3-7.5-7.5v-13Z" fill="#FFF8ED"/>
+          <path d="M10.5 20h27" stroke="#F28A70" strokeWidth="3" strokeLinecap="round"/>
+          <path d="M18 26v.2M30 26v.2" stroke="#285B48" strokeWidth="3.4" strokeLinecap="round"/>
+          <path d="M19.5 31c2.7 2.8 6.3 2.8 9 0" fill="none" stroke="#285B48" strokeWidth="2.4" strokeLinecap="round"/>
+          <path d="M24 10c.2-4.5 3.5-7 8.2-6.8-.7 4.2-3.7 6.7-8.2 6.8Z" fill="#DDEBDD" stroke="#FFF8ED" strokeWidth="1"/>
+          <path d="M24 10c-3.6-3.4-7.2-3.1-9.6-.3 2.8 2.6 6.1 2.8 9.6.3Z" fill="#F5D985" stroke="#FFF8ED" strokeWidth="1"/>
+          <path d="M35 34.5c0-2.2 1.7-3.7 3.7-3.7 2 0 3.3 1.5 3.3 3.7 0 2.5-3.3 4.9-3.3 4.9s-3.7-2.4-3.7-4.9Z" fill="#F28A70" stroke="#FFF8ED" strokeWidth="1.2"/>
         </svg>
       </span>
       <span className="font-display text-[1.35rem] font-extrabold leading-none tracking-tight text-primary">
