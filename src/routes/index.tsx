@@ -517,7 +517,7 @@ function Index() {
 
 function Logo() {
   return (
-    <a href="#" className="flex items-center gap-3" aria-label="Buen Bocado, inicio">
+    <a href="/" className="flex items-center gap-3" aria-label="Buen Bocado, inicio">
       <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary shadow-soft">
         <svg viewBox="0 0 48 48" className="h-9 w-9" aria-hidden="true">
           <path d="M10 18.5c0-5 3.8-8.5 9-8.5h10c5.2 0 9 3.5 9 8.5v13c0 4.2-3.3 7.5-7.5 7.5h-13c-4.2 0-7.5-3.3-7.5-7.5v-13Z" fill="#FFF8ED"/>
