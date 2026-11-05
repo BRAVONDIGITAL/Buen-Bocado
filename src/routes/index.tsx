@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
-import { Check, Sparkles, CalendarDays, Shuffle, BookOpen, Coffee, Apple, Home, Users, FileText, Smartphone, Lock, Mail, Camera, MessageSquareQuote, Gift } from "lucide-react";
+import { Check, Sparkles, CalendarDays, Shuffle, BookOpen, Coffee, Apple, Home, Users, FileText, Smartphone, Lock, Camera, MessageSquareQuote, Gift } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { RecipeCard, type Recipe } from "@/components/pequesabor/RecipeCard";
 import { Ingredient, type IngredientKind } from "@/components/pequesabor/Ingredient";
@@ -27,7 +27,6 @@ export const Route = createFileRoute("/")({
 });
 
 /* ---------- Editable footer fields ---------- */
-const CONTACT_EMAIL = "contacto@pequesabor.com"; // TODO: reemplazar por el e-mail real
 const PRIVACY_URL = "#"; // TODO
 const TERMS_URL = "#"; // TODO
 const REFUND_URL = "#"; // TODO: política de reembolso configurada en Cakto
@@ -492,7 +491,6 @@ function Index() {
             <p className="mt-2 text-sm text-muted-foreground">Producto digital · 60 Recetas Fáciles para Niños en Air Fryer</p>
           </div>
           <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-primary" aria-label="Legal">
-            <a href={`mailto:${CONTACT_EMAIL}`} className="inline-flex items-center gap-1"><Mail className="h-4 w-4" aria-hidden />Contacto</a>
             <a href={PRIVACY_URL}>Política de privacidad</a>
             <a href={TERMS_URL}>Términos y condiciones</a>
             <a href={REFUND_URL}>Política de reembolso</a>
