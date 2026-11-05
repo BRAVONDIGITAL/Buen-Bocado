@@ -161,7 +161,7 @@ function HeroVisual() {
           <div className="mt-3 rounded-lg bg-white px-2 py-1.5 text-center text-[9px] font-extrabold uppercase tracking-wider text-primary sm:text-[10px]">Guía digital en PDF</div>
         </div>
         <div className="relative aspect-[4/5] overflow-hidden rounded-[1.8rem] border-[5px] border-white bg-card shadow-soft sm:rounded-[2.2rem]">
-          <img src={generated} alt="Niño disfrutando una mini pizza casera" loading="eager" decoding="async" className="h-full w-full object-cover" />
+          <img src="/images/child-snack.svg" alt="Niño disfrutando una mini pizza casera" loading="eager" decoding="async" className="h-full w-full object-cover" />
           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/85 to-transparent px-3 pb-4 pt-12 text-white sm:px-5 sm:pb-5">
             <p className="text-[9px] font-extrabold uppercase tracking-[0.16em] sm:text-xs">Más variedad, menos improvisación</p>
             <p className="mt-1 font-display text-base font-extrabold leading-tight sm:text-xl">Ideas para cada día</p>
