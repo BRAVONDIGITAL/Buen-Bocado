@@ -17,6 +17,19 @@ const DESC = "Descubre 60 recetas fáciles para preparar loncheras escolares var
    Manie Rehman Yousaf: https://www.pexels.com/photo/eco-friendly-double-layer-bento-lunch-box-35916884/
    Antoni Shkraba: https://www.pexels.com/photo/healthy-lunchboxes-5852270/
    Antoni Shkraba: https://www.pexels.com/photo/sliced-fruits-on-yellow-plastic-container-5852332/
+   Antoni Shkraba: https://www.pexels.com/photo/an-assortment-of-healthy-snacks-in-plastic-containers-5852335/
+   Antoni Shkraba: https://www.pexels.com/photo/food-in-containers-5852285/
+   Antoni Shkraba: https://www.pexels.com/photo/overhead-shot-of-healthy-snacks-in-plastic-containers-5852341/
+   Elly Mar Tamayor: https://www.pexels.com/photo/healthy-lunch-with-sandwiches-and-salad-35482981/
+   Bora C: https://www.pexels.com/photo/fresh-fruit-assortment-in-containers-on-white-background-35439983/
+   Maarten Ceulemans: https://www.pexels.com/photo/belgian-mini-pancakes-with-powdered-sugar-36564998/
+   Novkov Visuals: https://www.pexels.com/photo/healthy-snack-and-salad-assortment-on-table-34227785/
+   Antoni Shkraba: https://www.pexels.com/photo/an-assortment-of-healthy-snacks-in-plastic-containers-5852457/
+   Şemsi Belli: https://www.pexels.com/photo/plate-of-healthy-snacks-16557594/
+   Valeria Boltneva: https://www.pexels.com/photo/mini-pancakes-and-berries-with-chocolates-on-ceramic-plate-beside-a-cup-of-coffee-12833165/
+   Vanessa Loring: https://www.pexels.com/photo/food-inside-green-food-containers-on-purple-surface-5971998/
+   Vanessa Loring: https://www.pexels.com/photo/orange-fruits-in-blue-plastic-container-5972002/
+   Yan Krukau: https://www.pexels.com/photo/children-eating-on-a-table-8617560/
    Lauren Diaz: https://www.pexels.com/photo/delicious-mini-pizzas-with-toppings-on-tray-34275219/
    Backen.de: https://www.pexels.com/photo/preparing-mini-pizza-7322629/
    alleksana: https://www.pexels.com/photo/close-up-photo-of-delicious-muffins-4051588/
@@ -30,11 +43,24 @@ const FOOD_PHOTOS = {
   lunchboxModern: "https://images.pexels.com/photos/35916884/pexels-photo-35916884.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxColorful: "https://images.pexels.com/photos/5852270/pexels-photo-5852270.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxFruit: "https://images.pexels.com/photos/5852332/pexels-photo-5852332.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxMix: "https://images.pexels.com/photos/5852335/pexels-photo-5852335.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxTop: "https://images.pexels.com/photos/5852285/pexels-photo-5852285.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxBlue: "https://images.pexels.com/photos/5852341/pexels-photo-5852341.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  freshLunch: "https://images.pexels.com/photos/35482981/pexels-photo-35482981.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  freshFruit: "https://images.pexels.com/photos/35439983/pexels-photo-35439983.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  miniPancakes: "https://images.pexels.com/photos/36564998/pexels-photo-36564998.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  snackTable: "https://images.pexels.com/photos/34227785/pexels-photo-34227785.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxAlt: "https://images.pexels.com/photos/5852457/pexels-photo-5852457.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  fruitPlate: "https://images.pexels.com/photos/16557594/pexels-photo-16557594.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  pancakePlate: "https://images.pexels.com/photos/12833165/pexels-photo-12833165.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxPurple: "https://images.pexels.com/photos/5971998/pexels-photo-5971998.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxVibrant: "https://images.pexels.com/photos/5972002/pexels-photo-5972002.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  kidsSnacks: "https://images.pexels.com/photos/8617560/pexels-photo-8617560.jpeg?auto=compress&cs=tinysrgb&w=2000",
   pizza: "https://images.pexels.com/photos/34275219/pexels-photo-34275219/free-photo-of-delicious-mini-pizzas-with-toppings-on-tray.jpeg?auto=compress&dpr=1&h=1100&w=1800",
   pizzaPrep: "https://images.pexels.com/photos/7322629/pexels-photo-7322629.jpeg?auto=compress&cs=tinysrgb&w=1800",
   muffins: "https://images.pexels.com/photos/4051588/pexels-photo-4051588.jpeg?auto=compress&cs=tinysrgb&w=1800",
   cheeseSticks: "https://images.pexels.com/photos/9568318/pexels-photo-9568318.jpeg?auto=compress&cs=tinysrgb&w=1800",
-} as const;
+} as const;;
 
 
 export const Route = createFileRoute("/")({
@@ -181,7 +207,7 @@ const RECIPES: Recipe[] = [
     tip: "Congélalos 15 min antes de cocinar para que mantengan la forma.",
   },
   {
-    page: 45, category: "Para compartir", image: FOOD_PHOTOS.lunchboxDetail, imageAlt: "Lonchera con sándwiches y frutas", title: "Sándwiches y bocadillos", prep: "10 min", temp: "175 °C", fryer: "5 min", tone: "butter",
+    page: 45, category: "Para compartir", image: FOOD_PHOTOS.lunchboxFruit, imageAlt: "Lonchera con sándwiches y frutas", title: "Sándwiches y bocadillos", prep: "10 min", temp: "175 °C", fryer: "5 min", tone: "butter",
     ingredients: [
       { kind: "bread", text: "4 rebanadas de pan" },
       { kind: "cheese", text: "4 lonchas de queso" },
@@ -193,10 +219,10 @@ const RECIPES: Recipe[] = [
 ];
 
 const CATEGORIES = [
-  { n: "01", t: "Desayunos para comenzar el día", photo: FOOD_PHOTOS.muffins, alt: "Muffins recién horneados", school: false },
+  { n: "01", t: "Desayunos para comenzar el día", photo: FOOD_PHOTOS.miniPancakes, alt: "Mini pancakes dorados para el desayuno", school: false },
   { n: "02", t: "Loncheras que inspiran", photo: FOOD_PHOTOS.lunchboxHands, alt: "Compañeros preparando sus loncheras en la escuela", school: true },
-  { n: "03", t: "Snacks salados para cualquier momento", photo: FOOD_PHOTOS.cheeseSticks, alt: "Bastones de queso dorados", school: true },
-  { n: "04", t: "Preparaciones con mucho sabor", photo: FOOD_PHOTOS.pizza, alt: "Mini pizzas con queso y vegetales", school: true },
+  { n: "03", t: "Snacks salados para cualquier momento", photo: FOOD_PHOTOS.snackTable, alt: "Variedad de snacks frescos y coloridos", school: true },
+  { n: "04", t: "Preparaciones con mucho sabor", photo: FOOD_PHOTOS.lunchboxTop, alt: "Loncheras variadas con sándwiches y vegetales", school: true },
   { n: "05", t: "Pequeños momentos dulces", photo: FOOD_PHOTOS.schoolBoys, alt: "Dos estudiantes compartiendo una merienda", school: false },
   { n: "06", t: "Favoritos para compartir", photo: FOOD_PHOTOS.lunchboxModern, alt: "Lonchera moderna reutilizable de doble compartimento", school: false },
 ];
@@ -268,7 +294,7 @@ function Index() {
           <div className="grid items-center gap-10 md:grid-cols-2">
             <div className="grid grid-cols-2 gap-3">
               <PhotoSlot label="Una lonchera llena de color" src={FOOD_PHOTOS.lunchboxDetail} className="col-span-2 aspect-[16/10]" />
-              <PhotoSlot label="Muffins caseros" src={FOOD_PHOTOS.muffins} className="aspect-square" />
+              <PhotoSlot label="Merienda fresca" src={FOOD_PHOTOS.freshFruit} className="aspect-square" />
               <PhotoSlot label="Bento para el recreo" src={FOOD_PHOTOS.bentoModern} className="aspect-square" />
             </div>
             <div>
@@ -357,12 +383,12 @@ function Index() {
           <Heading eyebrow="Inspiración diaria" title="Loncheras con más color, variedad y sabor" />
           <div className="mt-12 grid auto-rows-[140px] grid-cols-2 gap-3 md:auto-rows-[180px] md:grid-cols-4">
             <PhotoSlot label="Loncheras llenas de variedad" src={FOOD_PHOTOS.lunchboxColorful} className="col-span-2 row-span-2" />
-            <PhotoSlot label="Mini pizzas" src={FOOD_PHOTOS.pizza} />
-            <PhotoSlot label="Muffins" src={FOOD_PHOTOS.muffins} />
-            <PhotoSlot label="Preparación de mini pizzas" src={FOOD_PHOTOS.pizzaPrep} className="col-span-2" />
-            <PhotoSlot label="Frutas frescas para el recreo" src={FOOD_PHOTOS.lunchboxFruit} className="col-span-2" />
-            <PhotoSlot label="Bastones de queso" src={FOOD_PHOTOS.cheeseSticks} />
-            <PhotoSlot label="Bento de inspiración" src={FOOD_PHOTOS.bentoModern} />
+            <PhotoSlot label="Ensalada y sándwich fresco" src={FOOD_PHOTOS.freshLunch} />
+            <PhotoSlot label="Frutas listas para llevar" src={FOOD_PHOTOS.fruitPlate} />
+            <PhotoSlot label="Snacks coloridos" src={FOOD_PHOTOS.lunchboxBlue} className="col-span-2" />
+            <PhotoSlot label="Bocados para compartir" src={FOOD_PHOTOS.lunchboxAlt} className="col-span-2" />
+            <PhotoSlot label="Pancakes con frutos rojos" src={FOOD_PHOTOS.pancakePlate} />
+            <PhotoSlot label="Snacks en recipientes modernos" src={FOOD_PHOTOS.lunchboxPurple} />
           </div>
         </Section>
 
@@ -414,8 +440,8 @@ function Index() {
           <div className="mx-auto mt-12 grid max-w-4xl items-stretch gap-6 md:grid-cols-2">
             <PlanCard
               name="Plan Básico"
-              image={FOOD_PHOTOS.lunchboxFruit}
-              imageAlt="Lonchera con frutas frescas y sándwiches"
+              image={FOOD_PHOTOS.lunchboxVibrant}
+              imageAlt="Loncheras coloridas con frutas y snacks"
               price="9,90"
               plan="basic"
               cta="QUIERO EL PLAN BÁSICO."
@@ -432,8 +458,8 @@ function Index() {
             <PlanCard
               featured
               name="Plan Premium"
-              image={FOOD_PHOTOS.lunchboxModern}
-              imageAlt="Lonchera moderna reutilizable de doble compartimento"
+              image={FOOD_PHOTOS.kidsSnacks}
+              imageAlt="Niños compartiendo snacks en la escuela"
               price="14,90"
               plan="premium"
               cta="QUIERO EL PLAN PREMIUM."
