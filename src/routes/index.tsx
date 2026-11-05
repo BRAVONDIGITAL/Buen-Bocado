@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
-import { Check, Sparkles, CalendarDays, Shuffle, BookOpen, Coffee, Apple, Home, Users, FileText, Smartphone, Lock, Camera, MessageSquareQuote, Gift } from "lucide-react";
+import { Check, Sparkles, CalendarDays, Shuffle, BookOpen, Coffee, Apple, Home, Users, FileText, Smartphone, Lock, MessageSquareQuote, Gift } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { RecipeCard, type Recipe } from "@/components/pequesabor/RecipeCard";
 import { Ingredient, type IngredientKind } from "@/components/pequesabor/Ingredient";
@@ -8,6 +8,21 @@ import { CHECKOUT, goToCheckout, track } from "@/lib/tracking";
 
 const TITLE = "Buen Bocado | 60 Recetas para Loncheras Escolares en Air Fryer";
 const DESC = "Descubre 60 recetas fáciles para preparar loncheras escolares variadas con Air Fryer. Ideas dulces y saladas para los pequeños.";
+
+/* Pexels photos under the Pexels free-to-use license.
+   Credits: Antoni Shkraba (5852326, 5852335), Vanessa Loring (5971966),
+   Backen.de (7322629), alleksana (4051588), Elena Leya (9568318),
+   Lauren Diaz (34275219). Original photo pages are linked in source comments. */
+const FOOD_PHOTOS = {
+  lunchboxes: "https://images.pexels.com/photos/5852326/pexels-photo-5852326.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  lunchboxDetail: "https://images.pexels.com/photos/5852335/pexels-photo-5852335.jpeg?auto=compress&cs=tinysrgb&w=1100",
+  lunchboxHands: "https://images.pexels.com/photos/5971966/pexels-photo-5971966.jpeg?auto=compress&cs=tinysrgb&w=1100",
+  pizza: "https://images.pexels.com/photos/34275219/pexels-photo-34275219/free-photo-of-delicious-mini-pizzas-with-toppings-on-tray.jpeg?auto=compress&dpr=1&h=750&w=1260",
+  pizzaPrep: "https://images.pexels.com/photos/7322629/pexels-photo-7322629.jpeg?auto=compress&cs=tinysrgb&w=1100",
+  muffins: "https://images.pexels.com/photos/4051588/pexels-photo-4051588.jpeg?auto=compress&cs=tinysrgb&w=1100",
+  cheeseSticks: "https://images.pexels.com/photos/9568318/pexels-photo-9568318.jpeg?auto=compress&cs=tinysrgb&w=1100",
+} as const;
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -65,62 +80,52 @@ function Heading({ eyebrow, title, children, center = true }: { eyebrow?: string
   );
 }
 
-function PhotoSlot({ label, className = "" }: { label: string; className?: string }) {
+function PhotoSlot({ label, src, className = "" }: { label: string; src: string; className?: string }) {
   return (
-    <figure className={`photo-slot relative flex items-end overflow-hidden rounded-2xl ${className}`}>
-      <figcaption className="m-3 inline-flex items-center gap-1.5 rounded-full bg-card/90 px-3 py-1 text-xs font-semibold text-primary">
-        <Camera className="h-3.5 w-3.5" aria-hidden /> {label}
+    <figure className={`group relative overflow-hidden rounded-[1.6rem] bg-secondary shadow-card ${className}`}>
+      <img
+        src={src}
+        alt={label}
+        loading="lazy"
+        decoding="async"
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" aria-hidden />
+      <figcaption className="absolute bottom-3 left-3 rounded-full border border-white/30 bg-white/90 px-3 py-1.5 text-xs font-extrabold text-primary shadow-card">
+        {label}
       </figcaption>
     </figure>
   );
 }
 
-/* ---------- Hero visual: lunchbox + cover (pure CSS) ---------- */
-function Compartment({ kinds, label, className = "" }: { kinds: IngredientKind[]; label: string; className?: string }) {
-  return (
-    <div className={`flex flex-col items-center justify-center gap-1 rounded-xl p-2 ${className}`}>
-      <div className="flex -space-x-2">
-        {kinds.map((k, i) => (
-          <Ingredient key={i} kind={k} className="h-9 w-9 md:h-11 md:w-11" />
-        ))}
-      </div>
-      <span className="text-[10px] font-bold uppercase tracking-wider text-primary/80">{label}</span>
-    </div>
-  );
-}
-
-function Cover({ className = "" }: { className?: string }) {
-  return (
-    <div className={`flex aspect-[3/4] flex-col justify-between rounded-r-xl rounded-l-sm bg-primary p-4 text-primary-foreground shadow-soft ring-1 ring-primary/30 ${className}`}>
-      <div className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-80">Buen Bocado</div>
-      <div>
-        <div className="font-display text-4xl font-extrabold leading-none text-butter">60</div>
-        <div className="mt-1 font-display text-sm font-extrabold leading-tight">Recetas Fáciles para Niños en Air Fryer</div>
-      </div>
-      <div className="flex gap-1">
-        <Ingredient kind="apple" className="h-5 w-5" />
-        <Ingredient kind="cheese" className="h-5 w-5" />
-        <Ingredient kind="leaf" className="h-5 w-5" />
-      </div>
-    </div>
-  );
-}
-
+/* ---------- Hero visual: real food photography ---------- */
 function HeroVisual() {
   return (
-    <div className="relative mx-auto w-full max-w-md">
-      <div className="blob absolute -inset-6 bg-secondary" aria-hidden />
-      <div className="relative rounded-[2rem] border-4 border-primary/15 bg-card p-3 shadow-soft">
-        <div className="grid grid-cols-3 grid-rows-2 gap-2" style={{ aspectRatio: "4 / 3" }}>
-          <Compartment kinds={["tomato", "cheese"]} label="Mini pizzas" className="col-span-2 bg-coral/20" />
-          <Compartment kinds={["apple"]} label="Frutas" className="bg-secondary" />
-          <Compartment kinds={["banana", "oat"]} label="Muffins" className="bg-accent/50" />
-          <Compartment kinds={["bread", "leaf"]} label="Sándwich" className="col-span-2 bg-muted" />
+    <div className="relative mx-auto w-full max-w-xl pb-5">
+      <div className="blob absolute -inset-5 bg-secondary" aria-hidden />
+      <div className="relative aspect-[5/4] overflow-hidden rounded-[2.2rem] border-[7px] border-white bg-card shadow-soft">
+        <img
+          src={FOOD_PHOTOS.lunchboxes}
+          alt="Tres loncheras escolares con frutas, sándwiches y opciones variadas"
+          fetchPriority="high"
+          decoding="async"
+          className="h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/55 via-transparent to-transparent" aria-hidden />
+        <div className="absolute bottom-5 left-5 max-w-[75%] text-white">
+          <span className="text-xs font-extrabold uppercase tracking-[0.18em]">Ideas para cada día</span>
+          <p className="mt-1 font-display text-2xl font-extrabold leading-tight md:text-3xl">Loncheras llenas de sabor</p>
         </div>
       </div>
-      <Cover className="absolute -bottom-10 -right-2 w-32 rotate-6 md:w-40" />
-      <div className="absolute -left-3 -top-4 rounded-full bg-butter px-4 py-2 font-display text-sm font-extrabold text-primary shadow-card">
-        60 recetas
+      <div className="absolute -left-4 top-7 rounded-2xl border-4 border-white bg-card p-1.5 shadow-card md:-left-8">
+        <img src={FOOD_PHOTOS.pizza} alt="Mini pizzas listas para servir" loading="lazy" className="h-24 w-28 rounded-xl object-cover md:h-28 md:w-36" />
+      </div>
+      <div className="absolute -bottom-1 right-2 flex items-center gap-3 rounded-2xl border border-primary/10 bg-card px-4 py-3 shadow-soft md:right-0">
+        <span className="font-display text-4xl font-extrabold leading-none text-coral">60</span>
+        <span className="max-w-24 text-xs font-extrabold uppercase leading-tight tracking-wide text-primary">recetas para descubrir</span>
+      </div>
+      <div className="absolute -right-2 top-1/2 hidden -translate-y-1/2 rotate-3 overflow-hidden rounded-2xl border-4 border-white shadow-card sm:block">
+        <img src={FOOD_PHOTOS.muffins} alt="Muffins caseros con frutos rojos" loading="lazy" className="h-28 w-24 object-cover" />
       </div>
     </div>
   );
@@ -129,7 +134,7 @@ function HeroVisual() {
 /* ---------- Data ---------- */
 const RECIPES: Recipe[] = [
   {
-    page: 12, category: "Loncheras", title: "Mini pizzas para la lonchera", prep: "15 min", temp: "180 °C", fryer: "8 min", tone: "coral",
+    page: 12, category: "Loncheras", image: FOOD_PHOTOS.pizza, imageAlt: "Mini pizzas recién preparadas", title: "Mini pizzas para la lonchera", prep: "15 min", temp: "180 °C", fryer: "8 min", tone: "coral",
     ingredients: [
       { kind: "bread", text: "4 panes pequeños o masa base" },
       { kind: "tomato", text: "4 cdas. de salsa de tomate" },
@@ -140,7 +145,7 @@ const RECIPES: Recipe[] = [
     tip: "Déjalas enfriar antes de guardarlas para que no se humedezcan.",
   },
   {
-    page: 24, category: "Desayunos", title: "Muffins de banana y avena", prep: "10 min", temp: "160 °C", fryer: "12 min", tone: "butter",
+    page: 24, category: "Desayunos", image: FOOD_PHOTOS.muffins, imageAlt: "Muffins caseros con frutos rojos", title: "Muffins de banana y avena", prep: "10 min", temp: "160 °C", fryer: "12 min", tone: "butter",
     ingredients: [
       { kind: "banana", text: "2 bananas maduras" },
       { kind: "oat", text: "1 taza de avena" },
@@ -151,7 +156,7 @@ const RECIPES: Recipe[] = [
     tip: "Usa moldes de silicona para desmoldar con facilidad.",
   },
   {
-    page: 31, category: "Snacks salados", title: "Palitos de queso", prep: "12 min", temp: "190 °C", fryer: "6 min", tone: "sage",
+    page: 31, category: "Snacks salados", image: FOOD_PHOTOS.cheeseSticks, imageAlt: "Bastones de queso dorados con salsa", title: "Palitos de queso", prep: "12 min", temp: "190 °C", fryer: "6 min", tone: "sage",
     ingredients: [
       { kind: "cheese", text: "200 g de queso en bastones" },
       { kind: "egg", text: "1 huevo batido" },
@@ -161,7 +166,7 @@ const RECIPES: Recipe[] = [
     tip: "Congélalos 15 min antes de cocinar para que mantengan la forma.",
   },
   {
-    page: 45, category: "Para compartir", title: "Sándwiches y bocadillos", prep: "10 min", temp: "175 °C", fryer: "5 min", tone: "butter",
+    page: 45, category: "Para compartir", image: FOOD_PHOTOS.lunchboxDetail, imageAlt: "Lonchera con sándwiches y frutas", title: "Sándwiches y bocadillos", prep: "10 min", temp: "175 °C", fryer: "5 min", tone: "butter",
     ingredients: [
       { kind: "bread", text: "4 rebanadas de pan" },
       { kind: "cheese", text: "4 lonchas de queso" },
@@ -173,12 +178,12 @@ const RECIPES: Recipe[] = [
 ];
 
 const CATEGORIES = [
-  { n: "01", t: "Desayunos para comenzar el día", k: ["banana", "oat"] as IngredientKind[], school: false },
-  { n: "02", t: "Loncheras que inspiran", k: ["apple", "bread"] as IngredientKind[], school: true },
-  { n: "03", t: "Snacks salados para cualquier momento", k: ["cheese", "tomato"] as IngredientKind[], school: true },
-  { n: "04", t: "Recetas con queso, pollo y mucho sabor", k: ["cheese", "leaf"] as IngredientKind[], school: true },
-  { n: "05", t: "Pequeños momentos dulces", k: ["banana", "apple"] as IngredientKind[], school: false },
-  { n: "06", t: "Favoritos para compartir", k: ["bread", "egg"] as IngredientKind[], school: false },
+  { n: "01", t: "Desayunos para comenzar el día", photo: FOOD_PHOTOS.muffins, alt: "Muffins recién horneados", school: false },
+  { n: "02", t: "Loncheras que inspiran", photo: FOOD_PHOTOS.lunchboxes, alt: "Loncheras variadas con frutas y sándwiches", school: true },
+  { n: "03", t: "Snacks salados para cualquier momento", photo: FOOD_PHOTOS.cheeseSticks, alt: "Bastones de queso dorados", school: true },
+  { n: "04", t: "Preparaciones con mucho sabor", photo: FOOD_PHOTOS.pizza, alt: "Mini pizzas con queso y vegetales", school: true },
+  { n: "05", t: "Pequeños momentos dulces", photo: FOOD_PHOTOS.lunchboxHands, alt: "Bocadillos dulces y frutas en una lonchera", school: false },
+  { n: "06", t: "Favoritos para compartir", photo: FOOD_PHOTOS.lunchboxDetail, alt: "Sándwiches, frutas y snacks variados", school: false },
 ];
 
 const FAQ = [
@@ -202,7 +207,7 @@ function Index() {
     <div className="font-sans">
       {/* Top bar */}
       <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur">
-        <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-5">
+        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
           <Logo />
           <a href="#planes" className="rounded-full bg-primary px-4 py-2 text-sm font-bold text-primary-foreground">
             Ver planes
@@ -247,9 +252,9 @@ function Index() {
         <Section>
           <div className="grid items-center gap-10 md:grid-cols-2">
             <div className="grid grid-cols-2 gap-3">
-              <PhotoSlot label="Familia preparando la lonchera" className="col-span-2 aspect-[16/10]" />
-              <PhotoSlot label="Opciones de bocadillos" className="aspect-square" />
-              <PhotoSlot label="Lonchera lista" className="aspect-square" />
+              <PhotoSlot label="Loncheras variadas" src={FOOD_PHOTOS.lunchboxes} className="col-span-2 aspect-[16/10]" />
+              <PhotoSlot label="Muffins caseros" src={FOOD_PHOTOS.muffins} className="aspect-square" />
+              <PhotoSlot label="Snacks para llevar" src={FOOD_PHOTOS.lunchboxDetail} className="aspect-square" />
             </div>
             <div>
               <Heading center={false} eyebrow="La rutina de cada mañana" title="¿Qué poner hoy en la lonchera?">
@@ -317,20 +322,17 @@ function Index() {
           <Heading eyebrow="6 categorías · 10 recetas cada una" title="60 recetas para renovar las loncheras escolares." />
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {CATEGORIES.map((c) => (
-              <div key={c.n} className="relative flex items-center gap-4 rounded-2xl bg-card p-5 shadow-card">
-                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-muted">
-                  <Ingredient kind={c.k[0] ?? "apple"} className="h-9 w-9" />
+              <article key={c.n} className="group overflow-hidden rounded-[1.6rem] bg-card shadow-card transition-transform duration-300 hover:-translate-y-1">
+                <div className="relative h-48 overflow-hidden sm:h-56">
+                  <img src={c.photo} alt={c.alt} loading="lazy" decoding="async" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  {c.school && <span className="absolute left-4 top-4 rounded-full bg-butter px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider text-primary">Ideal para lonchera</span>}
+                  <span className="absolute bottom-3 right-3 rounded-full bg-white/90 px-3 py-1 text-xs font-extrabold text-primary">{c.n} / 06</span>
                 </div>
-                <div>
-                  <p className="font-display text-sm font-extrabold text-coral">{c.n} · 10 recetas</p>
-                  <h3 className="text-lg font-extrabold uppercase leading-tight text-primary">{c.t}</h3>
+                <div className="p-5">
+                  <p className="font-display text-xs font-extrabold uppercase tracking-widest text-coral">10 recetas</p>
+                  <h3 className="mt-2 text-lg font-extrabold leading-snug text-primary">{c.t}</h3>
                 </div>
-                {c.school && (
-                  <span className="absolute right-3 top-3 rounded-full bg-accent px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary">
-                    Ideal lonchera
-                  </span>
-                )}
-              </div>
+              </article>
             ))}
           </div>
         </Section>
@@ -339,13 +341,13 @@ function Index() {
         <Section>
           <Heading eyebrow="Inspiración diaria" title="Loncheras con más color, variedad y sabor" />
           <div className="mt-12 grid auto-rows-[140px] grid-cols-2 gap-3 md:auto-rows-[180px] md:grid-cols-4">
-            <PhotoSlot label="Madre organizando la lonchera" className="col-span-2 row-span-2" />
-            <PhotoSlot label="Mini pizzas" />
-            <PhotoSlot label="Muffins" />
-            <PhotoSlot label="Padre armando la lonchera" className="col-span-2" />
-            <PhotoSlot label="Niños con su lonchera" className="col-span-2" />
-            <PhotoSlot label="Palitos de queso" />
-            <PhotoSlot label="Recipientes coloridos" />
+            <PhotoSlot label="Ideas para la lonchera" src={FOOD_PHOTOS.lunchboxHands} className="col-span-2 row-span-2" />
+            <PhotoSlot label="Mini pizzas" src={FOOD_PHOTOS.pizza} />
+            <PhotoSlot label="Muffins" src={FOOD_PHOTOS.muffins} />
+            <PhotoSlot label="Preparación de mini pizzas" src={FOOD_PHOTOS.pizzaPrep} className="col-span-2" />
+            <PhotoSlot label="Loncheras con variedad" src={FOOD_PHOTOS.lunchboxes} className="col-span-2" />
+            <PhotoSlot label="Bastones de queso" src={FOOD_PHOTOS.cheeseSticks} />
+            <PhotoSlot label="Snacks y frutas" src={FOOD_PHOTOS.lunchboxDetail} />
           </div>
         </Section>
 
@@ -506,12 +508,18 @@ function Index() {
 
 function Logo() {
   return (
-    <a href="#" className="flex items-center gap-2" aria-label="Buen Bocado inicio">
-      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary">
-        <Ingredient kind="apple" className="h-5 w-5" />
+    <a href="#" className="flex items-center gap-3" aria-label="Buen Bocado, inicio">
+      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary shadow-soft">
+        <svg viewBox="0 0 48 48" className="h-8 w-8" aria-hidden="true">
+          <path d="M9 25h30l-3.2 10.2a5 5 0 0 1-4.8 3.5H17a5 5 0 0 1-4.8-3.5L9 25Z" fill="#FFF8ED" />
+          <path d="M13 24c2.8-5.5 7.2-8.2 11-8.2s8.2 2.7 11 8.2" fill="none" stroke="#F28A70" strokeWidth="3.2" strokeLinecap="round" />
+          <path d="M24 15c-.2-5 3.4-8 8.5-8-1 4.8-4 7.8-8.5 8Z" fill="#DDEBDD" />
+          <path d="M24 15c-4.5-4.5-9.2-4.3-12.2-.8 3.3 3.4 7.5 4.2 12.2.8Z" fill="#F5D985" />
+          <path d="M16 29h16" stroke="#285B48" strokeWidth="2.4" strokeLinecap="round" />
+        </svg>
       </span>
-      <span className="font-display text-xl font-extrabold text-primary">
-        Peque<span className="text-coral">Sabor</span>
+      <span className="font-display text-[1.35rem] font-extrabold leading-none tracking-tight text-primary">
+        Buen <span className="text-coral">Bocado</span>
       </span>
     </a>
   );
