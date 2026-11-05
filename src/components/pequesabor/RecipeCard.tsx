@@ -80,10 +80,10 @@ export function RecipeCard({ r }: { r: Recipe }) {
           <div className="flex gap-2 rounded-xl bg-accent/45 p-3 text-sm">
             <Lightbulb className="h-4 w-4 shrink-0 text-primary" aria-hidden />
             <p>
-              <strong className="text-primary">Tip PequeSabor:</strong> {r.tip}
+              <strong className="text-primary">Tip Buen Bocado:</strong> {r.tip}
             </p>
           </div>
-          <p className="mt-3 text-right text-[10px] font-semibold text-muted-foreground">PequeSabor · pág. {r.page}</p>
+          <p className="mt-3 text-right text-[10px] font-semibold text-muted-foreground">Buen Bocado · pág. {r.page}</p>
         </div>
       </div>
     </article>
