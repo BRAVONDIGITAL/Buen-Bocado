@@ -66,6 +66,12 @@ const FOOD_PHOTOS = {
   pizzaPrep: "https://images.pexels.com/photos/7322629/pexels-photo-7322629.jpeg?auto=compress&cs=tinysrgb&w=1800",
   muffins: "https://images.pexels.com/photos/4051588/pexels-photo-4051588.jpeg?auto=compress&cs=tinysrgb&w=1800",
   cheeseSticks: "https://images.pexels.com/photos/9568318/pexels-photo-9568318.jpeg?auto=compress&cs=tinysrgb&w=1800",
+  momFeeding: "https://images.pexels.com/photos/8035921/pexels-photo-8035921.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  momDaughterMeal: "https://images.pexels.com/photos/7492941/pexels-photo-7492941.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  momSonMeal: "https://images.pexels.com/photos/19773924/pexels-photo-19773924.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  familyBreakfast: "https://images.pexels.com/photos/4866897/pexels-photo-4866897.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  momCooking: "https://images.pexels.com/photos/6297629/pexels-photo-6297629.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  momDaughterCooking: "https://images.pexels.com/photos/5907539/pexels-photo-5907539.jpeg?auto=compress&cs=tinysrgb&w=1600",
 } as const;;
 
 
@@ -487,51 +493,63 @@ function Index() {
           <p className="mt-7 text-center text-xs text-muted-foreground">Fotografías ilustrativas de alimentos. El producto adquirido es una guía digital en PDF.</p>
         </Section>
 
-        {/* 10. GALERÍA DE INSPIRACIÓN Y ESPACIO PARA RESEÑAS REALES */}
+        {/* 10. MOMENTOS EN FAMILIA + PRUEBA SOCIAL ILUSTRATIVA */}
         <Section className="bg-secondary">
-          <Heading eyebrow="Ideas que abren el apetito" title="Pequeños momentos felices alrededor de la comida.">
-            <p>Recetas caseras, bocados doraditos y loncheras llenas de color: descubre ideas para preparar, compartir y adaptar a la rutina de tu familia.</p>
+          <Heading eyebrow="La comida también es conexión" title="Pequeños momentos que se disfrutan en familia.">
+            <p>Preparar una merienda, descubrir un sabor nuevo y compartir la mesa: Buen Bocado quiere inspirar momentos cotidianos más alegres alrededor de la comida.</p>
           </Heading>
-          <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
-            <PhotoSlot label="Mini pizzas recién hechas" src={FOOD_PHOTOS.pizza} className="aspect-[4/5]" />
-            <PhotoSlot label="Un pequeño disfrutando su comida" src={FOOD_PHOTOS.lunchboxes} className="aspect-[4/5]" />
-            <PhotoSlot label="Pancakes para una mañana especial" src={FOOD_PHOTOS.pancakePlate} className="aspect-[4/5]" />
-            <PhotoSlot label="Una lonchera llena de color" src={FOOD_PHOTOS.lunchboxColorful} className="aspect-[4/5]" />
-            <PhotoSlot label="Muffins caseros para la merienda" src={FOOD_PHOTOS.muffins} className="aspect-[4/5]" />
-            <PhotoSlot label="Bocados dorados para compartir" src={FOOD_PHOTOS.cheeseSticks} className="aspect-[4/5]" />
-            <PhotoSlot label="Frutas listas para llevar" src={FOOD_PHOTOS.freshFruit} className="aspect-[4/5]" />
-            <PhotoSlot label="Ideas para la lonchera escolar" src={FOOD_PHOTOS.proofLunchboxOne} className="aspect-[4/5]" />
+          <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
+            <PhotoSlot label="Mamá y peque compartiendo el desayuno" src={FOOD_PHOTOS.momFeeding} className="aspect-[4/5]" />
+            <PhotoSlot label="Una comida para compartir" src={FOOD_PHOTOS.momDaughterMeal} className="aspect-[4/5]" />
+            <PhotoSlot label="Desayuno en familia" src={FOOD_PHOTOS.familyBreakfast} className="aspect-[4/5]" />
+            <PhotoSlot label="Cocinando juntos en casa" src={FOOD_PHOTOS.momCooking} className="aspect-[4/5]" />
+            <PhotoSlot label="Madre e hija preparando algo rico" src={FOOD_PHOTOS.momDaughterCooking} className="aspect-[4/5]" />
+            <PhotoSlot label="Mamá acompañando la hora de comer" src={FOOD_PHOTOS.momSonMeal} className="aspect-[4/5]" />
           </div>
-          <p className="mt-5 text-center text-xs text-muted-foreground">Fotografías ilustrativas para inspirarte. No representan necesariamente preparaciones realizadas por compradores de esta guía.</p>
+          <p className="mt-4 text-center text-xs text-muted-foreground">Fotografías de stock ilustrativas. No representan compradores ni testimonios del producto.</p>
+        </Section>
 
-          <div className="mt-16">
-            <Heading eyebrow="Lo que las familias buscan" title="Ideas sencillas para llenar la lonchera de alegría.">
-              <p>Una muestra visual del tipo de comentarios y experiencias que esta comunidad podrá compartir cuando haya opiniones reales de compradores.</p>
-            </Heading>
-            <div className="mt-9 grid gap-5 md:grid-cols-3">
-              {[
-                { name: "Mariana R.", role: "Ejemplo de perfil familiar", photo: FOOD_PHOTOS.lunchboxHands, title: "Más ideas para el día a día", quote: "Me encantan las propuestas prácticas y coloridas. Tener distintas ideas dulces y saladas ayuda a planificar la semana con más creatividad." },
-                { name: "Camila S.", role: "Ejemplo de perfil familiar", photo: FOOD_PHOTOS.pizza, title: "Recetas que inspiran", quote: "Las mini pizzas y los bocaditos caseros son una inspiración para preparar meriendas diferentes y compartir un momento rico en familia." },
-                { name: "Patricia M.", role: "Ejemplo de perfil familiar", photo: FOOD_PHOTOS.lunchboxColorful, title: "Una lonchera con más variedad", quote: "Una buena selección de recetas puede hacer que organizar desayunos y loncheras sea más simple, visual y divertido." },
-              ].map((review) => (
-                <article key={review.name} className="overflow-hidden rounded-[1.6rem] border border-primary/10 bg-card shadow-card">
-                  <img src={review.photo} alt="Fotografía ilustrativa de comida y lonchera infantil" loading="lazy" decoding="async" className="h-44 w-full object-cover" />
-                  <div className="p-6">
-                    <div className="flex items-center gap-1 text-coral" aria-label="Estrellas decorativas">★★★★★</div>
-                    <p className="mt-3 text-lg font-extrabold leading-snug text-primary">“{review.title}”</p>
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">“{review.quote}”</p>
-                    <div className="mt-5 border-t border-primary/10 pt-4">
-                      <p className="font-extrabold text-primary">{review.name}</p>
-                      <p className="mt-1 text-xs text-muted-foreground">{review.role}</p>
-                    </div>
-                    <span className="mt-4 inline-flex rounded-full bg-secondary px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-wide text-primary">Ejemplo ilustrativo · No es reseña real</span>
+        <Section className="bg-background">
+          <Heading eyebrow="Opiniones y experiencias" title="Lo que una buena idea puede aportar a la rutina.">
+            <p>Una vista previa del espacio de comentarios de Buen Bocado, con ejemplos de cómo las familias podrían contar su experiencia con las recetas.</p>
+          </Heading>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {[
+              { name: "Mariana R.", detail: "Ejemplo de opinión · mamá", photo: FOOD_PHOTOS.momFeeding, title: "Más ideas para cada día", quote: "Me gusta tener opciones dulces y saladas para salir de la rutina y pensar con anticipación qué preparar para la semana." },
+              { name: "Camila S.", detail: "Ejemplo de opinión · mamá", photo: FOOD_PHOTOS.momDaughterCooking, title: "Un momento para compartir", quote: "Las recetas sencillas pueden convertirse en una actividad bonita para hacer en casa y dejar que los peques participen." },
+              { name: "Patricia M.", detail: "Ejemplo de opinión · mamá", photo: FOOD_PHOTOS.momDaughterMeal, title: "Más variedad en la lonchera", quote: "Tener ideas organizadas ayuda a imaginar combinaciones distintas y preparar meriendas con más color." },
+            ].map((review) => (
+              <article key={review.name} className="overflow-hidden rounded-[1.7rem] border border-primary/10 bg-card shadow-card">
+                <img src={review.photo} alt="Fotografía ilustrativa de una madre compartiendo comida con su hijo" loading="lazy" decoding="async" className="h-56 w-full object-cover" />
+                <div className="p-6">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-sm tracking-[0.18em] text-coral" aria-label="Cinco estrellas ilustrativas">★★★★★</span>
+                    <span className="rounded-full bg-secondary px-2.5 py-1 text-[9px] font-extrabold uppercase tracking-wide text-primary">Ejemplo</span>
                   </div>
-                </article>
-              ))}
-            </div>
-            <div className="mx-auto mt-7 max-w-3xl rounded-2xl border border-primary/10 bg-card px-5 py-4 text-center">
-              <p className="text-sm leading-relaxed text-muted-foreground">Los nombres y textos de estas tarjetas son ficticios y se muestran únicamente como ejemplos de presentación. Las fotografías son ilustrativas y no corresponden necesariamente a clientes. Las reseñas reales se publicarán solo con autorización de sus autores.</p>
-            </div>
+                  <h3 className="mt-4 text-xl font-extrabold leading-snug text-primary">{review.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">“{review.quote}”</p>
+                  <div className="mt-5 border-t border-primary/10 pt-4">
+                    <p className="font-extrabold text-primary">{review.name}</p>
+                    <p className="mt-1 text-xs text-muted-foreground">{review.detail}</p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div className="mx-auto mt-7 max-w-3xl rounded-2xl border border-primary/10 bg-secondary px-5 py-4 text-center">
+            <p className="text-sm leading-relaxed text-muted-foreground">Importante: nombres y comentarios ficticios, creados como muestra de diseño. Las imágenes son fotografías de stock y no identifican a compradores. Las reseñas auténticas podrán sustituir estos ejemplos cuando estén disponibles y autorizadas.</p>
+          </div>
+        </Section>
+
+        <Section className="bg-hero">
+          <Heading eyebrow="Más ideas para la lonchera" title="Recetas que se ven tan ricas como suenan.">
+            <p>Mini pizzas, muffins, frutas y bocaditos dorados para inspirar desayunos y meriendas infantiles.</p>
+          </Heading>
+          <div className="mt-9 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            <PhotoSlot label="Mini pizzas caseras" src={FOOD_PHOTOS.pizza} className="aspect-[4/5]" />
+            <PhotoSlot label="Muffins para la merienda" src={FOOD_PHOTOS.muffins} className="aspect-[4/5]" />
+            <PhotoSlot label="Frutas listas para llevar" src={FOOD_PHOTOS.freshFruit} className="aspect-[4/5]" />
+            <PhotoSlot label="Lonchera llena de color" src={FOOD_PHOTOS.lunchboxColorful} className="aspect-[4/5]" />
           </div>
         </Section>
 
