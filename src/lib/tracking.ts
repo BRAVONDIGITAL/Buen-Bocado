@@ -21,7 +21,7 @@ export function track(event: string, params?: Record<string, unknown>) {
 
 export function goToCheckout(plan: keyof typeof CHECKOUT) {
   track("InitiateCheckout", {
-    content_name: plan === "premium" ? "PequeSabor Premium" : "PequeSabor Básico",
+    content_name: plan === "premium" ? "Buen Bocado Premium" : "Buen Bocado Básico",
     value: PRICES[plan],
     currency: "USD",
   });
