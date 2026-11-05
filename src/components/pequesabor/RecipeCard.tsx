@@ -4,6 +4,8 @@ import { Ingredient, type IngredientKind } from "./Ingredient";
 export type Recipe = {
   page: number;
   category: string;
+  image: string;
+  imageAlt: string;
   title: string;
   prep: string;
   temp: string;
@@ -22,22 +24,22 @@ const toneBg = {
 
 export function RecipeCard({ r }: { r: Recipe }) {
   return (
-    <article className="flex h-full flex-col overflow-hidden rounded-2xl border bg-card shadow-card">
-      <div className={`relative aspect-[16/10] ${toneBg[r.tone]} flex items-center justify-center`}>
-        <div className="flex gap-2 opacity-90">
-          {r.ingredients.slice(0, 3).map((i, k) => (
-            <Ingredient key={k} kind={i.kind} className="h-12 w-12 md:h-14 md:w-14" />
-          ))}
-        </div>
-        <span className="absolute left-3 top-3 rounded-full bg-card/90 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-primary">
+    <article className="flex h-full flex-col overflow-hidden rounded-[1.6rem] border border-primary/10 bg-card shadow-card transition-shadow duration-300 hover:shadow-soft">
+      <div className={`group relative aspect-[16/10] overflow-hidden ${toneBg[r.tone]}`}>
+        <img
+          src={r.image}
+          alt={r.imageAlt}
+          loading="lazy"
+          decoding="async"
+          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" aria-hidden />
+        <span className="absolute left-3 top-3 rounded-full border border-white/40 bg-white/90 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-widest text-primary shadow-card">
           {r.category}
-        </span>
-        <span className="absolute bottom-3 right-3 text-[10px] font-semibold text-primary/70">
-          Espacio para fotografía del plato
         </span>
       </div>
 
-      <div className="flex flex-1 flex-col p-5">
+      <div className="flex flex-1 flex-col p-5 md:p-6">
         <h3 className="text-xl font-extrabold leading-tight text-primary">{r.title}</h3>
 
         <dl className="mt-4 grid grid-cols-3 gap-2 text-center">
