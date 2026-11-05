@@ -66,12 +66,6 @@ const FOOD_PHOTOS = {
   pizzaPrep: "https://images.pexels.com/photos/7322629/pexels-photo-7322629.jpeg?auto=compress&cs=tinysrgb&w=1800",
   muffins: "https://images.pexels.com/photos/4051588/pexels-photo-4051588.jpeg?auto=compress&cs=tinysrgb&w=1800",
   cheeseSticks: "https://images.pexels.com/photos/9568318/pexels-photo-9568318.jpeg?auto=compress&cs=tinysrgb&w=1800",
-  momFeeding: "https://images.pexels.com/photos/8035921/pexels-photo-8035921.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  momDaughterMeal: "https://images.pexels.com/photos/7492941/pexels-photo-7492941.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  momSonMeal: "https://images.pexels.com/photos/19773924/pexels-photo-19773924.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  familyBreakfast: "https://images.pexels.com/photos/4866897/pexels-photo-4866897.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  momCooking: "https://images.pexels.com/photos/6297629/pexels-photo-6297629.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  momDaughterCooking: "https://images.pexels.com/photos/5907539/pexels-photo-5907539.jpeg?auto=compress&cs=tinysrgb&w=1600",
 } as const;;
 
 
@@ -491,54 +485,6 @@ function Index() {
             </div>
           </div>
           <p className="mt-7 text-center text-xs text-muted-foreground">Fotografías ilustrativas de alimentos. El producto adquirido es una guía digital en PDF.</p>
-        </Section>
-
-        {/* 10. MOMENTOS EN FAMILIA + PRUEBA SOCIAL ILUSTRATIVA */}
-        <Section className="bg-secondary">
-          <Heading eyebrow="La comida también es conexión" title="Pequeños momentos que se disfrutan en familia.">
-            <p>Preparar una merienda, descubrir un sabor nuevo y compartir la mesa: Buen Bocado quiere inspirar momentos cotidianos más alegres alrededor de la comida.</p>
-          </Heading>
-          <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
-            <PhotoSlot label="Mamá y peque compartiendo el desayuno" src={FOOD_PHOTOS.momFeeding} className="aspect-[4/5]" />
-            <PhotoSlot label="Una comida para compartir" src={FOOD_PHOTOS.momDaughterMeal} className="aspect-[4/5]" />
-            <PhotoSlot label="Desayuno en familia" src={FOOD_PHOTOS.familyBreakfast} className="aspect-[4/5]" />
-            <PhotoSlot label="Cocinando juntos en casa" src={FOOD_PHOTOS.momCooking} className="aspect-[4/5]" />
-            <PhotoSlot label="Madre e hija preparando algo rico" src={FOOD_PHOTOS.momDaughterCooking} className="aspect-[4/5]" />
-            <PhotoSlot label="Mamá acompañando la hora de comer" src={FOOD_PHOTOS.momSonMeal} className="aspect-[4/5]" />
-          </div>
-          <p className="mt-4 text-center text-xs text-muted-foreground">Fotografías de stock ilustrativas. No representan compradores ni testimonios del producto.</p>
-        </Section>
-
-        <Section className="bg-background">
-          <Heading eyebrow="Opiniones y experiencias" title="Lo que una buena idea puede aportar a la rutina.">
-            <p>Una vista previa del espacio de comentarios de Buen Bocado, con ejemplos de cómo las familias podrían contar su experiencia con las recetas.</p>
-          </Heading>
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {[
-              { name: "Mariana R.", detail: "Ejemplo de opinión · mamá", photo: FOOD_PHOTOS.momFeeding, title: "Más ideas para cada día", quote: "Me gusta tener opciones dulces y saladas para salir de la rutina y pensar con anticipación qué preparar para la semana." },
-              { name: "Camila S.", detail: "Ejemplo de opinión · mamá", photo: FOOD_PHOTOS.momDaughterCooking, title: "Un momento para compartir", quote: "Las recetas sencillas pueden convertirse en una actividad bonita para hacer en casa y dejar que los peques participen." },
-              { name: "Patricia M.", detail: "Ejemplo de opinión · mamá", photo: FOOD_PHOTOS.momDaughterMeal, title: "Más variedad en la lonchera", quote: "Tener ideas organizadas ayuda a imaginar combinaciones distintas y preparar meriendas con más color." },
-            ].map((review) => (
-              <article key={review.name} className="overflow-hidden rounded-[1.7rem] border border-primary/10 bg-card shadow-card">
-                <img src={review.photo} alt="Fotografía ilustrativa de una madre compartiendo comida con su hijo" loading="lazy" decoding="async" className="h-56 w-full object-cover" />
-                <div className="p-6">
-                  <div className="flex items-center justify-between gap-2">
-                    <span className="text-sm tracking-[0.18em] text-coral" aria-label="Cinco estrellas ilustrativas">★★★★★</span>
-                    <span className="rounded-full bg-secondary px-2.5 py-1 text-[9px] font-extrabold uppercase tracking-wide text-primary">Ejemplo</span>
-                  </div>
-                  <h3 className="mt-4 text-xl font-extrabold leading-snug text-primary">{review.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">“{review.quote}”</p>
-                  <div className="mt-5 border-t border-primary/10 pt-4">
-                    <p className="font-extrabold text-primary">{review.name}</p>
-                    <p className="mt-1 text-xs text-muted-foreground">{review.detail}</p>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-          <div className="mx-auto mt-7 max-w-3xl rounded-2xl border border-primary/10 bg-secondary px-5 py-4 text-center">
-            <p className="text-sm leading-relaxed text-muted-foreground">Importante: nombres y comentarios ficticios, creados como muestra de diseño. Las imágenes son fotografías de stock y no identifican a compradores. Las reseñas auténticas podrán sustituir estos ejemplos cuando estén disponibles y autorizadas.</p>
-          </div>
         </Section>
 
         <Section className="bg-hero">
