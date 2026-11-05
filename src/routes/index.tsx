@@ -9,17 +9,27 @@ const TITLE = "Buen Bocado | 60 Recetas para Loncheras Escolares en Air Fryer";
 const DESC = "Descubre 60 recetas fáciles para preparar loncheras escolares variadas con Air Fryer. Ideas dulces y saladas para los pequeños.";
 
 /* Free-to-use Pexels photos. Creator and source pages:
-   Yan Krukau: https://www.pexels.com/photo/boy-in-blue-long-sleeve-shirt-sitting-on-chair-in-front-of-table-with-lunch-box-8617547/
-   Katerina Holmes: https://www.pexels.com/photo/crop-multiethnic-schoolchildren-with-lunch-boxes-near-window-5905689/
-   Katerina Holmes: https://www.pexels.com/photo/multiethnic-friends-having-lunch-in-school-5905614/
+   Pavel Danilyuk: https://www.pexels.com/photo/students-eating-their-snacks-8423421/
+   Katerina Holmes: https://www.pexels.com/photo/cute-asian-girl-eating-tasty-organic-meal-in-plastic-container-5905694/
+   Katerina Holmes: https://www.pexels.com/photo/diverse-schoolchildren-preparing-for-lunch-in-school-5905676/
+   Pavel Danilyuk: https://www.pexels.com/photo/a-boy-eating-a-sandwich-from-a-lunchbox-8423428/
+   Change C.C: https://www.pexels.com/photo/asian-lunch-bento-box-with-assorted-dishes-35211816/
+   Manie Rehman Yousaf: https://www.pexels.com/photo/eco-friendly-double-layer-bento-lunch-box-35916884/
+   Antoni Shkraba: https://www.pexels.com/photo/healthy-lunchboxes-5852270/
+   Antoni Shkraba: https://www.pexels.com/photo/sliced-fruits-on-yellow-plastic-container-5852332/
    Lauren Diaz: https://www.pexels.com/photo/delicious-mini-pizzas-with-toppings-on-tray-34275219/
    Backen.de: https://www.pexels.com/photo/preparing-mini-pizza-7322629/
    alleksana: https://www.pexels.com/photo/close-up-photo-of-delicious-muffins-4051588/
    Elena Leya: https://www.pexels.com/photo/cooked-food-on-blue-ceramic-plate-9568318/ */
 const FOOD_PHOTOS = {
-  lunchboxes: "https://images.pexels.com/photos/8617547/pexels-photo-8617547.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  lunchboxDetail: "https://images.pexels.com/photos/5905689/pexels-photo-5905689.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  lunchboxHands: "https://images.pexels.com/photos/5905614/pexels-photo-5905614.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxes: "https://images.pexels.com/photos/8423421/pexels-photo-8423421.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxDetail: "https://images.pexels.com/photos/5905694/pexels-photo-5905694.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxHands: "https://images.pexels.com/photos/5905676/pexels-photo-5905676.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  schoolBoys: "https://images.pexels.com/photos/8423428/pexels-photo-8423428.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  bentoModern: "https://images.pexels.com/photos/35211816/pexels-photo-35211816.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxModern: "https://images.pexels.com/photos/35916884/pexels-photo-35916884.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxColorful: "https://images.pexels.com/photos/5852270/pexels-photo-5852270.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxFruit: "https://images.pexels.com/photos/5852332/pexels-photo-5852332.jpeg?auto=compress&cs=tinysrgb&w=2000",
   pizza: "https://images.pexels.com/photos/34275219/pexels-photo-34275219/free-photo-of-delicious-mini-pizzas-with-toppings-on-tray.jpeg?auto=compress&dpr=1&h=1100&w=1800",
   pizzaPrep: "https://images.pexels.com/photos/7322629/pexels-photo-7322629.jpeg?auto=compress&cs=tinysrgb&w=1800",
   muffins: "https://images.pexels.com/photos/4051588/pexels-photo-4051588.jpeg?auto=compress&cs=tinysrgb&w=1800",
@@ -184,11 +194,11 @@ const RECIPES: Recipe[] = [
 
 const CATEGORIES = [
   { n: "01", t: "Desayunos para comenzar el día", photo: FOOD_PHOTOS.muffins, alt: "Muffins recién horneados", school: false },
-  { n: "02", t: "Loncheras que inspiran", photo: FOOD_PHOTOS.lunchboxes, alt: "Niño disfrutando su almuerzo escolar con una lonchera colorida", school: true },
+  { n: "02", t: "Loncheras que inspiran", photo: FOOD_PHOTOS.lunchboxHands, alt: "Compañeros preparando sus loncheras en la escuela", school: true },
   { n: "03", t: "Snacks salados para cualquier momento", photo: FOOD_PHOTOS.cheeseSticks, alt: "Bastones de queso dorados", school: true },
   { n: "04", t: "Preparaciones con mucho sabor", photo: FOOD_PHOTOS.pizza, alt: "Mini pizzas con queso y vegetales", school: true },
-  { n: "05", t: "Pequeños momentos dulces", photo: FOOD_PHOTOS.lunchboxHands, alt: "Bocadillos dulces y frutas en una lonchera", school: false },
-  { n: "06", t: "Favoritos para compartir", photo: FOOD_PHOTOS.lunchboxDetail, alt: "Sándwiches, frutas y snacks variados", school: false },
+  { n: "05", t: "Pequeños momentos dulces", photo: FOOD_PHOTOS.schoolBoys, alt: "Dos estudiantes compartiendo una merienda", school: false },
+  { n: "06", t: "Favoritos para compartir", photo: FOOD_PHOTOS.lunchboxModern, alt: "Lonchera moderna reutilizable de doble compartimento", school: false },
 ];
 
 const FAQ = [
@@ -257,9 +267,9 @@ function Index() {
         <Section>
           <div className="grid items-center gap-10 md:grid-cols-2">
             <div className="grid grid-cols-2 gap-3">
-              <PhotoSlot label="Hora de la lonchera" src={FOOD_PHOTOS.lunchboxes} className="col-span-2 aspect-[16/10]" />
+              <PhotoSlot label="Una lonchera llena de color" src={FOOD_PHOTOS.lunchboxDetail} className="col-span-2 aspect-[16/10]" />
               <PhotoSlot label="Muffins caseros" src={FOOD_PHOTOS.muffins} className="aspect-square" />
-              <PhotoSlot label="Snacks para llevar" src={FOOD_PHOTOS.lunchboxDetail} className="aspect-square" />
+              <PhotoSlot label="Bento para el recreo" src={FOOD_PHOTOS.bentoModern} className="aspect-square" />
             </div>
             <div>
               <Heading center={false} eyebrow="La rutina de cada mañana" title="¿Qué poner hoy en la lonchera?">
@@ -346,13 +356,13 @@ function Index() {
         <Section>
           <Heading eyebrow="Inspiración diaria" title="Loncheras con más color, variedad y sabor" />
           <div className="mt-12 grid auto-rows-[140px] grid-cols-2 gap-3 md:auto-rows-[180px] md:grid-cols-4">
-            <PhotoSlot label="Ideas para la lonchera" src={FOOD_PHOTOS.lunchboxHands} className="col-span-2 row-span-2" />
+            <PhotoSlot label="Loncheras llenas de variedad" src={FOOD_PHOTOS.lunchboxColorful} className="col-span-2 row-span-2" />
             <PhotoSlot label="Mini pizzas" src={FOOD_PHOTOS.pizza} />
             <PhotoSlot label="Muffins" src={FOOD_PHOTOS.muffins} />
             <PhotoSlot label="Preparación de mini pizzas" src={FOOD_PHOTOS.pizzaPrep} className="col-span-2" />
-            <PhotoSlot label="Un recreo delicioso" src={FOOD_PHOTOS.lunchboxes} className="col-span-2" />
+            <PhotoSlot label="Frutas frescas para el recreo" src={FOOD_PHOTOS.lunchboxFruit} className="col-span-2" />
             <PhotoSlot label="Bastones de queso" src={FOOD_PHOTOS.cheeseSticks} />
-            <PhotoSlot label="Snacks y frutas" src={FOOD_PHOTOS.lunchboxDetail} />
+            <PhotoSlot label="Bento de inspiración" src={FOOD_PHOTOS.bentoModern} />
           </div>
         </Section>
 
@@ -404,8 +414,8 @@ function Index() {
           <div className="mx-auto mt-12 grid max-w-4xl items-stretch gap-6 md:grid-cols-2">
             <PlanCard
               name="Plan Básico"
-              image={FOOD_PHOTOS.lunchboxes}
-              imageAlt="Niño disfrutando su almuerzo escolar con una lonchera colorida"
+              image={FOOD_PHOTOS.lunchboxFruit}
+              imageAlt="Lonchera con frutas frescas y sándwiches"
               price="9,90"
               plan="basic"
               cta="QUIERO EL PLAN BÁSICO."
@@ -422,8 +432,8 @@ function Index() {
             <PlanCard
               featured
               name="Plan Premium"
-              image={FOOD_PHOTOS.pizza}
-              imageAlt="Mini pizzas con queso y vegetales"
+              image={FOOD_PHOTOS.lunchboxModern}
+              imageAlt="Lonchera moderna reutilizable de doble compartimento"
               price="14,90"
               plan="premium"
               cta="QUIERO EL PLAN PREMIUM."
@@ -499,7 +509,6 @@ function Index() {
           <div>
             <Logo />
             <p className="mt-2 text-sm text-muted-foreground">Producto digital · 60 Recetas Fáciles para Niños en Air Fryer</p>
-            <p className="mt-2 text-sm text-muted-foreground">Atención al cliente: <a className="font-semibold text-primary underline" href="mailto:neg.digital7@gmail.com">neg.digital7@gmail.com</a></p>
           </div>
           <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-primary" aria-label="Legal">
             <a href={PRIVACY_URL}>Política de privacidad</a>
@@ -508,7 +517,7 @@ function Index() {
           </nav>
         </div>
         <p className="mx-auto mt-6 max-w-6xl text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Buen Bocado. Todos los derechos reservados. Atención: neg.digital7@gmail.com. Este producto no sustituye la orientación de profesionales de salud o nutrición.
+          © {new Date().getFullYear()} Buen Bocado. Todos los derechos reservados. Este producto no sustituye la orientación de profesionales de salud o nutrición.
         </p>
       </footer>
     </div>
