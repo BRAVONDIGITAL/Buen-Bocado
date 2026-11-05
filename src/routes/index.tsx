@@ -159,14 +159,11 @@ function HeroVisual() {
         </div>
       </div>
       <div className="absolute -left-4 top-7 rounded-2xl border-4 border-white bg-card p-1.5 shadow-card md:-left-8">
-        <img src={FOOD_PHOTOS.pizza} alt="Mini pizzas listas para servir" loading="lazy" className="h-24 w-28 rounded-xl object-cover md:h-28 md:w-36" />
+        <img src={FOOD_PHOTOS.lunchboxMix} alt="Bento con variedad de frutas y snacks" loading="lazy" className="h-24 w-28 rounded-xl object-cover md:h-28 md:w-36" />
       </div>
       <div className="absolute -bottom-1 right-2 flex items-center gap-3 rounded-2xl border border-primary/10 bg-card px-4 py-3 shadow-soft md:right-0">
         <span className="font-display text-4xl font-extrabold leading-none text-coral">60</span>
         <span className="max-w-24 text-xs font-extrabold uppercase leading-tight tracking-wide text-primary">recetas para descubrir</span>
-      </div>
-      <div className="absolute -right-2 top-1/2 hidden -translate-y-1/2 rotate-3 overflow-hidden rounded-2xl border-4 border-white shadow-card sm:block">
-        <img src={FOOD_PHOTOS.muffins} alt="Muffins caseros con frutos rojos" loading="lazy" className="h-28 w-24 object-cover" />
       </div>
     </div>
   );
