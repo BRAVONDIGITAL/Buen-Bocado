@@ -8,10 +8,14 @@ import { CHECKOUT, goToCheckout, track } from "@/lib/tracking";
 const TITLE = "Buen Bocado | 60 Recetas para Loncheras Escolares en Air Fryer";
 const DESC = "Descubre 60 recetas fáciles para preparar loncheras escolares variadas con Air Fryer. Ideas dulces y saladas para los pequeños.";
 
-/* Pexels photos under the Pexels free-to-use license.
-   Credits: Antoni Shkraba (5852326, 5852335), Vanessa Loring (5971966),
-   Backen.de (7322629), alleksana (4051588), Elena Leya (9568318),
-   Lauren Diaz (34275219). Original photo pages are linked in source comments. */
+/* Free-to-use Pexels photos. Creator and source pages:
+   Antoni Shkraba: https://www.pexels.com/photo/packed-food-in-colorful-containers-5852326/
+   Antoni Shkraba: https://www.pexels.com/photo/an-assortment-of-healthy-snacks-in-plastic-containers-5852335/
+   Vanessa Loring: https://www.pexels.com/photo/food-on-green-lunchbox-5971966/
+   Backen.de: https://www.pexels.com/photo/preparing-mini-pizza-7322629/
+   alleksana: https://www.pexels.com/photo/close-up-photo-of-delicious-muffins-4051588/
+   Elena Leya: https://www.pexels.com/photo/cooked-food-on-blue-ceramic-plate-9568318/
+   Lauren Diaz: https://www.pexels.com/photo/delicious-mini-pizzas-with-toppings-on-tray-34275219/ */
 const FOOD_PHOTOS = {
   lunchboxes: "https://images.pexels.com/photos/5852326/pexels-photo-5852326.jpeg?auto=compress&cs=tinysrgb&w=1400",
   lunchboxDetail: "https://images.pexels.com/photos/5852335/pexels-photo-5852335.jpeg?auto=compress&cs=tinysrgb&w=1100",
