@@ -9,21 +9,21 @@ const TITLE = "Buen Bocado | 60 Recetas para Loncheras Escolares en Air Fryer";
 const DESC = "Descubre 60 recetas fáciles para preparar loncheras escolares variadas con Air Fryer. Ideas dulces y saladas para los pequeños.";
 
 /* Free-to-use Pexels photos. Creator and source pages:
-   Antoni Shkraba: https://www.pexels.com/photo/packed-food-in-colorful-containers-5852326/
-   Antoni Shkraba: https://www.pexels.com/photo/an-assortment-of-healthy-snacks-in-plastic-containers-5852335/
-   Vanessa Loring: https://www.pexels.com/photo/food-on-green-lunchbox-5971966/
+   Yan Krukau: https://www.pexels.com/photo/boy-in-blue-long-sleeve-shirt-sitting-on-chair-in-front-of-table-with-lunch-box-8617547/
+   Katerina Holmes: https://www.pexels.com/photo/crop-multiethnic-schoolchildren-with-lunch-boxes-near-window-5905689/
+   Katerina Holmes: https://www.pexels.com/photo/multiethnic-friends-having-lunch-in-school-5905614/
+   Lauren Diaz: https://www.pexels.com/photo/delicious-mini-pizzas-with-toppings-on-tray-34275219/
    Backen.de: https://www.pexels.com/photo/preparing-mini-pizza-7322629/
    alleksana: https://www.pexels.com/photo/close-up-photo-of-delicious-muffins-4051588/
-   Elena Leya: https://www.pexels.com/photo/cooked-food-on-blue-ceramic-plate-9568318/
-   Lauren Diaz: https://www.pexels.com/photo/delicious-mini-pizzas-with-toppings-on-tray-34275219/ */
+   Elena Leya: https://www.pexels.com/photo/cooked-food-on-blue-ceramic-plate-9568318/ */
 const FOOD_PHOTOS = {
-  lunchboxes: "https://images.pexels.com/photos/5852326/pexels-photo-5852326.jpeg?auto=compress&cs=tinysrgb&w=1400",
-  lunchboxDetail: "https://images.pexels.com/photos/5852335/pexels-photo-5852335.jpeg?auto=compress&cs=tinysrgb&w=1100",
-  lunchboxHands: "https://images.pexels.com/photos/5971966/pexels-photo-5971966.jpeg?auto=compress&cs=tinysrgb&w=1100",
-  pizza: "https://images.pexels.com/photos/34275219/pexels-photo-34275219/free-photo-of-delicious-mini-pizzas-with-toppings-on-tray.jpeg?auto=compress&dpr=1&h=750&w=1260",
-  pizzaPrep: "https://images.pexels.com/photos/7322629/pexels-photo-7322629.jpeg?auto=compress&cs=tinysrgb&w=1100",
-  muffins: "https://images.pexels.com/photos/4051588/pexels-photo-4051588.jpeg?auto=compress&cs=tinysrgb&w=1100",
-  cheeseSticks: "https://images.pexels.com/photos/9568318/pexels-photo-9568318.jpeg?auto=compress&cs=tinysrgb&w=1100",
+  lunchboxes: "https://images.pexels.com/photos/8617547/pexels-photo-8617547.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxDetail: "https://images.pexels.com/photos/5905689/pexels-photo-5905689.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxHands: "https://images.pexels.com/photos/5905614/pexels-photo-5905614.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  pizza: "https://images.pexels.com/photos/34275219/pexels-photo-34275219/free-photo-of-delicious-mini-pizzas-with-toppings-on-tray.jpeg?auto=compress&dpr=1&h=1100&w=1800",
+  pizzaPrep: "https://images.pexels.com/photos/7322629/pexels-photo-7322629.jpeg?auto=compress&cs=tinysrgb&w=1800",
+  muffins: "https://images.pexels.com/photos/4051588/pexels-photo-4051588.jpeg?auto=compress&cs=tinysrgb&w=1800",
+  cheeseSticks: "https://images.pexels.com/photos/9568318/pexels-photo-9568318.jpeg?auto=compress&cs=tinysrgb&w=1800",
 } as const;
 
 
