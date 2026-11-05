@@ -5,7 +5,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { RecipeCard, type Recipe } from "@/components/pequesabor/RecipeCard";
 import { CHECKOUT, goToCheckout, track } from "@/lib/tracking";
 
-const TITLE = "Buen Bocado | Ideas fáciles para que los peques disfruten cada comida";
+const TITLE = "Buen Bocado | 60 recetas para renovar la lonchera de tu peque";
 const DESC = "¿Tu peque se aburre de la lonchera? Encuentra inspiración para preparar meriendas y comidas caseras que den ganas de probar.";
 
 /* Free-to-use Pexels photos. Creator and source pages:
@@ -273,13 +273,13 @@ function Index() {
             <div>
               <p className="eyebrow">¿Otra vez sin ideas para la lonchera?</p>
               <h1 className="mt-3 text-[2.4rem] font-extrabold leading-[1.02] text-primary sm:text-5xl md:text-6xl">
-                ¿Tu peque rechaza la lonchera y ya no sabes qué prepararle?
+                ¿Otra vez volvió la lonchera casi intacta? ¡Se acabó improvisar cada mañana!
               </h1>
               <p className="mt-5 font-display text-xl font-bold text-foreground md:text-2xl">
-                Deja de repetir siempre lo mismo. Vuelve a llenar su lonchera de colores, sabores y pequeñas sorpresas que sí dan ganas de comer.
+                Deja de pelear con la rutina y de quedarte sin ideas. Prepara bocados caseros que despierten su curiosidad y hagan que la lonchera vuelva a ser emocionante.
               </p>
               <p className="mt-3 max-w-xl text-lg leading-relaxed text-muted-foreground">
-                Si cada mañana te quedas pensando qué ponerle, no estás sola. Descubre ideas dulces y saladas para salir de la rutina, preparar bocados caseros en tu Air Fryer y hacer que la hora de comer sea más fácil y agradable.
+                Si ya probaste de todo y sientes que siempre terminas preparando lo mismo, esta guía te ayuda a cambiar el menú: 60 ideas dulces y saladas para Air Fryer, pensadas para las loncheras, meriendas y pequeños antojos de tus hijos.
               </p>
               <ul className="mt-6 flex flex-wrap gap-2">
                 {["Más variedad cada semana", "Ideas dulces y saladas", "Fáciles en Air Fryer"].map((t) => (
@@ -289,7 +289,7 @@ function Index() {
                 ))}
               </ul>
               <div className="mt-8 flex flex-col items-start gap-3">
-                <CtaToPlans>Quiero ver los planes</CtaToPlans>
+                <CtaToPlans>Quiero dejar de improvisar</CtaToPlans>
                 <p className="text-sm text-muted-foreground">
                   A partir de <strong className="font-display text-lg text-primary">US$ 9,90</strong> · Producto digital en PDF
                 </p>
