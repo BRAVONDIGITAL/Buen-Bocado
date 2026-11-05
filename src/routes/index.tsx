@@ -145,31 +145,32 @@ function PhotoSlot({ label, src, className = "" }: { label: string; src: string;
   );
 }
 
-/* ---------- Hero visual: real food photography ---------- */
+/* ---------- Hero visual: product mockup + high-resolution food photography ---------- */
 function HeroVisual() {
   return (
-    <div className="relative mx-auto w-full max-w-xl pb-5">
-      <div className="blob absolute -inset-5 bg-secondary" aria-hidden />
-      <div className="relative aspect-[5/4] overflow-hidden rounded-[2.2rem] border-[7px] border-white bg-card shadow-soft">
-        <img
-          src={FOOD_PHOTOS.lunchboxes}
-          alt="Niño pequeño disfrutando una porción de pizza"
-          fetchPriority="high"
-          decoding="async"
-          className="h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/55 via-transparent to-transparent" aria-hidden />
-        <div className="absolute bottom-5 left-5 max-w-[75%] text-white">
-          <span className="text-xs font-extrabold uppercase tracking-[0.18em]">Ideas para cada día</span>
-          <p className="mt-1 font-display text-2xl font-extrabold leading-tight md:text-3xl">Loncheras llenas de sabor</p>
+    <div className="relative mx-auto w-full max-w-xl px-3 pb-9 pt-4">
+      <div className="absolute inset-8 rotate-3 rounded-[3rem] bg-secondary" aria-hidden />
+      <div className="relative grid grid-cols-[0.9fr_1.1fr] items-center gap-3 sm:gap-5">
+        <div className="relative z-10 -rotate-3 overflow-hidden rounded-[1.65rem] border-4 border-white bg-primary p-3 shadow-[0_24px_55px_rgba(25,55,42,0.24)] sm:rounded-[2rem] sm:p-4">
+          <p className="text-center text-[9px] font-extrabold uppercase tracking-[0.2em] text-white/85 sm:text-xs">Buen Bocado</p>
+          <div className="mt-3 overflow-hidden rounded-xl border border-white/20">
+            <img src={FOOD_PHOTOS.lunchboxColorful} alt="Lonchera colorida con diferentes preparaciones" loading="eager" decoding="async" className="aspect-[4/3] w-full object-cover" />
+          </div>
+          <h3 className="mt-3 text-center font-display text-lg font-extrabold leading-tight text-white sm:text-2xl">60 recetas para loncheras escolares</h3>
+          <p className="mt-2 text-center text-[9px] font-bold uppercase tracking-wide text-white/80 sm:text-[11px]">Ideas dulces y saladas en Air Fryer</p>
+          <div className="mt-3 rounded-lg bg-white px-2 py-1.5 text-center text-[9px] font-extrabold uppercase tracking-wider text-primary sm:text-[10px]">Guía digital en PDF</div>
+        </div>
+        <div className="relative aspect-[4/5] overflow-hidden rounded-[1.8rem] border-[5px] border-white bg-card shadow-soft sm:rounded-[2.2rem]">
+          <img src={FOOD_PHOTOS.lunchboxModern} alt="Comida casera organizada en una lonchera de varios compartimentos" loading="eager" decoding="async" className="h-full w-full object-cover" />
+          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/85 to-transparent px-3 pb-4 pt-12 text-white sm:px-5 sm:pb-5">
+            <p className="text-[9px] font-extrabold uppercase tracking-[0.16em] sm:text-xs">Más variedad, menos improvisación</p>
+            <p className="mt-1 font-display text-base font-extrabold leading-tight sm:text-xl">Ideas para cada día</p>
+          </div>
         </div>
       </div>
-      <div className="absolute -left-4 top-7 rounded-2xl border-4 border-white bg-card p-1.5 shadow-card md:-left-8">
-        <img src={FOOD_PHOTOS.lunchboxMix} alt="Bento con variedad de frutas y snacks" loading="lazy" className="h-24 w-28 rounded-xl object-cover md:h-28 md:w-36" />
-      </div>
-      <div className="absolute -bottom-1 right-2 flex items-center gap-3 rounded-2xl border border-primary/10 bg-card px-4 py-3 shadow-soft md:right-0">
-        <span className="font-display text-4xl font-extrabold leading-none text-coral">60</span>
-        <span className="max-w-24 text-xs font-extrabold uppercase leading-tight tracking-wide text-primary">recetas para descubrir</span>
+      <div className="absolute -bottom-1 right-0 rounded-2xl border border-primary/10 bg-card px-4 py-3 shadow-card sm:right-2">
+        <p className="font-display text-2xl font-extrabold leading-none text-primary sm:text-3xl">6 × 10</p>
+        <p className="mt-1 text-[9px] font-extrabold uppercase tracking-wide text-muted-foreground sm:text-[10px]">categorías y recetas</p>
       </div>
     </div>
   );
@@ -266,13 +267,13 @@ function Index() {
             <div>
               <p className="eyebrow">Ideas para loncheras escolares</p>
               <h1 className="mt-3 text-[2.4rem] font-extrabold leading-[1.02] text-primary sm:text-5xl md:text-6xl">
-                ¿Otra vez sin ideas para la lonchera escolar?
+                60 recetas para variar las loncheras escolares con tu Air Fryer
               </h1>
               <p className="mt-5 font-display text-xl font-bold text-foreground md:text-2xl">
-                ¡Sorprende a los pequeños con nuevas opciones cada día!
+                Ideas dulces y saladas para hacer más fácil la rutina de cada semana.
               </p>
               <p className="mt-3 max-w-xl text-lg leading-relaxed text-muted-foreground">
-                Descubre 60 recetas fáciles y deliciosas para preparar en Air Fryer y deja atrás la rutina de repetir siempre los mismos bocadillos en la lonchera de tus hijos.
+                Encuentra nuevas opciones para desayunos, meriendas y loncheras: recetas con ingredientes, cantidades y pasos organizados para que sepas qué preparar y cómo hacerlo.
               </p>
               <ul className="mt-6 flex flex-wrap gap-2">
                 {["60 recetas", "Ideas para loncheras escolares", "Preparaciones en Air Fryer"].map((t) => (
@@ -282,7 +283,7 @@ function Index() {
                 ))}
               </ul>
               <div className="mt-8 flex flex-col items-start gap-3">
-                <CtaToPlans>¡Quiero nuevas ideas para la lonchera!</CtaToPlans>
+                <CtaToPlans>Quiero ver los planes</CtaToPlans>
                 <p className="text-sm text-muted-foreground">
                   A partir de <strong className="font-display text-lg text-primary">US$ 9,90</strong> · Producto digital en PDF
                 </p>
@@ -306,7 +307,7 @@ function Index() {
                 <p>Pensar qué preparar, buscar nuevas ideas y evitar que los pequeños lleven siempre los mismos bocadillos a la escuela.</p>
                 <p>A veces parece que las opciones se terminan y la creatividad también.</p>
                 <p className="font-semibold text-foreground">
-                  Por eso creamos Buen Bocado: una colección de 60 recetas para ayudarte a encontrar nuevas ideas y darle más variedad a las loncheras escolares.
+                  Por eso reunimos 60 recetas en una sola guía: para que tengas opciones a mano y puedas elegir qué preparar sin empezar desde cero cada mañana.
                 </p>
               </Heading>
             </div>
@@ -437,50 +438,53 @@ function Index() {
           </div>
         </Section>
 
-        {/* 9. EXPERIENCIAS — MOCKUPS ILUSTRATIVOS */}
+        {/* 9. UN VISTAZO A LA GUÍA */}
         <Section className="bg-muted">
-          <Heading eyebrow="Conversaciones de ejemplo" title="Más ideas para las mañanas, más variedad en cada lonchera.">
-            <p>Así podría verse el intercambio de mensajes de una familia que encuentra nuevas ideas para preparar sus loncheras con Buen Bocado.</p>
-          </Heading>
-          <div className="mt-5 text-center text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-            Demostraciones visuales · No son testimonios ni conversaciones de compradoras reales
+          <div className="grid items-center gap-10 md:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <Heading center={false} eyebrow="Un vistazo al contenido" title="Todo organizado para que elegir sea más sencillo.">
+                <p>Buen Bocado reúne recetas dulces y saladas en una guía digital que puedes consultar cuando estés organizando las comidas de la semana.</p>
+                <p>En cada receta encontrarás ingredientes, cantidades y una secuencia de preparación, además de tiempos y temperatura orientativos para Air Fryer.</p>
+              </Heading>
+              <ul className="mt-7 space-y-3">
+                {[
+                  "60 recetas distribuidas en 6 categorías.",
+                  "10 ideas en cada categoría para encontrar variedad.",
+                  "Fichas visuales con ingredientes y preparación paso a paso.",
+                  "Acceso digital para consultar desde tus dispositivos.",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 rounded-xl bg-card px-4 py-3 text-sm font-semibold text-foreground shadow-sm">
+                    <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+              <figure className="col-span-2 overflow-hidden rounded-[1.7rem] bg-card shadow-card">
+                <img src={FOOD_PHOTOS.pizza} alt="Mini pizzas caseras recién preparadas" loading="lazy" decoding="async" className="h-52 w-full object-cover sm:h-64" />
+                <figcaption className="p-4">
+                  <p className="text-xs font-extrabold uppercase tracking-widest text-coral">Ideas saladas</p>
+                  <p className="mt-1 font-display text-lg font-extrabold text-primary">Opciones para variar la lonchera</p>
+                </figcaption>
+              </figure>
+              <figure className="overflow-hidden rounded-[1.5rem] bg-card shadow-card">
+                <img src={FOOD_PHOTOS.miniPancakes} alt="Mini pancakes para desayunos y meriendas" loading="lazy" decoding="async" className="h-36 w-full object-cover sm:h-44" />
+                <figcaption className="p-3">
+                  <p className="text-[10px] font-extrabold uppercase tracking-widest text-coral">Ideas dulces</p>
+                  <p className="mt-1 text-sm font-extrabold text-primary">Desayunos y meriendas</p>
+                </figcaption>
+              </figure>
+              <figure className="overflow-hidden rounded-[1.5rem] bg-card shadow-card">
+                <img src={FOOD_PHOTOS.muffins} alt="Muffins caseros de banana y avena" loading="lazy" decoding="async" className="h-36 w-full object-cover sm:h-44" />
+                <figcaption className="p-3">
+                  <p className="text-[10px] font-extrabold uppercase tracking-widest text-coral">Para compartir</p>
+                  <p className="mt-1 text-sm font-extrabold text-primary">Preparaciones caseras</p>
+                </figcaption>
+              </figure>
+            </div>
           </div>
-          <div className="mx-auto mt-10 grid max-w-5xl items-start gap-8 md:grid-cols-3">
-            <WhatsAppMockup
-              contact="Mariana · mamá de Nico"
-              photo={FOOD_PHOTOS.proofLunchboxOne}
-              photoAlt="Ejemplo de lonchera con bocadillos variados"
-              messages={[
-                { from: "them", text: "¡Mira la lonchera que preparé hoy! 🥰", time: "8:42" },
-                { from: "them", photo: true, text: "Hice varias opciones de la guía. Las mini pizzas quedaron preciosas.", time: "8:43" },
-                { from: "me", text: "¡Qué linda quedó! 💚", time: "8:45" },
-                { from: "them", text: "Y hoy no estuve improvisando a última hora. Dejé todo organizado anoche.", time: "8:46" },
-              ]}
-            />
-            <WhatsAppMockup
-              contact="Camila · mamá de Emma"
-              photo={FOOD_PHOTOS.proofLunchboxTwo}
-              photoAlt="Ejemplo de bocadillos organizados en una lonchera"
-              messages={[
-                { from: "them", text: "Te comparto lo que armamos para mañana 😍", time: "19:16" },
-                { from: "them", photo: true, text: "Usé las ideas de snacks salados y agregué unos bocaditos caseros.", time: "19:17" },
-                { from: "me", text: "¡Se ve delicioso!", time: "19:19" },
-                { from: "them", text: "Me ayuda mucho tener las recetas y cantidades en un solo lugar. Ya no pierdo tanto tiempo pensando qué preparar.", time: "19:20" },
-              ]}
-            />
-            <WhatsAppMockup
-              contact="Valentina · mamá de Leo"
-              messages={[
-                { from: "them", text: "Al final elegí el Premium y me gustó que venga con los dos materiales extra.", time: "10:08" },
-                { from: "them", text: "También me parece conveniente tener incluidas las futuras actualizaciones que se publiquen. Siento que aprovecho mejor la compra.", time: "10:09" },
-                { from: "me", text: "¡Qué bueno que te esté sirviendo! 💚", time: "10:11" },
-                { from: "them", text: "No me arrepiento. Tener más ideas y las guías adicionales en el mismo lugar me resulta muy práctico.", time: "10:12" },
-              ]}
-            />
-          </div>
-          <p className="mx-auto mt-8 max-w-3xl text-center text-xs leading-relaxed text-muted-foreground">
-            Los nombres, mensajes y situaciones de esta sección son ficticios y se muestran únicamente como ejemplos de presentación. Las fotografías son imágenes ilustrativas de loncheras y alimentos.
-          </p>
+          <p className="mt-7 text-center text-xs text-muted-foreground">Fotografías ilustrativas de alimentos. El producto adquirido es una guía digital en PDF.</p>
         </Section>
 
         {/* BONOS PREMIUM */}
@@ -543,7 +547,7 @@ function Index() {
           <a href={REFUND_URL} className="inline-flex min-h-11 items-center justify-center rounded-full border border-primary/20 px-6 py-3 text-sm font-extrabold text-primary hover:bg-secondary">Leer política de reembolso</a>
         </div></Section>
 
-        {/* 10. CONFIANZA */}
+        {/* 11. CONFIANZA */}
         <Section>
           <Heading eyebrow="Compra con claridad" title="Conoce lo que estás a punto de descubrir." />
           <div className="mt-12 grid gap-x-10 gap-y-7 sm:grid-cols-2">
@@ -566,7 +570,7 @@ function Index() {
           </div>
         </Section>
 
-        {/* 11. FAQ */}
+        {/* 12. FAQ */}
         <Section className="bg-secondary">
           <Heading eyebrow="Preguntas frecuentes" title="¿Tienes alguna duda?" />
           <Accordion type="single" collapsible className="mx-auto mt-10 max-w-3xl space-y-3">
@@ -579,12 +583,12 @@ function Index() {
           </Accordion>
         </Section>
 
-        {/* 12. CTA FINAL */}
+        {/* 13. CTA FINAL */}
         <Section className="bg-primary text-center text-primary-foreground">
           <div className="mx-auto max-w-3xl">
             <h2 className="text-3xl font-extrabold leading-tight md:text-5xl">¡Que la lonchera deje de ser un desafío cada mañana!</h2>
             <p className="mt-5 text-lg opacity-90">
-              Descubre 60 nuevas ideas para preparar, combinar y variar los bocadillos escolares de los pequeños. Con Buen Bocado tendrás inspiración para salir de la rutina y encontrar nuevas opciones con tu Air Fryer.
+              Reúne nuevas ideas para desayunos, meriendas y loncheras en una guía práctica, visual y fácil de consultar. Elige tu plan y descubre todo lo que incluye Buen Bocado.
             </p>
             <div className="mt-8"><CtaToPlans variant="coral">¡Quiero Buen Bocado!</CtaToPlans></div>
           </div>
@@ -596,7 +600,7 @@ function Index() {
         <div className="mx-auto flex max-w-6xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div>
             <Logo />
-            <p className="mt-2 text-sm text-muted-foreground">Producto digital · 60 Recetas Fáciles para Niños en Air Fryer</p>
+            <p className="mt-2 text-sm text-muted-foreground">Guía digital · 60 recetas para loncheras escolares en Air Fryer</p>
           </div>
           <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-primary" aria-label="Legal">
             <a href={PRIVACY_URL}>Política de privacidad</a>
@@ -630,59 +634,6 @@ function Logo() {
         Buen <span className="text-coral">Bocado</span>
       </span>
     </a>
-  );
-}
-
-function WhatsAppMockup({
-  contact, photo, photoAlt, messages,
-}: {
-  contact: string;
-  photo?: string;
-  photoAlt?: string;
-  messages: { from: "me" | "them"; text: string; time: string; photo?: boolean }[];
-}) {
-  return (
-    <article className="mx-auto w-full max-w-[290px]">
-      <div className="rounded-[2.8rem] border-[7px] border-[#171717] bg-[#171717] p-[5px] shadow-[0_22px_55px_rgba(0,0,0,0.18)]">
-        <div className="overflow-hidden rounded-[2.25rem] bg-[#efeae2]">
-          <div className="relative flex h-8 items-center justify-center bg-[#075e54] text-[10px] font-semibold text-white">
-            <span className="absolute left-5">9:41</span>
-            <span className="h-[17px] w-[92px] rounded-full bg-black" aria-hidden="true" />
-            <span className="absolute right-5">5G · 100%</span>
-          </div>
-          <div className="flex h-14 items-center gap-2 bg-[#075e54] px-3 text-white">
-            <span className="text-2xl leading-none">‹</span>
-            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#d7e6dc] text-sm font-bold text-[#075e54]">♡</span>
-            <div className="min-w-0 flex-1">
-              <p className="truncate text-xs font-bold">{contact}</p>
-              <p className="text-[9px] text-white/75">en línea</p>
-            </div>
-            <span className="text-sm">▣</span><span className="text-base">☎</span>
-          </div>
-          <div className="min-h-[390px] space-y-2 bg-[#efeae2] px-2.5 py-3">
-            <div className="mx-auto mb-2 w-fit rounded-md bg-[#fff7d6] px-2 py-1 text-[9px] text-[#6b6257] shadow-sm">Hoy</div>
-            {messages.map((message, index) => (
-              <div key={index} className={`flex ${message.from === "me" ? "justify-end" : "justify-start"}`}>
-                <div className={`max-w-[88%] rounded-xl px-2.5 py-2 text-[10px] leading-[1.45] text-[#263238] shadow-sm ${message.from === "me" ? "rounded-tr-sm bg-[#d9fdd3]" : "rounded-tl-sm bg-white"}`}>
-                  {message.photo && photo && <img src={photo} alt={photoAlt || "Fotografía ilustrativa de una lonchera"} loading="lazy" className="mb-1.5 h-28 w-full rounded-lg object-cover" />}
-                  <p>{message.text}</p>
-                  <p className="mt-1 text-right text-[8px] text-[#718078]">{message.time} {message.from === "me" ? "✓✓" : ""}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="flex h-12 items-center gap-2 bg-[#f7f7f7] px-2.5">
-            <span className="text-lg text-[#64736c]">＋</span>
-            <div className="flex h-8 flex-1 items-center rounded-full bg-white px-3 text-[9px] text-[#9aa39e]">Mensaje</div>
-            <span className="text-sm text-[#64736c]">◉</span><span className="text-sm text-[#64736c]">●</span>
-          </div>
-        </div>
-      </div>
-      <div className="mt-3 flex items-center justify-center gap-2 text-center text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
-        <span className="rounded-full bg-white px-2.5 py-1 shadow-sm">Ejemplo ilustrativo</span>
-        <span>WhatsApp · iPhone 18 Pro Max</span>
-      </div>
-    </article>
   );
 }
 
