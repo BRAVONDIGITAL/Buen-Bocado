@@ -5,8 +5,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { RecipeCard, type Recipe } from "@/components/pequesabor/RecipeCard";
 import { CHECKOUT, goToCheckout, track } from "@/lib/tracking";
 
-const TITLE = "Buen Bocado | 60 Recetas para Loncheras Escolares en Air Fryer";
-const DESC = "Descubre 60 recetas fáciles para preparar loncheras escolares variadas con Air Fryer. Ideas dulces y saladas para los pequeños.";
+const TITLE = "Buen Bocado | Ideas fáciles para que los peques disfruten cada comida";
+const DESC = "¿Tu peque se aburre de la lonchera? Encuentra inspiración para preparar meriendas y comidas caseras que den ganas de probar.";
 
 /* Free-to-use Pexels photos. Creator and source pages:
    Change C.C: https://www.pexels.com/photo/asian-lunch-bento-box-with-assorted-dishes-35211816/
@@ -271,18 +271,18 @@ function Index() {
         <section className="bg-hero overflow-hidden px-5 pb-24 pt-10 md:pb-28 md:pt-16">
           <div className="mx-auto grid max-w-6xl items-center gap-14 md:grid-cols-[1.1fr_1fr]">
             <div>
-              <p className="eyebrow">Ideas para loncheras escolares</p>
+              <p className="eyebrow">¿Otra vez sin ideas para la lonchera?</p>
               <h1 className="mt-3 text-[2.4rem] font-extrabold leading-[1.02] text-primary sm:text-5xl md:text-6xl">
-                60 recetas para variar las loncheras escolares con tu Air Fryer
+                ¿Tu peque rechaza la lonchera y ya no sabes qué prepararle?
               </h1>
               <p className="mt-5 font-display text-xl font-bold text-foreground md:text-2xl">
-                Ideas dulces y saladas para hacer más fácil la rutina de cada semana.
+                Deja de repetir siempre lo mismo. Vuelve a llenar su lonchera de colores, sabores y pequeñas sorpresas que sí dan ganas de comer.
               </p>
               <p className="mt-3 max-w-xl text-lg leading-relaxed text-muted-foreground">
-                Encuentra nuevas opciones para desayunos, meriendas y loncheras: recetas con ingredientes, cantidades y pasos organizados para que sepas qué preparar y cómo hacerlo.
+                Si cada mañana te quedas pensando qué ponerle, no estás sola. Descubre ideas dulces y saladas para salir de la rutina, preparar bocados caseros en tu Air Fryer y hacer que la hora de comer sea más fácil y agradable.
               </p>
               <ul className="mt-6 flex flex-wrap gap-2">
-                {["60 recetas", "Ideas para loncheras escolares", "Preparaciones en Air Fryer"].map((t) => (
+                {["Más variedad cada semana", "Ideas dulces y saladas", "Fáciles en Air Fryer"].map((t) => (
                   <li key={t} className="inline-flex items-center gap-1.5 rounded-full border border-primary/15 bg-card px-3 py-1.5 text-sm font-bold uppercase tracking-wide text-primary">
                     <Check className="h-4 w-4 text-coral" aria-hidden /> {t}
                   </li>
