@@ -504,18 +504,33 @@ function Index() {
           </div>
           <p className="mt-5 text-center text-xs text-muted-foreground">Fotografías ilustrativas para inspirarte. No representan necesariamente preparaciones realizadas por compradores de esta guía.</p>
 
-          <div className="mx-auto mt-16 max-w-4xl rounded-[2rem] border border-primary/10 bg-card p-7 text-center shadow-card sm:p-10">
-            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-secondary text-primary">
-              <Users className="h-7 w-7" aria-hidden />
+          <div className="mt-16">
+            <Heading eyebrow="Lo que las familias buscan" title="Ideas sencillas para llenar la lonchera de alegría.">
+              <p>Una muestra visual del tipo de comentarios y experiencias que esta comunidad podrá compartir cuando haya opiniones reales de compradores.</p>
+            </Heading>
+            <div className="mt-9 grid gap-5 md:grid-cols-3">
+              {[
+                { name: "Mariana R.", role: "Ejemplo de perfil familiar", photo: FOOD_PHOTOS.lunchboxHands, title: "Más ideas para el día a día", quote: "Me encantan las propuestas prácticas y coloridas. Tener distintas ideas dulces y saladas ayuda a planificar la semana con más creatividad." },
+                { name: "Camila S.", role: "Ejemplo de perfil familiar", photo: FOOD_PHOTOS.pizza, title: "Recetas que inspiran", quote: "Las mini pizzas y los bocaditos caseros son una inspiración para preparar meriendas diferentes y compartir un momento rico en familia." },
+                { name: "Patricia M.", role: "Ejemplo de perfil familiar", photo: FOOD_PHOTOS.lunchboxColorful, title: "Una lonchera con más variedad", quote: "Una buena selección de recetas puede hacer que organizar desayunos y loncheras sea más simple, visual y divertido." },
+              ].map((review) => (
+                <article key={review.name} className="overflow-hidden rounded-[1.6rem] border border-primary/10 bg-card shadow-card">
+                  <img src={review.photo} alt="Fotografía ilustrativa de comida y lonchera infantil" loading="lazy" decoding="async" className="h-44 w-full object-cover" />
+                  <div className="p-6">
+                    <div className="flex items-center gap-1 text-coral" aria-label="Estrellas decorativas">★★★★★</div>
+                    <p className="mt-3 text-lg font-extrabold leading-snug text-primary">“{review.title}”</p>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">“{review.quote}”</p>
+                    <div className="mt-5 border-t border-primary/10 pt-4">
+                      <p className="font-extrabold text-primary">{review.name}</p>
+                      <p className="mt-1 text-xs text-muted-foreground">{review.role}</p>
+                    </div>
+                    <span className="mt-4 inline-flex rounded-full bg-secondary px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-wide text-primary">Ejemplo ilustrativo · No es reseña real</span>
+                  </div>
+                </article>
+              ))}
             </div>
-            <p className="eyebrow mt-5">Opiniones de la comunidad</p>
-            <h3 className="mt-3 font-display text-2xl font-extrabold text-primary sm:text-3xl">Las experiencias reales merecen ser contadas.</h3>
-            <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-              Estamos preparando este espacio para compartir reseñas verificadas de familias que hayan utilizado Buen Bocado. Muy pronto podrás leer sus experiencias y descubrir qué recetas se convirtieron en favoritas en casa.
-            </p>
-            <div className="mt-7 inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-xs font-extrabold uppercase tracking-wide text-primary">
-              <ShieldCheck className="h-4 w-4" aria-hidden />
-              Solo opiniones auténticas
+            <div className="mx-auto mt-7 max-w-3xl rounded-2xl border border-primary/10 bg-card px-5 py-4 text-center">
+              <p className="text-sm leading-relaxed text-muted-foreground">Los nombres y textos de estas tarjetas son ficticios y se muestran únicamente como ejemplos de presentación. Las fotografías son ilustrativas y no corresponden necesariamente a clientes. Las reseñas reales se publicarán solo con autorización de sus autores.</p>
             </div>
           </div>
         </Section>
