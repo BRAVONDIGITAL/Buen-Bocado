@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
-import { Check, Sparkles, CalendarDays, Shuffle, BookOpen, Coffee, Apple, Home, Users, FileText, Smartphone, Lock, Gift } from "lucide-react";
+import { Check, Sparkles, CalendarDays, Shuffle, BookOpen, Coffee, Apple, Home, Users, FileText, Smartphone, Lock, Gift, ShieldCheck } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { RecipeCard, type Recipe } from "@/components/pequesabor/RecipeCard";
 import { CHECKOUT, goToCheckout, track } from "@/lib/tracking";
@@ -483,6 +483,15 @@ function Index() {
           </p>
         </Section>
 
+        {/* BONOS PREMIUM */}
+        <Section className="bg-background">
+          <Heading eyebrow="Material extra exclusivo del Premium" title="Dos recursos complementarios para ampliar tus ideas."><p>El Plan Premium incluye estos dos bonos, además de las 60 recetas principales.</p></Heading>
+          <div className="mx-auto mt-10 grid max-w-5xl gap-5 md:grid-cols-2">
+            <article className="overflow-hidden rounded-[1.75rem] border border-primary/10 bg-card shadow-card"><img src={FOOD_PHOTOS.muffins} alt="Muffins caseros como inspiración para snacks infantiles" loading="lazy" className="h-56 w-full object-cover" /><div className="p-6"><p className="text-xs font-extrabold uppercase tracking-widest text-coral">Bono Premium 01</p><h3 className="mt-2 text-2xl font-extrabold text-primary">15 Snacks para Niños con Paladar Selectivo</h3><p className="mt-3 leading-relaxed text-muted-foreground">Un recurso adicional con ideas de snacks para niños con preferencias alimentarias selectivas.</p></div></article>
+            <article className="overflow-hidden rounded-[1.75rem] border border-primary/10 bg-card shadow-card"><img src={FOOD_PHOTOS.cheeseSticks} alt="Bocadillos caseros para inspirar cambios y sustituciones" loading="lazy" className="h-56 w-full object-cover" /><div className="p-6"><p className="text-xs font-extrabold uppercase tracking-widest text-coral">Bono Premium 02</p><h3 className="mt-2 text-2xl font-extrabold text-primary">Guía de Cambios y Sustituciones</h3><p className="mt-3 leading-relaxed text-muted-foreground">Una guía complementaria para consultar alternativas al organizar tus preparaciones.</p></div></article>
+          </div><p className="mt-5 text-center text-xs text-muted-foreground">Los dos bonos son exclusivos del Plan Premium y no forman parte de las 60 recetas principales.</p>
+        </Section>
+
         {/* 10. PLANES */}
         <Section id="planes" className="bg-hero scroll-mt-14">
           <Heading eyebrow="Acceso inmediato tras el pago" title="¡Elige tu plan Buen Bocado!" />
@@ -525,6 +534,14 @@ function Index() {
             El material se entrega en el área de miembros de Cakto después de la confirmación del pago. Los medios de pago disponibles dependen de tu país.
           </p>
         </Section>
+
+        {/* GARANTÍA DE 7 DÍAS */}
+        <Section className="bg-secondary"><div className="mx-auto flex max-w-4xl flex-col items-center gap-5 rounded-[2rem] border border-primary/10 bg-card px-6 py-10 text-center shadow-card md:px-12">
+          <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-primary-foreground"><ShieldCheck className="h-8 w-8" aria-hidden /></span>
+          <p className="eyebrow">Compra con tranquilidad</p><h2 className="max-w-2xl text-3xl font-extrabold leading-tight text-primary md:text-4xl">Tienes 7 días para solicitar el reembolso.</h2>
+          <p className="max-w-2xl leading-relaxed text-muted-foreground">Puedes solicitarlo dentro de los 7 días siguientes a la compra mediante los canales de soporte de Cakto asociados a tu pedido. Consulta las condiciones completas en nuestra política.</p>
+          <a href={REFUND_URL} className="inline-flex min-h-11 items-center justify-center rounded-full border border-primary/20 px-6 py-3 text-sm font-extrabold text-primary hover:bg-secondary">Leer política de reembolso</a>
+        </div></Section>
 
         {/* 10. CONFIANZA */}
         <Section>
