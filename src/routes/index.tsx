@@ -297,7 +297,7 @@ function Index() {
         <Section>
           <div className="grid items-center gap-10 md:grid-cols-2">
             <div className="grid grid-cols-2 gap-3">
-              <PhotoSlot label="Un pequeño disfrutando su merienda" src={"https://images.pexels.com/photos/12788325/pexels-photo-12788325.jpeg?auto=compress&cs=tinysrgb&w=1800"} className="col-span-2 aspect-[16/10]" />
+              <PhotoSlot label="Un pequeño disfrutando su merienda" src={"https://images.pexels.com/photos/5905963/pexels-photo-5905963.jpeg?auto=compress&cs=tinysrgb&w=1800"} className="col-span-2 aspect-[16/10]" />
               <PhotoSlot label="Merienda fresca" src={FOOD_PHOTOS.freshFruit} className="aspect-square" />
               <PhotoSlot label="Bento para el recreo" src={FOOD_PHOTOS.bentoModern} className="aspect-square" />
             </div>
