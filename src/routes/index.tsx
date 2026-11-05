@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
-import { Check, Sparkles, CalendarDays, Shuffle, BookOpen, Coffee, Apple, Home, Users, FileText, Smartphone, Lock, MessageSquareQuote, Gift } from "lucide-react";
+import { Check, Sparkles, CalendarDays, Shuffle, BookOpen, Coffee, Apple, Home, Users, FileText, Smartphone, Lock, Gift } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { RecipeCard, type Recipe } from "@/components/pequesabor/RecipeCard";
 import { CHECKOUT, goToCheckout, track } from "@/lib/tracking";
@@ -446,24 +446,23 @@ function Index() {
         {/* 10. CONFIANZA */}
         <Section>
           <Heading eyebrow="Compra con claridad" title="Conoce lo que estás a punto de descubrir." />
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-x-10 gap-y-7 sm:grid-cols-2">
             {[
               { i: BookOpen, t: "Fichas visuales", d: "Cada receta en su propia ficha, con foto, tiempos y temperatura." },
               { i: Sparkles, t: "Material organizado", d: "6 categorías con 10 recetas cada una, fáciles de encontrar." },
               { i: FileText, t: "Qué recibes", d: "Una guía digital en PDF con ingredientes, cantidades y pasos." },
               { i: Smartphone, t: "Acceso digital", d: "Consulta desde tu celular a través del área de miembros de Cakto." },
             ].map(({ i: Icon, t, d }) => (
-              <div key={t} className="rounded-2xl border bg-card p-5">
-                <Icon className="h-6 w-6 text-coral" aria-hidden />
-                <h3 className="mt-3 font-extrabold text-primary">{t}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{d}</p>
+              <div key={t} className="flex gap-4 border-b border-primary/10 pb-5">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-secondary">
+                  <Icon className="h-5 w-5 text-primary" aria-hidden />
+                </span>
+                <div>
+                  <h3 className="font-extrabold text-primary">{t}</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{d}</p>
+                </div>
               </div>
             ))}
-          </div>
-          <div className="mt-8 flex flex-col items-center gap-3 rounded-2xl border-2 border-dashed p-8 text-center text-muted-foreground">
-            <MessageSquareQuote className="h-8 w-8" aria-hidden />
-            <p className="font-display font-bold">Pronto compartiremos aquí experiencias reales de familias que usan Buen Bocado.</p>
-            <a href="#por-dentro" className="text-sm font-bold text-primary underline underline-offset-4">Ver las fichas por dentro</a>
           </div>
         </Section>
 
