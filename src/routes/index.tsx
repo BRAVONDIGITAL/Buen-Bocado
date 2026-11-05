@@ -26,23 +26,22 @@ const DESC = "Descubre 60 recetas fáciles para preparar loncheras escolares var
    Vanessa Loring: https://www.pexels.com/photo/food-inside-green-food-containers-on-purple-surface-5971998/
    Vanessa Loring: https://www.pexels.com/photo/orange-fruits-in-blue-plastic-container-5972002/
    Anna Shvets: https://www.pexels.com/photo/boy-wearing-yellow-hoodie-eating-pizza-and-holding-a-glass-of-water-3905792/
+   Andrea Piacquadio: https://www.pexels.com/photo/a-young-kid-in-white-shirt-eating-food-5039623/
    Eileen Lamb: https://www.pexels.com/photo/selective-focus-photo-of-child-holding-muffin-3225513/
    RDNE Stock project: https://www.pexels.com/photo/little-girl-preparing-homemade-pizza-5593192/
    RDNE Stock project: https://www.pexels.com/photo/little-girl-showing-her-homemade-pizza-on-kitchen-counter-5593170/
-   Kaboompics: https://www.pexels.com/photo/photo-of-a-child-eating-food-8910114/
-   Kaboompics: https://www.pexels.com/photo/close-up-shot-of-a-cute-baby-eating-8910054/
-   KATRIN BOLOVTSOVA: https://www.pexels.com/photo/cute-toddler-in-white-holding-an-apple-indoors-with-fruits-on-a-wooden-table-4867904/
-   Pavel Danilyuk: https://www.pexels.com/photo/mother-and-child-sitting-on-bed-beside-the-crib-7938077/
-   Matheus Bertelli: https://www.pexels.com/photo/a-girl-smiling-with-curly-hair-13872218/
-   KATRIN BOLOVTSOVA: https://www.pexels.com/photo/child-eating-from-bowl-4867895/
-   Lisa from Pexels: https://www.pexels.com/photo/photo-of-toddler-holding-cookie-4124471/
+   Thiago Lazaro: https://www.pexels.com/photo/hot-appetizers-with-tomatoes-and-cheese-on-wooden-table-7182999/
+   Anna Shvets: https://www.pexels.com/photo/boy-wearing-yellow-hoodie-eating-pizza-and-holding-a-glass-of-water-3905792/
+   Eileen Lamb: https://www.pexels.com/photo/selective-focus-photo-of-child-holding-muffin-3225513/
+   RDNE Stock project: https://www.pexels.com/photo/little-girl-preparing-homemade-pizza-5593192/
+   RDNE Stock project: https://www.pexels.com/photo/little-girl-showing-her-homemade-pizza-on-kitchen-counter-5593170/
    Lauren Diaz: https://www.pexels.com/photo/delicious-mini-pizzas-with-toppings-on-tray-34275219/
    Backen.de: https://www.pexels.com/photo/preparing-mini-pizza-7322629/
    alleksana: https://www.pexels.com/photo/close-up-photo-of-delicious-muffins-4051588/
    Elena Leya: https://www.pexels.com/photo/cooked-food-on-blue-ceramic-plate-9568318/ */
 const FOOD_PHOTOS = {
   lunchboxes: "https://images.pexels.com/photos/3905792/pexels-photo-3905792.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  lunchboxDetail: "https://images.pexels.com/photos/5593170/pexels-photo-5593170.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxDetail: "https://images.pexels.com/photos/5039623/pexels-photo-5039623.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxHands: "https://images.pexels.com/photos/5593192/pexels-photo-5593192.jpeg?auto=compress&cs=tinysrgb&w=2000",
   schoolBoys: "https://images.pexels.com/photos/3225513/pexels-photo-3225513.jpeg?auto=compress&cs=tinysrgb&w=2000",
   bentoModern: "https://images.pexels.com/photos/35211816/pexels-photo-35211816.jpeg?auto=compress&cs=tinysrgb&w=2000",
@@ -60,8 +59,8 @@ const FOOD_PHOTOS = {
   fruitPlate: "https://images.pexels.com/photos/16557594/pexels-photo-16557594.jpeg?auto=compress&cs=tinysrgb&w=2000",
   pancakePlate: "https://images.pexels.com/photos/12833165/pexels-photo-12833165.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxPurple: "https://images.pexels.com/photos/5971998/pexels-photo-5971998.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  lunchboxVibrant: "https://images.pexels.com/photos/8910114/pexels-photo-8910114.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  kidsSnacks: "https://images.pexels.com/photos/8910054/pexels-photo-8910054.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxVibrant: "https://images.pexels.com/photos/7182999/pexels-photo-7182999.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  kidsSnacks: "https://images.pexels.com/photos/5593170/pexels-photo-5593170.jpeg?auto=compress&cs=tinysrgb&w=2000",
   pizza: "https://images.pexels.com/photos/34275219/pexels-photo-34275219/free-photo-of-delicious-mini-pizzas-with-toppings-on-tray.jpeg?auto=compress&dpr=1&h=1100&w=1800",
   pizzaPrep: "https://images.pexels.com/photos/7322629/pexels-photo-7322629.jpeg?auto=compress&cs=tinysrgb&w=1800",
   muffins: "https://images.pexels.com/photos/4051588/pexels-photo-4051588.jpeg?auto=compress&cs=tinysrgb&w=1800",
@@ -296,7 +295,7 @@ function Index() {
         <Section>
           <div className="grid items-center gap-10 md:grid-cols-2">
             <div className="grid grid-cols-2 gap-3">
-              <PhotoSlot label="Un pequeño disfrutando una pizza casera" src={FOOD_PHOTOS.lunchboxDetail} className="col-span-2 aspect-[16/10]" />
+              <PhotoSlot label="Un pequeño disfrutando su merienda" src={FOOD_PHOTOS.lunchboxDetail} className="col-span-2 aspect-[16/10]" />
               <PhotoSlot label="Merienda fresca" src={FOOD_PHOTOS.freshFruit} className="aspect-square" />
               <PhotoSlot label="Bento para el recreo" src={FOOD_PHOTOS.bentoModern} className="aspect-square" />
             </div>
@@ -444,7 +443,7 @@ function Index() {
             <PlanCard
               name="Plan Básico"
               image={FOOD_PHOTOS.lunchboxVibrant}
-              imageAlt="Pequeño disfrutando un bocadillo casero"
+              imageAlt="Mini pizzas doradas listas para la lonchera"
               price="9,90"
               plan="basic"
               cta="QUIERO EL PLAN BÁSICO."
@@ -462,7 +461,7 @@ function Index() {
               featured
               name="Plan Premium"
               image={FOOD_PHOTOS.kidsSnacks}
-              imageAlt="Pequeño disfrutando un snack casero"
+              imageAlt="Niña pequeña disfrutando una pizza casera"
               price="14,90"
               plan="premium"
               cta="QUIERO EL PLAN PREMIUM."
