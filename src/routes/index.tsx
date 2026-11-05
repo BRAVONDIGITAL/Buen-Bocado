@@ -399,7 +399,7 @@ function Index() {
               name="Plan Básico"
               price="9,90"
               plan="basic"
-              cta="Quiero el plan básico"
+              cta="QUIERO EL PLAN BÁSICO."
               features={[
                 "60 recetas para Air Fryer.",
                 "Ideas para loncheras escolares.",
@@ -415,7 +415,7 @@ function Index() {
               name="Plan Premium"
               price="14,90"
               plan="premium"
-              cta="Quiero el plan premium"
+              cta="QUIERO EL PLAN PREMIUM."
               features={[
                 "Todo lo incluido en el Plan Básico.",
                 "Acceso ilimitado al material adquirido.",
