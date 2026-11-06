@@ -313,7 +313,7 @@ function Index() {
         <Section>
           <div className="grid items-center gap-10 md:grid-cols-2">
             <div className="grid grid-cols-2 gap-3">
-              <PhotoSlot label="Mini pizzas caseras para la merienda" src={FOOD_PHOTOS.pizza} className="col-span-2 aspect-[16/10]" />
+              <PhotoSlot label="Mini pizzas caseras para la merienda" src={FOOD_PHOTOS.pizzaPrep} className="col-span-2 aspect-[16/10]" />
               <PhotoSlot label="Merienda fresca" src={FOOD_PHOTOS.freshFruit} className="aspect-square" />
               <PhotoSlot label="Bento para el recreo" src={FOOD_PHOTOS.bentoModern} className="aspect-square" />
             </div>
