@@ -114,7 +114,7 @@ function RootShell({ children }: { children: ReactNode }) {
             height="1"
             width="1"
             style={{ display: "none" }}
-            src="https://www.facebook.com/tr?id=1873002933691549&ev=PageView&noscript=1"
+            src="https://www.facebook.com/tr?id=3832985993535186&ev=PageView&noscript=1"
             alt=""
           />
         </noscript>
