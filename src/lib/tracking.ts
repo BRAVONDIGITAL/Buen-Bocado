@@ -3,7 +3,7 @@
  * META_PIXEL_ID: paste the real Pixel ID here. Empty = Pixel disabled (no script loaded).
  * Purchase is NOT fired here — it must come from Cakto's official Pixel integration.
  */
-export const META_PIXEL_ID = "1873002933691549";
+export const META_PIXEL_ID = "3832985993535186";
 
 export const CHECKOUT = {
   basic: "https://pay.cakto.com.br/3cesfcs_1281608",
