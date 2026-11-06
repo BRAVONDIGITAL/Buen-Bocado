@@ -374,9 +374,6 @@ function Index() {
               </div>
             ))}
           </div>
-          <p className="mt-6 text-center text-sm italic text-muted-foreground">
-            Vistas ilustrativas del formato del producto. El diseño final de las páginas puede variar.
-          </p>
         </Section>
 
         {/* 5. 60 RECEITAS */}
@@ -452,6 +449,30 @@ function Index() {
                 </li>
               ))}
             </ul>
+          </div>
+        </Section>
+
+        {/* INSPIRACIÓN PARA MAMÁS — contenido editorial, no reseñas atribuidas */}
+        <Section className="bg-secondary">
+          <Heading eyebrow="Pensado para la rutina de mamá" title="Pequeñas recetas que hacen más especiales las meriendas.">
+            <p>Ideas dulces y saladas para sumar variedad a la lonchera y disfrutar preparando algo rico para los peques.</p>
+          </Heading>
+          <div className="mx-auto mt-10 grid max-w-5xl gap-5 md:grid-cols-3">
+            <article className="rounded-3xl border border-primary/10 bg-card p-6 shadow-card">
+              <span className="text-3xl" aria-hidden="true">🍕</span>
+              <h3 className="mt-4 text-xl font-extrabold text-primary">Mini pizzas caseras</h3>
+              <p className="mt-2 leading-relaxed text-muted-foreground">Una idea salada, divertida y fácil de adaptar para compartir con los niños.</p>
+            </article>
+            <article className="rounded-3xl border border-primary/10 bg-card p-6 shadow-card">
+              <span className="text-3xl" aria-hidden="true">🧁</span>
+              <h3 className="mt-4 text-xl font-extrabold text-primary">Meriendas para variar</h3>
+              <p className="mt-2 leading-relaxed text-muted-foreground">Recetas dulces y saladas para salir de la rutina y descubrir nuevas combinaciones.</p>
+            </article>
+            <article className="rounded-3xl border border-primary/10 bg-card p-6 shadow-card">
+              <span className="text-3xl" aria-hidden="true">🍓</span>
+              <h3 className="mt-4 text-xl font-extrabold text-primary">Loncheras con color</h3>
+              <p className="mt-2 leading-relaxed text-muted-foreground">Inspiración para combinar frutas, bocaditos y preparaciones en porciones prácticas.</p>
+            </article>
           </div>
         </Section>
 
