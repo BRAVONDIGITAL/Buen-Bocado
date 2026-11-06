@@ -81,7 +81,7 @@ const FOOD_PHOTOS = {
   lunchboxAltThree: "https://images.pexels.com/photos/5852279/pexels-photo-5852279.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxAltFour: "https://images.pexels.com/photos/5852287/pexels-photo-5852287.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxAltFive: "https://images.pexels.com/photos/5852319/pexels-photo-5852319.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  fruitBlue: "https://images.pexels.com/photos/5972002/pexels-photo-5972002.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  fruitBlue: "https://images.pexels.com/photos/35439982/pexels-photo-35439982.jpeg?auto=compress&cs=tinysrgb&w=2000",
   familyKitchen: "https://images.pexels.com/photos/8657194/pexels-photo-8657194.jpeg?auto=compress&cs=tinysrgb&w=2000",
 } as const;;
 
