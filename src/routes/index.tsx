@@ -71,6 +71,7 @@ const FOOD_PHOTOS = {
   miniPizzaRecipe: "https://images.pexels.com/photos/4203043/pexels-photo-4203043.jpeg?auto=compress&cs=tinysrgb&w=2000",
   pizzaCloseup: "https://images.pexels.com/photos/5953574/pexels-photo-5953574.jpeg?auto=compress&cs=tinysrgb&w=2000",
   muffinsAlt: "https://images.pexels.com/photos/30388621/pexels-photo-30388621.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  muffinsAltTwo: "https://images.pexels.com/photos/10815917/pexels-photo-10815917.jpeg?auto=compress&cs=tinysrgb&w=2000",
   savoryMuffins: "https://images.pexels.com/photos/34501162/pexels-photo-34501162.jpeg?auto=compress&cs=tinysrgb&w=2000",
   spinachMiniPizza: "https://images.pexels.com/photos/37182338/pexels-photo-37182338.jpeg?auto=compress&cs=tinysrgb&w=2000",
   cheeseSticksAlt: "https://images.pexels.com/photos/10065184/pexels-photo-10065184.jpeg?auto=compress&cs=tinysrgb&w=2000",
@@ -508,7 +509,7 @@ function Index() {
           </Heading>
           <div className="mt-9 grid grid-cols-2 gap-3 sm:grid-cols-4">
             <PhotoSlot label="Mini pizzas caseras" src={FOOD_PHOTOS.spinachMiniPizza} className="aspect-[4/5]" />
-            <PhotoSlot label="Muffins para la merienda" src={FOOD_PHOTOS.lunchboxMix} className="aspect-[4/5]" />
+            <PhotoSlot label="Muffins para la merienda" src={FOOD_PHOTOS.muffinsAltTwo} className="aspect-[4/5]" />
             <PhotoSlot label="Frutas listas para llevar" src={FOOD_PHOTOS.fruitBlue} className="aspect-[4/5]" />
             <PhotoSlot label="Lonchera llena de color" src={FOOD_PHOTOS.lunchboxAltOne} className="aspect-[4/5]" />
           </div>
