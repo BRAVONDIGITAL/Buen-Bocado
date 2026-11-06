@@ -396,20 +396,6 @@ function Index() {
           </div>
         </Section>
 
-        {/* 6. LIFESTYLE */}
-        <Section>
-          <Heading eyebrow="Inspiración diaria" title="Loncheras con más color, variedad y sabor" />
-          <div className="mt-12 grid auto-rows-[140px] grid-cols-2 gap-3 md:auto-rows-[180px] md:grid-cols-4">
-            <PhotoSlot label="Lonchera moderna para cada día" src={FOOD_PHOTOS.lunchboxModern} className="col-span-2 row-span-2" />
-            <PhotoSlot label="Ensalada y sándwich fresco" src={FOOD_PHOTOS.freshLunch} />
-            <PhotoSlot label="Frutas listas para llevar" src={FOOD_PHOTOS.fruitPlate} />
-            <PhotoSlot label="Snacks coloridos" src={FOOD_PHOTOS.lunchboxBlue} className="col-span-2" />
-            <PhotoSlot label="Preparando meriendas en familia" src={FOOD_PHOTOS.familyKitchen} className="col-span-2" />
-            <PhotoSlot label="Pancakes con frutos rojos" src={FOOD_PHOTOS.pancakePlate} />
-            <PhotoSlot label="Snacks en recipientes modernos" src={FOOD_PHOTOS.lunchboxPurple} />
-          </div>
-        </Section>
-
         {/* 7. MOMENTOS */}
         <Section className="bg-muted">
           <Heading eyebrow="Y además…" title="Más ideas para disfrutar en diferentes momentos.">
