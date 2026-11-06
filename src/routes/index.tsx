@@ -66,6 +66,21 @@ const FOOD_PHOTOS = {
   pizzaPrep: "https://images.pexels.com/photos/7322629/pexels-photo-7322629.jpeg?auto=compress&cs=tinysrgb&w=1800",
   muffins: "https://images.pexels.com/photos/4051588/pexels-photo-4051588.jpeg?auto=compress&cs=tinysrgb&w=1800",
   cheeseSticks: "https://images.pexels.com/photos/9568318/pexels-photo-9568318.jpeg?auto=compress&cs=tinysrgb&w=1800",
+  pancakeAlt: "https://images.pexels.com/photos/17751916/pexels-photo-17751916.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  pancakeAltTwo: "https://images.pexels.com/photos/17751910/pexels-photo-17751910.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  miniPizzaRecipe: "https://images.pexels.com/photos/4203043/pexels-photo-4203043.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  pizzaCloseup: "https://images.pexels.com/photos/5953574/pexels-photo-5953574.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  muffinsAlt: "https://images.pexels.com/photos/30388621/pexels-photo-30388621.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  savoryMuffins: "https://images.pexels.com/photos/34501162/pexels-photo-34501162.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  spinachMiniPizza: "https://images.pexels.com/photos/37182338/pexels-photo-37182338.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  cheeseSticksAlt: "https://images.pexels.com/photos/10065184/pexels-photo-10065184.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxFruitAlt: "https://images.pexels.com/photos/5852322/pexels-photo-5852322.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxAltOne: "https://images.pexels.com/photos/5852330/pexels-photo-5852330.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxAltTwo: "https://images.pexels.com/photos/5852329/pexels-photo-5852329.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxAltThree: "https://images.pexels.com/photos/5852279/pexels-photo-5852279.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxAltFour: "https://images.pexels.com/photos/5852287/pexels-photo-5852287.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxAltFive: "https://images.pexels.com/photos/5852319/pexels-photo-5852319.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  fruitBlue: "https://images.pexels.com/photos/5972002/pexels-photo-5972002.jpeg?auto=compress&cs=tinysrgb&w=2000",
 } as const;;
 
 
@@ -160,7 +175,7 @@ function HeroVisual() {
           <p className="mt-2 text-center text-[9px] font-bold uppercase tracking-wide text-white/80 sm:text-[11px]">Ideas dulces y saladas en Air Fryer</p>
           <div className="mt-3 rounded-lg bg-white px-2 py-1.5 text-center text-[9px] font-extrabold uppercase tracking-wider text-primary sm:text-[10px]">Guía digital en PDF</div>
         </div>
-        <div className="relative aspect-[4/5] overflow-hidden rounded-[1.8rem] border-[5px] border-white bg-card shadow-soft sm:rounded-[2.2rem]">
+        <div className="relative aspect-[1024/590] overflow-hidden rounded-[1.8rem] border-[5px] border-white bg-card shadow-soft sm:rounded-[2.2rem]">
           <img src="/images/child-snack.svg" alt="Niña disfrutando una mini pizza casera" loading="eager" decoding="async" className="h-full w-full object-cover" />
           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/85 to-transparent px-3 pb-4 pt-12 text-white sm:px-5 sm:pb-5">
             <p className="text-[9px] font-extrabold uppercase tracking-[0.16em] sm:text-xs">Más variedad, menos improvisación</p>
@@ -179,7 +194,7 @@ function HeroVisual() {
 /* ---------- Data ---------- */
 const RECIPES: Recipe[] = [
   {
-    page: 12, category: "Loncheras", image: FOOD_PHOTOS.pizza, imageAlt: "Mini pizzas recién preparadas", title: "Mini pizzas para la lonchera", prep: "15 min", temp: "180 °C", fryer: "8 min", tone: "coral",
+    page: 12, category: "Loncheras", image: FOOD_PHOTOS.miniPizzaRecipe, imageAlt: "Mini pizzas recién preparadas", title: "Mini pizzas para la lonchera", prep: "15 min", temp: "180 °C", fryer: "8 min", tone: "coral",
     ingredients: [
       { kind: "bread", text: "4 panes pequeños o masa base" },
       { kind: "tomato", text: "4 cdas. de salsa de tomate" },
@@ -224,10 +239,10 @@ const RECIPES: Recipe[] = [
 
 const CATEGORIES = [
   { n: "01", t: "Desayunos para comenzar el día", photo: FOOD_PHOTOS.miniPancakes, alt: "Mini pancakes dorados para el desayuno", school: false },
-  { n: "02", t: "Pequeños momentos de merienda", photo: FOOD_PHOTOS.miniPancakes, alt: "Mini pancakes caseros para la merienda", school: false },
+  { n: "02", t: "Pequeños momentos de merienda", photo: FOOD_PHOTOS.pancakeAlt, alt: "Mini pancakes caseros para la merienda", school: false },
   { n: "03", t: "Snacks salados para cualquier momento", photo: FOOD_PHOTOS.snackTable, alt: "Variedad de snacks frescos y coloridos", school: true },
   { n: "04", t: "Preparaciones con mucho sabor", photo: FOOD_PHOTOS.lunchboxTop, alt: "Loncheras variadas con sándwiches y vegetales", school: true },
-  { n: "05", t: "Pequeños momentos dulces", photo: FOOD_PHOTOS.muffins, alt: "Muffins caseros para una merienda dulce", school: false },
+  { n: "05", t: "Pequeños momentos dulces", photo: FOOD_PHOTOS.muffinsAlt, alt: "Muffins caseros para una merienda dulce", school: false },
   { n: "06", t: "Favoritos para compartir", photo: FOOD_PHOTOS.lunchboxColorful, alt: "Lonchera moderna con compartimentos y variedad de bocadillos", school: false },
 ];
 
@@ -462,21 +477,21 @@ function Index() {
             </div>
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
               <figure className="col-span-2 overflow-hidden rounded-[1.7rem] bg-card shadow-card">
-                <img src={FOOD_PHOTOS.pizza} alt="Mini pizzas caseras recién preparadas" loading="lazy" decoding="async" className="h-52 w-full object-cover sm:h-64" />
+                <img src={FOOD_PHOTOS.pizzaCloseup} alt="Mini pizzas caseras recién preparadas" loading="lazy" decoding="async" className="h-52 w-full object-cover sm:h-64" />
                 <figcaption className="p-4">
                   <p className="text-xs font-extrabold uppercase tracking-widest text-coral">Ideas saladas</p>
                   <p className="mt-1 font-display text-lg font-extrabold text-primary">Opciones para variar la lonchera</p>
                 </figcaption>
               </figure>
               <figure className="overflow-hidden rounded-[1.5rem] bg-card shadow-card">
-                <img src={FOOD_PHOTOS.miniPancakes} alt="Mini pancakes para desayunos y meriendas" loading="lazy" decoding="async" className="h-36 w-full object-cover sm:h-44" />
+                <img src={FOOD_PHOTOS.pancakeAltTwo} alt="Mini pancakes para desayunos y meriendas" loading="lazy" decoding="async" className="h-36 w-full object-cover sm:h-44" />
                 <figcaption className="p-3">
                   <p className="text-[10px] font-extrabold uppercase tracking-widest text-coral">Ideas dulces</p>
                   <p className="mt-1 text-sm font-extrabold text-primary">Desayunos y meriendas</p>
                 </figcaption>
               </figure>
               <figure className="overflow-hidden rounded-[1.5rem] bg-card shadow-card">
-                <img src={FOOD_PHOTOS.muffins} alt="Muffins caseros de banana y avena" loading="lazy" decoding="async" className="h-36 w-full object-cover sm:h-44" />
+                <img src={FOOD_PHOTOS.savoryMuffins} alt="Muffins caseros de banana y avena" loading="lazy" decoding="async" className="h-36 w-full object-cover sm:h-44" />
                 <figcaption className="p-3">
                   <p className="text-[10px] font-extrabold uppercase tracking-widest text-coral">Para compartir</p>
                   <p className="mt-1 text-sm font-extrabold text-primary">Preparaciones caseras</p>
@@ -492,10 +507,10 @@ function Index() {
             <p>Mini pizzas, muffins, frutas y bocaditos dorados para inspirar desayunos y meriendas infantiles.</p>
           </Heading>
           <div className="mt-9 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            <PhotoSlot label="Mini pizzas caseras" src={FOOD_PHOTOS.pizza} className="aspect-[4/5]" />
-            <PhotoSlot label="Muffins para la merienda" src={FOOD_PHOTOS.muffins} className="aspect-[4/5]" />
-            <PhotoSlot label="Frutas listas para llevar" src={FOOD_PHOTOS.freshFruit} className="aspect-[4/5]" />
-            <PhotoSlot label="Lonchera llena de color" src={FOOD_PHOTOS.lunchboxColorful} className="aspect-[4/5]" />
+            <PhotoSlot label="Mini pizzas caseras" src={FOOD_PHOTOS.spinachMiniPizza} className="aspect-[4/5]" />
+            <PhotoSlot label="Muffins para la merienda" src={FOOD_PHOTOS.lunchboxMix} className="aspect-[4/5]" />
+            <PhotoSlot label="Frutas listas para llevar" src={FOOD_PHOTOS.fruitBlue} className="aspect-[4/5]" />
+            <PhotoSlot label="Lonchera llena de color" src={FOOD_PHOTOS.lunchboxAltOne} className="aspect-[4/5]" />
           </div>
         </Section>
 
@@ -503,8 +518,8 @@ function Index() {
         <Section className="bg-background">
           <Heading eyebrow="Material extra exclusivo del Premium" title="Dos recursos complementarios para ampliar tus ideas."><p>El Plan Premium incluye estos dos bonos, además de las 60 recetas principales.</p></Heading>
           <div className="mx-auto mt-10 grid max-w-5xl gap-5 md:grid-cols-2">
-            <article className="overflow-hidden rounded-[1.75rem] border border-primary/10 bg-card shadow-card"><img src={FOOD_PHOTOS.muffins} alt="Muffins caseros como inspiración para snacks infantiles" loading="lazy" className="h-56 w-full object-cover" /><div className="p-6"><p className="text-xs font-extrabold uppercase tracking-widest text-coral">Bono Premium 01</p><h3 className="mt-2 text-2xl font-extrabold text-primary">15 Snacks para Niños con Paladar Selectivo</h3><p className="mt-3 leading-relaxed text-muted-foreground">Un recurso adicional con ideas de snacks para niños con preferencias alimentarias selectivas.</p></div></article>
-            <article className="overflow-hidden rounded-[1.75rem] border border-primary/10 bg-card shadow-card"><img src={FOOD_PHOTOS.cheeseSticks} alt="Bocadillos caseros para inspirar cambios y sustituciones" loading="lazy" className="h-56 w-full object-cover" /><div className="p-6"><p className="text-xs font-extrabold uppercase tracking-widest text-coral">Bono Premium 02</p><h3 className="mt-2 text-2xl font-extrabold text-primary">Guía de Cambios y Sustituciones</h3><p className="mt-3 leading-relaxed text-muted-foreground">Una guía complementaria para consultar alternativas al organizar tus preparaciones.</p></div></article>
+            <article className="overflow-hidden rounded-[1.75rem] border border-primary/10 bg-card shadow-card"><img src={FOOD_PHOTOS.lunchboxAltTwo} alt="Muffins caseros como inspiración para snacks infantiles" loading="lazy" className="h-56 w-full object-cover" /><div className="p-6"><p className="text-xs font-extrabold uppercase tracking-widest text-coral">Bono Premium 01</p><h3 className="mt-2 text-2xl font-extrabold text-primary">15 Snacks para Niños con Paladar Selectivo</h3><p className="mt-3 leading-relaxed text-muted-foreground">Un recurso adicional con ideas de snacks para niños con preferencias alimentarias selectivas.</p></div></article>
+            <article className="overflow-hidden rounded-[1.75rem] border border-primary/10 bg-card shadow-card"><img src={FOOD_PHOTOS.cheeseSticksAlt} alt="Bocadillos caseros para inspirar cambios y sustituciones" loading="lazy" className="h-56 w-full object-cover" /><div className="p-6"><p className="text-xs font-extrabold uppercase tracking-widest text-coral">Bono Premium 02</p><h3 className="mt-2 text-2xl font-extrabold text-primary">Guía de Cambios y Sustituciones</h3><p className="mt-3 leading-relaxed text-muted-foreground">Una guía complementaria para consultar alternativas al organizar tus preparaciones.</p></div></article>
           </div><p className="mt-5 text-center text-xs text-muted-foreground">Los dos bonos son exclusivos del Plan Premium y no forman parte de las 60 recetas principales.</p>
         </Section>
 
