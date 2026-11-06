@@ -44,7 +44,7 @@ const FOOD_PHOTOS = {
   lunchboxHands: "https://images.pexels.com/photos/7322629/pexels-photo-7322629.jpeg?auto=compress&cs=tinysrgb&w=1800",
   schoolBoys: "https://images.pexels.com/photos/4051588/pexels-photo-4051588.jpeg?auto=compress&cs=tinysrgb&w=1800",
   bentoModern: "https://images.pexels.com/photos/35211816/pexels-photo-35211816.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  lunchboxModern: "https://images.pexels.com/photos/35916884/pexels-photo-35916884.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxModern: "https://images.pexels.com/photos/5905680/pexels-photo-5905680.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxColorful: "https://images.pexels.com/photos/5852270/pexels-photo-5852270.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxFruit: "https://images.pexels.com/photos/5852332/pexels-photo-5852332.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxMix: "https://images.pexels.com/photos/5852335/pexels-photo-5852335.jpeg?auto=compress&cs=tinysrgb&w=2000",
@@ -52,12 +52,12 @@ const FOOD_PHOTOS = {
   proofLunchboxOne: "https://images.pexels.com/photos/5852326/pexels-photo-5852326.jpeg?auto=compress&cs=tinysrgb&w=1200",
   proofLunchboxTwo: "https://images.pexels.com/photos/5852457/pexels-photo-5852457.jpeg?auto=compress&cs=tinysrgb&w=1200",
   lunchboxBlue: "https://images.pexels.com/photos/5852341/pexels-photo-5852341.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  freshLunch: "https://images.pexels.com/photos/35482981/pexels-photo-35482981.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  freshLunch: "https://images.pexels.com/photos/8617558/pexels-photo-8617558.jpeg?auto=compress&cs=tinysrgb&w=2000",
   freshFruit: "https://images.pexels.com/photos/35439983/pexels-photo-35439983.jpeg?auto=compress&cs=tinysrgb&w=2000",
   miniPancakes: "https://images.pexels.com/photos/36564998/pexels-photo-36564998.jpeg?auto=compress&cs=tinysrgb&w=2000",
   snackTable: "https://images.pexels.com/photos/34227785/pexels-photo-34227785.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxAlt: "https://images.pexels.com/photos/5852457/pexels-photo-5852457.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  fruitPlate: "https://images.pexels.com/photos/16557594/pexels-photo-16557594.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  fruitPlate: "https://images.pexels.com/photos/5852331/pexels-photo-5852331.jpeg?auto=compress&cs=tinysrgb&w=2000",
   pancakePlate: "https://images.pexels.com/photos/12833165/pexels-photo-12833165.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxPurple: "https://images.pexels.com/photos/5971998/pexels-photo-5971998.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxVibrant: "https://images.pexels.com/photos/7182999/pexels-photo-7182999.jpeg?auto=compress&cs=tinysrgb&w=2000",
@@ -82,6 +82,7 @@ const FOOD_PHOTOS = {
   lunchboxAltFour: "https://images.pexels.com/photos/5852287/pexels-photo-5852287.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxAltFive: "https://images.pexels.com/photos/5852319/pexels-photo-5852319.jpeg?auto=compress&cs=tinysrgb&w=2000",
   fruitBlue: "https://images.pexels.com/photos/5972002/pexels-photo-5972002.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  familyKitchen: "https://images.pexels.com/photos/8657194/pexels-photo-8657194.jpeg?auto=compress&cs=tinysrgb&w=2000",
 } as const;;
 
 
@@ -406,7 +407,7 @@ function Index() {
             <PhotoSlot label="Ensalada y sándwich fresco" src={FOOD_PHOTOS.freshLunch} />
             <PhotoSlot label="Frutas listas para llevar" src={FOOD_PHOTOS.fruitPlate} />
             <PhotoSlot label="Snacks coloridos" src={FOOD_PHOTOS.lunchboxBlue} className="col-span-2" />
-            <PhotoSlot label="Bocados dorados para compartir" src={FOOD_PHOTOS.lunchboxVibrant} className="col-span-2" />
+            <PhotoSlot label="Preparando meriendas en familia" src={FOOD_PHOTOS.familyKitchen} className="col-span-2" />
             <PhotoSlot label="Pancakes con frutos rojos" src={FOOD_PHOTOS.pancakePlate} />
             <PhotoSlot label="Snacks en recipientes modernos" src={FOOD_PHOTOS.lunchboxPurple} />
           </div>
