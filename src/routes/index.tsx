@@ -511,17 +511,7 @@ function Index() {
           <p className="mt-7 text-center text-xs text-muted-foreground">Fotografías ilustrativas de alimentos. El producto adquirido es una guía digital en PDF.</p>
         </Section>
 
-        <Section className="bg-hero">
-          <Heading eyebrow="Más ideas para la lonchera" title="Recetas que se ven tan ricas como suenan.">
-            <p>Mini pizzas, muffins, frutas y bocaditos dorados para inspirar desayunos y meriendas infantiles.</p>
-          </Heading>
-          <div className="mt-9 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            <PhotoSlot label="Mini pizzas caseras" src={FOOD_PHOTOS.spinachMiniPizza} className="aspect-[4/5]" />
-            <PhotoSlot label="Muffins para la merienda" src={FOOD_PHOTOS.muffinsAltTwo} className="aspect-[4/5]" />
-            <PhotoSlot label="Frutas listas para llevar" src={FOOD_PHOTOS.fruitBlue} className="aspect-[4/5]" />
-            <PhotoSlot label="Lonchera llena de color" src={FOOD_PHOTOS.lunchboxAltOne} className="aspect-[4/5]" />
-          </div>
-        </Section>
+
 
         {/* BONOS PREMIUM */}
         <Section className="bg-background">
