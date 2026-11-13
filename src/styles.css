@@ -425,7 +425,7 @@ main > section:nth-of-type(3) {
     radial-gradient(circle at 92% 82%, rgba(255, 255, 255, 0.11) 0 7rem, transparent 7.1rem);
 }
 main > section:nth-of-type(3) .eyebrow {
-  color: #ffe7a4;
+  color: var(--primary);
 }
 main > section:nth-of-type(3) article {
   border: 3px solid rgba(255, 255, 255, 0.8);
