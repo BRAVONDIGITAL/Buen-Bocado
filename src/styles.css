@@ -105,3 +105,123 @@
 @utility blob {
   border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
 }
+
+
+/* ---------- Buen Bocado: identidad infantil, alegre y cuidada ---------- */
+:root {
+  --background: oklch(0.99 0.012 88);
+  --cream: oklch(0.99 0.012 88);
+  --primary: oklch(0.43 0.075 164);
+  --secondary: oklch(0.94 0.045 157);
+  --sage: oklch(0.94 0.045 157);
+  --accent: oklch(0.91 0.13 92);
+  --butter: oklch(0.91 0.13 92);
+  --coral: oklch(0.72 0.16 38);
+  --kid-sky: oklch(0.92 0.07 225);
+  --kid-pink: oklch(0.94 0.07 8);
+  --gradient-hero:
+    radial-gradient(ellipse at 92% 8%, color-mix(in oklab, var(--kid-sky) 78%, transparent) 0%, transparent 34%),
+    radial-gradient(ellipse at 8% 92%, color-mix(in oklab, var(--accent) 52%, transparent) 0%, transparent 38%),
+    radial-gradient(ellipse at 72% 78%, color-mix(in oklab, var(--kid-pink) 42%, transparent) 0%, transparent 30%),
+    var(--cream);
+  --shadow-soft: 0 22px 55px -27px color-mix(in oklab, var(--primary) 42%, transparent);
+  --shadow-card: 0 12px 32px -15px color-mix(in oklab, var(--foreground) 24%, transparent);
+}
+
+@layer base {
+  body {
+    background-image:
+      radial-gradient(circle at 1px 1px, color-mix(in oklab, var(--primary) 5%, transparent) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+
+  ::selection {
+    color: var(--primary-foreground);
+    background: var(--coral);
+  }
+}
+
+/* Pequenos detalhes gráficos lembram um universo infantil sem infantilizar a compra. */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.42rem 0.85rem;
+  border: 1px solid color-mix(in oklab, var(--coral) 22%, transparent);
+  border-radius: 999px;
+  background: color-mix(in oklab, white 78%, var(--kid-pink));
+  letter-spacing: 0.12em;
+}
+
+.eyebrow::before,
+.eyebrow::after {
+  content: "✦";
+  color: var(--coral);
+  font-size: 0.72rem;
+}
+
+main > section {
+  position: relative;
+  isolation: isolate;
+}
+
+main > section:nth-of-type(odd) {
+  background-image:
+    radial-gradient(circle at 96% 12%, color-mix(in oklab, var(--kid-sky) 28%, transparent) 0 5rem, transparent 5.1rem),
+    radial-gradient(circle at 3% 88%, color-mix(in oklab, var(--accent) 22%, transparent) 0 4rem, transparent 4.1rem);
+}
+
+main section article,
+main section .bg-card {
+  border-radius: 1.65rem;
+  box-shadow: var(--shadow-card);
+}
+
+main section article {
+  border-color: color-mix(in oklab, var(--primary) 12%, white);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+main section article:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 38px -18px color-mix(in oklab, var(--primary) 30%, transparent);
+}
+
+main section figure {
+  border-radius: 1.65rem;
+}
+
+main section img {
+  -webkit-user-drag: none;
+}
+
+a[href="#planes"],
+main section a[href^="https://pay.cakto.com.br"] {
+  box-shadow: 0 9px 0 color-mix(in oklab, var(--primary) 16%, transparent), 0 15px 28px -15px color-mix(in oklab, var(--primary) 55%, transparent);
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+a[href="#planes"]:hover,
+main section a[href^="https://pay.cakto.com.br"]:hover {
+  transform: translateY(-2px);
+  filter: saturate(1.08);
+}
+
+a[href="#planes"]:active,
+main section a[href^="https://pay.cakto.com.br"]:active {
+  transform: translateY(2px);
+  box-shadow: 0 4px 0 color-mix(in oklab, var(--primary) 16%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main section article,
+  a[href="#planes"],
+  main section a[href^="https://pay.cakto.com.br"] {
+    transition: none;
+  }
+  main section article:hover,
+  a[href="#planes"]:hover,
+  main section a[href^="https://pay.cakto.com.br"]:hover {
+    transform: none;
+  }
+}
