@@ -504,8 +504,8 @@ main > section > div {
   }
 }
 
-/* Hero mobile: o segundo quadro vira uma faixa fotográfica ampla abaixo do mockup.
-   A composição desktop permanece inalterada. */
+/* Hero mobile: o segundo quadro vira um cartão horizontal compacto.
+   O desktop mantém a composição original. */
 @media (max-width: 640px) {
   main > section:first-child .hero-visual-grid {
     display: grid !important;
@@ -525,37 +525,56 @@ main > section > div {
 
   main > section:first-child .hero-visual-grid > .hero-child-card {
     order: 2 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
     width: 100% !important;
     height: auto !important;
     min-height: 0 !important;
-    aspect-ratio: 16 / 9 !important;
+    aspect-ratio: auto !important;
     border-width: 4px !important;
-    border-radius: 1.45rem !important;
+    border-radius: 1.35rem !important;
+    overflow: hidden !important;
     transform: none !important;
-    box-shadow: 0 8px 0 color-mix(in oklab, var(--kid-blue) 32%, white),
-      0 16px 28px -22px rgba(38, 75, 54, .35);
+    box-shadow: 0 7px 0 color-mix(in oklab, var(--kid-blue) 32%, white),
+      0 14px 24px -20px rgba(38, 75, 54, .35) !important;
   }
 
   main > section:first-child .hero-visual-grid > .hero-child-card img {
-    width: 100% !important;
-    height: 100% !important;
+    position: relative !important;
+    inset: auto !important;
+    display: block !important;
+    flex: 0 0 43% !important;
+    width: 43% !important;
+    height: auto !important;
+    min-height: 132px !important;
     object-fit: cover !important;
     object-position: 54% 44% !important;
-    border-radius: 1.1rem !important;
+    border-radius: 0 !important;
   }
 
   main > section:first-child .hero-visual-grid > .hero-child-card > div {
-    padding: 2.5rem .85rem .75rem !important;
+    position: relative !important;
+    inset: auto !important;
+    display: flex !important;
+    flex: 1 1 57% !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    gap: .4rem !important;
+    width: 57% !important;
+    padding: .9rem .8rem !important;
+    background: var(--primary) !important;
   }
 
   main > section:first-child .hero-visual-grid > .hero-child-card > div p:first-child {
-    font-size: .58rem !important;
-    line-height: 1.2 !important;
+    font-size: .55rem !important;
+    line-height: 1.25 !important;
     letter-spacing: .07em !important;
   }
 
   main > section:first-child .hero-visual-grid > .hero-child-card > div p:last-child {
-    font-size: 1.05rem !important;
+    margin-top: 0 !important;
+    font-size: 1rem !important;
     line-height: 1.12 !important;
   }
 }
