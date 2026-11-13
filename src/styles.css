@@ -503,3 +503,37 @@ main > section > div {
     width: 100%;
   }
 }
+
+/* Hero mobile: segundo quadro (foto da criança) com proporção e acabamento mais equilibrados.
+   O desktop permanece exatamente como está. */
+@media (max-width: 640px) {
+  main > section:first-child .hero-child-card {
+    aspect-ratio: 4 / 5;
+    border-width: 4px;
+    border-radius: 1.5rem;
+    transform: none;
+    box-shadow: 0 9px 0 color-mix(in oklab, var(--kid-blue) 34%, white),
+      0 18px 30px -22px rgba(38, 75, 54, .38);
+  }
+
+  main > section:first-child .hero-child-card img {
+    object-position: 52% center;
+    border-radius: 1.15rem;
+  }
+
+  main > section:first-child .hero-child-card > div {
+    padding: 2.5rem .65rem .85rem;
+  }
+
+  main > section:first-child .hero-child-card > div p:first-child {
+    font-size: .55rem;
+    line-height: 1.25;
+    letter-spacing: .08em;
+  }
+
+  main > section:first-child .hero-child-card > div p:last-child {
+    font-size: .95rem;
+    line-height: 1.15;
+  }
+}
+
