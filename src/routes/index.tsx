@@ -167,7 +167,7 @@ function HeroVisual() {
   return (
     <div className="relative mx-auto w-full max-w-xl px-3 pb-9 pt-4">
       <div className="absolute inset-8 rotate-3 rounded-[3rem] bg-secondary" aria-hidden />
-      <div className="relative grid grid-cols-[0.9fr_1.1fr] items-center gap-3 sm:gap-5">
+      <div className="hero-visual-grid relative grid grid-cols-[0.9fr_1.1fr] items-center gap-3 sm:gap-5">
         <div className="relative z-10 -rotate-3 overflow-hidden rounded-[1.65rem] border-4 border-white bg-primary p-3 shadow-[0_24px_55px_rgba(25,55,42,0.24)] sm:rounded-[2rem] sm:p-4">
           <p className="text-center text-[9px] font-extrabold uppercase tracking-[0.2em] text-white/85 sm:text-xs">Buen Bocado</p>
           <div className="mt-3 overflow-hidden rounded-xl border border-white/20">
