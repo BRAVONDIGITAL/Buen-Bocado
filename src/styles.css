@@ -387,12 +387,12 @@ main > section .grid > article.group:hover img {
 }
 
 main > section.bg-secondary .rounded-3xl.border,
-main > section.bg-background .rounded-\\[1\\.75rem\\] {
+main > section.bg-background .rounded-\[1\.75rem\] {
   border-color: rgba(40,91,72,.1);
   box-shadow: 0 13px 32px rgba(37,75,61,.075);
 }
 main > section.bg-secondary .rounded-3xl.border:hover,
-main > section.bg-background .rounded-\\[1\\.75rem\\]:hover {
+main > section.bg-background .rounded-\[1\.75rem\]:hover {
   transform: translateY(-3px);
   box-shadow: 0 18px 38px rgba(37,75,61,.12);
 }
@@ -427,7 +427,7 @@ main > section.bg-background .rounded-\\[1\\.75rem\\]:hover {
   filter: brightness(1.04);
 }
 
-main > section.bg-secondary > div.rounded-\\[2rem\\] {
+main > section.bg-secondary > div.rounded-\[2rem\] {
   border-radius: 2rem;
   box-shadow: 0 15px 36px rgba(37,75,61,.1);
 }
