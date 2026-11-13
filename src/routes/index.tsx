@@ -167,8 +167,8 @@ function HeroVisual() {
   return (
     <div className="relative mx-auto w-full max-w-xl px-3 pb-9 pt-4">
       <div className="absolute inset-8 rotate-3 rounded-[3rem] bg-secondary" aria-hidden />
-      <div className="hero-visual-grid relative grid grid-cols-[0.9fr_1.1fr] items-center gap-3 sm:gap-5">
-        <div className="relative z-10 -rotate-3 overflow-hidden rounded-[1.65rem] border-4 border-white bg-primary p-3 shadow-[0_24px_55px_rgba(25,55,42,0.24)] sm:rounded-[2rem] sm:p-4">
+      <div className="hero-visual-grid relative grid grid-cols-[0.9fr_1.1fr] items-center gap-3 sm:gap-5 max-sm:grid-cols-1 max-sm:gap-4">
+        <div className="relative z-10 order-1 overflow-hidden rounded-[1.65rem] border-4 border-white bg-primary p-3 shadow-[0_24px_55px_rgba(25,55,42,0.24)] sm:order-none sm:-rotate-3 sm:rounded-[2rem] sm:p-4">
           <p className="text-center text-[9px] font-extrabold uppercase tracking-[0.2em] text-white/85 sm:text-xs">Buen Bocado</p>
           <div className="mt-3 overflow-hidden rounded-xl border border-white/20">
             <img src={FOOD_PHOTOS.pizza} alt="Mini pizzas caseras para las loncheras" loading="eager" decoding="async" className="aspect-[4/3] w-full object-cover" />
@@ -177,7 +177,7 @@ function HeroVisual() {
           <p className="mt-2 text-center text-[9px] font-bold uppercase tracking-wide text-white/80 sm:text-[11px]">Ideas dulces y saladas en Air Fryer</p>
           <div className="mt-3 rounded-lg bg-white px-2 py-1.5 text-center text-[9px] font-extrabold uppercase tracking-wider text-primary sm:text-[10px]">Guía digital en PDF</div>
         </div>
-        <div className="hero-child-card relative aspect-[3/2] overflow-hidden rounded-[1.8rem] border-[5px] border-white bg-card shadow-soft sm:rounded-[2.2rem]">
+        <div className="hero-child-card relative order-2 aspect-[16/9] min-h-0 overflow-hidden rounded-[1.5rem] border-4 border-white bg-card shadow-soft sm:order-none sm:aspect-[3/2] sm:rounded-[2.2rem]">
           <img src="https://images.pexels.com/photos/5593170/pexels-photo-5593170.jpeg?auto=compress&cs=tinysrgb&w=2000" alt="Niña acercándose a una pizza casera recién preparada en la cocina" loading="eager" decoding="async" className="h-full w-full object-cover object-center" />
           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/85 to-transparent px-3 pb-4 pt-12 text-white sm:px-5 sm:pb-5">
             <p className="text-[9px] font-extrabold uppercase tracking-[0.16em] sm:text-xs">Más variedad, menos improvisación</p>
