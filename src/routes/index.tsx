@@ -185,7 +185,7 @@ function HeroVisual() {
           </div>
         </div>
       </div>
-      <div className="absolute -bottom-1 right-0 rounded-2xl border border-primary/10 bg-card px-4 py-3 shadow-card sm:right-2">
+      <div className="relative ml-auto mt-4 w-fit rounded-2xl border border-primary/10 bg-card px-4 py-3 shadow-card">
         <p className="font-display text-2xl font-extrabold leading-none text-primary sm:text-3xl">6 × 10</p>
         <p className="mt-1 text-[9px] font-extrabold uppercase tracking-wide text-muted-foreground sm:text-[10px]">categorías y recetas</p>
       </div>
