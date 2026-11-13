@@ -41,24 +41,24 @@
 
 :root {
   --radius: 1rem;
-  --background: oklch(0.985 0.015 85);        /* creme #FFF8ED */
+  --background: oklch(0.985 0.015 85); /* creme #FFF8ED */
   --foreground: oklch(0.3 0.05 160);
   --cream: oklch(0.985 0.015 85);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.3 0.05 160);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.3 0.05 160);
-  --primary: oklch(0.43 0.07 162);             /* verde #285B48 */
+  --primary: oklch(0.43 0.07 162); /* verde #285B48 */
   --primary-foreground: oklch(0.985 0.015 85);
-  --secondary: oklch(0.93 0.03 145);           /* verde suave #DDEBDD */
+  --secondary: oklch(0.93 0.03 145); /* verde suave #DDEBDD */
   --secondary-foreground: oklch(0.38 0.07 162);
   --sage: oklch(0.93 0.03 145);
   --muted: oklch(0.96 0.02 85);
-  --muted-foreground: oklch(0.52 0.025 65);    /* marrom #75695E */
-  --accent: oklch(0.89 0.11 90);               /* manteiga #F5D985 */
+  --muted-foreground: oklch(0.52 0.025 65); /* marrom #75695E */
+  --accent: oklch(0.89 0.11 90); /* manteiga #F5D985 */
   --accent-foreground: oklch(0.3 0.05 160);
   --butter: oklch(0.89 0.11 90);
-  --coral: oklch(0.73 0.13 38);                /* coral #F28A70 */
+  --coral: oklch(0.73 0.13 38); /* coral #F28A70 */
   --coral-foreground: oklch(0.99 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
@@ -68,14 +68,23 @@
 
   --shadow-soft: 0 20px 50px -25px color-mix(in oklab, var(--primary) 35%, transparent);
   --shadow-card: 0 10px 30px -12px color-mix(in oklab, var(--foreground) 22%, transparent);
-  --gradient-hero: radial-gradient(120% 80% at 85% 10%, var(--sage) 0%, transparent 55%),
-    radial-gradient(70% 60% at 0% 100%, color-mix(in oklab, var(--butter) 45%, transparent) 0%, transparent 60%),
+  --gradient-hero:
+    radial-gradient(120% 80% at 85% 10%, var(--sage) 0%, transparent 55%),
+    radial-gradient(
+      70% 60% at 0% 100%,
+      color-mix(in oklab, var(--butter) 45%, transparent) 0%,
+      transparent 60%
+    ),
     var(--cream);
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; }
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -83,12 +92,24 @@
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
-  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.015em; }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.015em;
+  }
 }
 
-@utility shadow-soft { box-shadow: var(--shadow-soft); }
-@utility shadow-card { box-shadow: var(--shadow-card); }
-@utility bg-hero { background: var(--gradient-hero); }
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+@utility shadow-card {
+  box-shadow: var(--shadow-card);
+}
+@utility bg-hero {
+  background: var(--gradient-hero);
+}
 @utility eyebrow {
   font-family: var(--font-display);
   font-weight: 800;
@@ -99,13 +120,16 @@
 }
 @utility photo-slot {
   background:
-    repeating-linear-gradient(45deg, color-mix(in oklab, var(--primary) 6%, transparent) 0 10px, transparent 10px 20px),
+    repeating-linear-gradient(
+      45deg,
+      color-mix(in oklab, var(--primary) 6%, transparent) 0 10px,
+      transparent 10px 20px
+    ),
     var(--sage);
 }
 @utility blob {
   border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
 }
-
 
 /* ---------- Buen Bocado: identidad infantil, alegre y cuidada ---------- */
 :root {
@@ -120,9 +144,21 @@
   --kid-sky: oklch(0.92 0.07 225);
   --kid-pink: oklch(0.94 0.07 8);
   --gradient-hero:
-    radial-gradient(ellipse at 92% 8%, color-mix(in oklab, var(--kid-sky) 78%, transparent) 0%, transparent 34%),
-    radial-gradient(ellipse at 8% 92%, color-mix(in oklab, var(--accent) 52%, transparent) 0%, transparent 38%),
-    radial-gradient(ellipse at 72% 78%, color-mix(in oklab, var(--kid-pink) 42%, transparent) 0%, transparent 30%),
+    radial-gradient(
+      ellipse at 92% 8%,
+      color-mix(in oklab, var(--kid-sky) 78%, transparent) 0%,
+      transparent 34%
+    ),
+    radial-gradient(
+      ellipse at 8% 92%,
+      color-mix(in oklab, var(--accent) 52%, transparent) 0%,
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 72% 78%,
+      color-mix(in oklab, var(--kid-pink) 42%, transparent) 0%,
+      transparent 30%
+    ),
     var(--cream);
   --shadow-soft: 0 22px 55px -27px color-mix(in oklab, var(--primary) 42%, transparent);
   --shadow-card: 0 12px 32px -15px color-mix(in oklab, var(--foreground) 24%, transparent);
@@ -130,8 +166,11 @@
 
 @layer base {
   body {
-    background-image:
-      radial-gradient(circle at 1px 1px, color-mix(in oklab, var(--primary) 5%, transparent) 1px, transparent 0);
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      color-mix(in oklab, var(--primary) 5%, transparent) 1px,
+      transparent 0
+    );
     background-size: 24px 24px;
   }
 
@@ -167,8 +206,16 @@ main > section {
 
 main > section:nth-of-type(odd) {
   background-image:
-    radial-gradient(circle at 96% 12%, color-mix(in oklab, var(--kid-sky) 28%, transparent) 0 5rem, transparent 5.1rem),
-    radial-gradient(circle at 3% 88%, color-mix(in oklab, var(--accent) 22%, transparent) 0 4rem, transparent 4.1rem);
+    radial-gradient(
+      circle at 96% 12%,
+      color-mix(in oklab, var(--kid-sky) 28%, transparent) 0 5rem,
+      transparent 5.1rem
+    ),
+    radial-gradient(
+      circle at 3% 88%,
+      color-mix(in oklab, var(--accent) 22%, transparent) 0 4rem,
+      transparent 4.1rem
+    );
 }
 
 main section article,
@@ -179,7 +226,9 @@ main section .bg-card {
 
 main section article {
   border-color: color-mix(in oklab, var(--primary) 12%, white);
-  transition: transform 220ms ease, box-shadow 220ms ease;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease;
 }
 
 main section article:hover {
@@ -197,8 +246,13 @@ main section img {
 
 a[href="#planes"],
 main section a[href^="https://pay.cakto.com.br"] {
-  box-shadow: 0 9px 0 color-mix(in oklab, var(--primary) 16%, transparent), 0 15px 28px -15px color-mix(in oklab, var(--primary) 55%, transparent);
-  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+  box-shadow:
+    0 9px 0 color-mix(in oklab, var(--primary) 16%, transparent),
+    0 15px 28px -15px color-mix(in oklab, var(--primary) 55%, transparent);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    filter 180ms ease;
 }
 
 a[href="#planes"]:hover,
@@ -226,7 +280,6 @@ main section a[href^="https://pay.cakto.com.br"]:active {
   }
 }
 
-
 /* ---------- Identidad infantil reforzada: lonchera, juego y color ---------- */
 :root {
   --kid-mint: oklch(0.91 0.09 157);
@@ -235,17 +288,39 @@ main section a[href^="https://pay.cakto.com.br"]:active {
   --kid-blue: oklch(0.91 0.09 230);
   --kid-ink: oklch(0.31 0.075 164);
   --gradient-hero:
-    radial-gradient(ellipse at 88% 12%, color-mix(in oklab, var(--kid-blue) 88%, white) 0%, transparent 33%),
-    radial-gradient(ellipse at 8% 86%, color-mix(in oklab, var(--kid-peach) 76%, white) 0%, transparent 34%),
-    radial-gradient(ellipse at 72% 78%, color-mix(in oklab, var(--kid-pink) 72%, white) 0%, transparent 29%),
+    radial-gradient(
+      ellipse at 88% 12%,
+      color-mix(in oklab, var(--kid-blue) 88%, white) 0%,
+      transparent 33%
+    ),
+    radial-gradient(
+      ellipse at 8% 86%,
+      color-mix(in oklab, var(--kid-peach) 76%, white) 0%,
+      transparent 34%
+    ),
+    radial-gradient(
+      ellipse at 72% 78%,
+      color-mix(in oklab, var(--kid-pink) 72%, white) 0%,
+      transparent 29%
+    ),
     linear-gradient(135deg, #fffdf7 0%, #f8fff7 52%, #fff8f1 100%);
 }
 
 body {
   background-image:
-    radial-gradient(circle, color-mix(in oklab, var(--coral) 12%, transparent) 1.5px, transparent 1.8px),
-    radial-gradient(circle, color-mix(in oklab, var(--kid-blue) 24%, transparent) 1.5px, transparent 1.8px);
-  background-position: 0 0, 12px 12px;
+    radial-gradient(
+      circle,
+      color-mix(in oklab, var(--coral) 12%, transparent) 1.5px,
+      transparent 1.8px
+    ),
+    radial-gradient(
+      circle,
+      color-mix(in oklab, var(--kid-blue) 24%, transparent) 1.5px,
+      transparent 1.8px
+    );
+  background-position:
+    0 0,
+    12px 12px;
   background-size: 28px 28px;
 }
 
@@ -257,9 +332,13 @@ header {
 header a[href="#planes"] {
   border: 2px solid color-mix(in oklab, white 45%, transparent);
   box-shadow: 0 4px 0 color-mix(in oklab, var(--kid-ink) 22%, transparent);
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
 }
-header a[href="#planes"]:hover { transform: translateY(-2px) rotate(-1deg); }
+header a[href="#planes"]:hover {
+  transform: translateY(-2px) rotate(-1deg);
+}
 
 main > section:first-child {
   overflow: hidden;
@@ -273,7 +352,7 @@ main > section:first-child::after {
   place-items: center;
   border: 3px solid white;
   border-radius: 1.35rem;
-  box-shadow: 0 12px 28px -16px rgba(40, 70, 50, .35);
+  box-shadow: 0 12px 28px -16px rgba(40, 70, 50, 0.35);
   font-size: clamp(1.5rem, 3vw, 2.6rem);
   pointer-events: none;
 }
@@ -303,12 +382,14 @@ main > section:first-child .eyebrow {
 }
 main > section:first-child h1 {
   text-wrap: balance;
-  text-shadow: 0 2px 0 rgba(255,255,255,.8);
+  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.8);
 }
 main > section:first-child .aspect-\[3\/2\] {
   border: 7px solid white !important;
   border-radius: 2.4rem !important;
-  box-shadow: 0 18px 0 color-mix(in oklab, var(--kid-blue) 45%, white), 0 28px 48px -26px rgba(38,75,54,.45);
+  box-shadow:
+    0 18px 0 color-mix(in oklab, var(--kid-blue) 45%, white),
+    0 28px 48px -26px rgba(38, 75, 54, 0.45);
   transform: rotate(1deg);
 }
 main > section:first-child .aspect-\[3\/2\] img {
@@ -323,13 +404,15 @@ main > section:first-child .absolute.-bottom-1 {
 .eyebrow {
   box-shadow: 0 4px 0 color-mix(in oklab, var(--coral) 12%, transparent);
 }
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   text-wrap: pretty;
 }
 main > section h2 {
   text-decoration-color: color-mix(in oklab, var(--accent) 75%, transparent);
-  text-decoration-thickness: .18em;
-  text-underline-offset: .16em;
+  text-decoration-thickness: 0.18em;
+  text-underline-offset: 0.16em;
 }
 main > section:nth-of-type(2),
 main > section:nth-of-type(4),
@@ -338,49 +421,65 @@ main > section:nth-of-type(6) {
 }
 main > section:nth-of-type(3) {
   background-image:
-    radial-gradient(circle at 8% 14%, rgba(255,255,255,.13) 0 5rem, transparent 5.1rem),
-    radial-gradient(circle at 92% 82%, rgba(255,255,255,.11) 0 7rem, transparent 7.1rem);
+    radial-gradient(circle at 8% 14%, rgba(255, 255, 255, 0.13) 0 5rem, transparent 5.1rem),
+    radial-gradient(circle at 92% 82%, rgba(255, 255, 255, 0.11) 0 7rem, transparent 7.1rem);
 }
 main > section:nth-of-type(3) .eyebrow {
   color: #ffe7a4;
 }
 main > section:nth-of-type(3) article {
-  border: 3px solid rgba(255,255,255,.8);
+  border: 3px solid rgba(255, 255, 255, 0.8);
   border-radius: 1.8rem;
-  box-shadow: 0 8px 0 rgba(12,50,35,.18), 0 18px 32px -20px rgba(0,0,0,.3);
+  box-shadow:
+    0 8px 0 rgba(12, 50, 35, 0.18),
+    0 18px 32px -20px rgba(0, 0, 0, 0.3);
 }
 main > section:nth-of-type(3) article:nth-child(2) {
   transform: translateY(-8px) rotate(1deg);
 }
-main > section:nth-of-type(3) article:nth-child(1) { transform: rotate(-1deg); }
-main > section:nth-of-type(3) article:nth-child(3) { transform: rotate(1deg); }
+main > section:nth-of-type(3) article:nth-child(1) {
+  transform: rotate(-1deg);
+}
+main > section:nth-of-type(3) article:nth-child(3) {
+  transform: rotate(1deg);
+}
 
 main section article {
   border: 2px solid color-mix(in oklab, var(--kid-mint) 48%, white);
 }
-main section article:nth-child(3n + 1) { border-bottom: 5px solid color-mix(in oklab, var(--coral) 65%, white); }
-main section article:nth-child(3n + 2) { border-bottom: 5px solid color-mix(in oklab, var(--accent) 80%, white); }
-main section article:nth-child(3n) { border-bottom: 5px solid color-mix(in oklab, var(--kid-blue) 80%, white); }
+main section article:nth-child(3n + 1) {
+  border-bottom: 5px solid color-mix(in oklab, var(--coral) 65%, white);
+}
+main section article:nth-child(3n + 2) {
+  border-bottom: 5px solid color-mix(in oklab, var(--accent) 80%, white);
+}
+main section article:nth-child(3n) {
+  border-bottom: 5px solid color-mix(in oklab, var(--kid-blue) 80%, white);
+}
 
 main section figure {
-  outline: 4px solid rgba(255,255,255,.8);
+  outline: 4px solid rgba(255, 255, 255, 0.8);
   outline-offset: -4px;
 }
 main section a[href="#planes"],
 main section a[href^="https://pay.cakto.com.br"] {
-  border: 2px solid rgba(255,255,255,.55);
-  box-shadow: 0 6px 0 color-mix(in oklab, var(--kid-ink) 24%, transparent), 0 15px 26px -15px color-mix(in oklab, var(--primary) 55%, transparent);
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  box-shadow:
+    0 6px 0 color-mix(in oklab, var(--kid-ink) 24%, transparent),
+    0 15px 26px -15px color-mix(in oklab, var(--primary) 55%, transparent);
 }
 main section a[href="#planes"]:hover,
 main section a[href^="https://pay.cakto.com.br"]:hover {
-  transform: translateY(-3px) rotate(-.5deg);
+  transform: translateY(-3px) rotate(-0.5deg);
 }
 main > section:last-of-type {
   background-image:
-    radial-gradient(circle at 8% 18%, rgba(255,255,255,.12) 0 4rem, transparent 4.1rem),
-    radial-gradient(circle at 92% 82%, rgba(255,255,255,.1) 0 6rem, transparent 6.1rem);
+    radial-gradient(circle at 8% 18%, rgba(255, 255, 255, 0.12) 0 4rem, transparent 4.1rem),
+    radial-gradient(circle at 92% 82%, rgba(255, 255, 255, 0.1) 0 6rem, transparent 6.1rem);
 }
-footer { border-top: 3px solid color-mix(in oklab, var(--kid-peach) 75%, white) !important; }
+footer {
+  border-top: 3px solid color-mix(in oklab, var(--kid-peach) 75%, white) !important;
+}
 
 @media (max-width: 640px) {
   main > section:first-child::before {
@@ -397,13 +496,17 @@ footer { border-top: 3px solid color-mix(in oklab, var(--kid-peach) 75%, white) 
     height: 3.1rem;
     font-size: 1.5rem;
   }
-  main > section:nth-of-type(3) article:nth-child(n) { transform: none; }
+  main > section:nth-of-type(3) article:nth-child(n) {
+    transform: none;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
-  header a[href="#planes"], main section a[href="#planes"],
-  main section a[href^="https://pay.cakto.com.br"] { transition: none; }
+  header a[href="#planes"],
+  main section a[href="#planes"],
+  main section a[href^="https://pay.cakto.com.br"] {
+    transition: none;
+  }
 }
-
 
 /* ---------- Ajuste de precisión: nada invade textos ni componentes ---------- */
 /* Se eliminan los stickers flotantes del hero: la identidad infantil queda en la paleta y el contenido. */
@@ -431,17 +534,28 @@ main > section:nth-of-type(3) article,
 main > section:nth-of-type(3) article:nth-child(n) {
   transform: none !important;
 }
-main section article:hover { transform: translateY(-2px) !important; }
+main section article:hover {
+  transform: translateY(-2px) !important;
+}
 
 /* Evita que palabras largas, títulos o etiquetas salgan de su caja. */
-main, main * {
+main,
+main * {
   min-width: 0;
 }
-main p, main li, main h1, main h2, main h3, main h4, main dt, main dd {
+main p,
+main li,
+main h1,
+main h2,
+main h3,
+main h4,
+main dt,
+main dd {
   overflow-wrap: anywhere;
   word-break: normal;
 }
-main a, main button {
+main a,
+main button {
   max-width: 100%;
   white-space: normal;
   overflow-wrap: anywhere;
@@ -451,7 +565,7 @@ main a[href="#planes"],
 main section a[href^="https://pay.cakto.com.br"] {
   height: auto;
   min-height: 3.5rem;
-  padding-block: .85rem;
+  padding-block: 0.85rem;
   text-align: center;
 }
 main section article img {
@@ -459,14 +573,19 @@ main section article img {
 }
 
 /* Receita: grid de metadados e listas com quebra real, sem texto escapando. */
-dl.grid > div { min-width: 0; }
-dl.grid dt, dl.grid dd {
+dl.grid > div {
+  min-width: 0;
+}
+dl.grid dt,
+dl.grid dd {
   min-width: 0;
   overflow-wrap: anywhere;
   line-height: 1.2;
 }
 main section article ol,
-main section article ul { min-width: 0; }
+main section article ul {
+  min-width: 0;
+}
 main section article li {
   min-width: 0;
   align-items: flex-start;
@@ -478,7 +597,9 @@ main section article li > p {
   overflow-wrap: anywhere;
 }
 main section article h3,
-main section article h4 { overflow-wrap: anywhere; }
+main section article h4 {
+  overflow-wrap: anywhere;
+}
 
 /* Mantém espaçamento regular e alinhamento visual sem elementos inclinados. */
 main > section {
@@ -518,7 +639,7 @@ main > section > div {
     order: 1 !important;
     width: 100% !important;
     transform: none !important;
-    padding: .9rem !important;
+    padding: 0.9rem !important;
     border-width: 4px !important;
     border-radius: 1.45rem !important;
   }
@@ -536,8 +657,9 @@ main > section > div {
     border-radius: 1.35rem !important;
     overflow: hidden !important;
     transform: none !important;
-    box-shadow: 0 7px 0 color-mix(in oklab, var(--kid-blue) 32%, white),
-      0 14px 24px -20px rgba(38, 75, 54, .35) !important;
+    box-shadow:
+      0 7px 0 color-mix(in oklab, var(--kid-blue) 32%, white),
+      0 14px 24px -20px rgba(38, 75, 54, 0.35) !important;
   }
 
   main > section:first-child .hero-visual-grid > .hero-child-card img {
@@ -560,16 +682,16 @@ main > section > div {
     flex: 1 1 57% !important;
     flex-direction: column !important;
     justify-content: center !important;
-    gap: .4rem !important;
+    gap: 0.4rem !important;
     width: 57% !important;
-    padding: .9rem .8rem !important;
+    padding: 0.9rem 0.8rem !important;
     background: var(--primary) !important;
   }
 
   main > section:first-child .hero-visual-grid > .hero-child-card > div p:first-child {
-    font-size: .55rem !important;
+    font-size: 0.55rem !important;
     line-height: 1.25 !important;
-    letter-spacing: .07em !important;
+    letter-spacing: 0.07em !important;
   }
 
   main > section:first-child .hero-visual-grid > .hero-child-card > div p:last-child {

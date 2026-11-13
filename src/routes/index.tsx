@@ -1,12 +1,33 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
-import { Check, Sparkles, CalendarDays, Shuffle, BookOpen, Coffee, Apple, Home, FileText, Smartphone, Lock, Gift, ShieldCheck, Users } from "lucide-react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Check,
+  Sparkles,
+  CalendarDays,
+  Shuffle,
+  BookOpen,
+  Coffee,
+  Apple,
+  Home,
+  FileText,
+  Smartphone,
+  Lock,
+  Gift,
+  ShieldCheck,
+  Users,
+} from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { RecipeCard, type Recipe } from "@/components/pequesabor/RecipeCard";
 import { CHECKOUT, goToCheckout, track } from "@/lib/tracking";
 
 const TITLE = "Buen Bocado | 60 recetas para renovar la lonchera de tu peque";
-const DESC = "¿Tu peque se aburre de la lonchera? Encuentra inspiración para preparar meriendas y comidas caseras que den ganas de probar.";
+const DESC =
+  "¿Tu peque se aburre de la lonchera? Encuentra inspiración para preparar meriendas y comidas caseras que den ganas de probar.";
 
 /* Free-to-use Pexels photos. Creator and source pages:
    Change C.C: https://www.pexels.com/photo/asian-lunch-bento-box-with-assorted-dishes-35211816/
@@ -39,52 +60,95 @@ const DESC = "¿Tu peque se aburre de la lonchera? Encuentra inspiración para p
    alleksana: https://www.pexels.com/photo/close-up-photo-of-delicious-muffins-4051588/
    Elena Leya: https://www.pexels.com/photo/cooked-food-on-blue-ceramic-plate-9568318/ */
 const FOOD_PHOTOS = {
-  lunchboxes: "https://images.pexels.com/photos/5852270/pexels-photo-5852270.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  lunchboxDetail: "https://images.pexels.com/photos/34275219/pexels-photo-34275219.jpeg?auto=compress&cs=tinysrgb&w=1800",
-  lunchboxHands: "https://images.pexels.com/photos/7322629/pexels-photo-7322629.jpeg?auto=compress&cs=tinysrgb&w=1800",
-  schoolBoys: "https://images.pexels.com/photos/4051588/pexels-photo-4051588.jpeg?auto=compress&cs=tinysrgb&w=1800",
-  bentoModern: "https://images.pexels.com/photos/35211816/pexels-photo-35211816.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  lunchboxModern: "https://images.pexels.com/photos/5905680/pexels-photo-5905680.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  lunchboxColorful: "https://images.pexels.com/photos/5852270/pexels-photo-5852270.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  lunchboxFruit: "https://images.pexels.com/photos/5852332/pexels-photo-5852332.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  lunchboxMix: "https://images.pexels.com/photos/5852335/pexels-photo-5852335.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  lunchboxTop: "https://images.pexels.com/photos/5852285/pexels-photo-5852285.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  proofLunchboxOne: "https://images.pexels.com/photos/5852326/pexels-photo-5852326.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  proofLunchboxTwo: "https://images.pexels.com/photos/5852457/pexels-photo-5852457.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  lunchboxBlue: "https://images.pexels.com/photos/5852341/pexels-photo-5852341.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  freshLunch: "https://images.pexels.com/photos/8617558/pexels-photo-8617558.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  freshFruit: "https://images.pexels.com/photos/35439983/pexels-photo-35439983.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  miniPancakes: "https://images.pexels.com/photos/36564998/pexels-photo-36564998.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  snackTable: "https://images.pexels.com/photos/34227785/pexels-photo-34227785.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  lunchboxAlt: "https://images.pexels.com/photos/5852457/pexels-photo-5852457.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  fruitPlate: "https://images.pexels.com/photos/5852331/pexels-photo-5852331.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  pancakePlate: "https://images.pexels.com/photos/12833165/pexels-photo-12833165.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  lunchboxPurple: "https://images.pexels.com/photos/5971998/pexels-photo-5971998.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  lunchboxVibrant: "https://images.pexels.com/photos/7182999/pexels-photo-7182999.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  kidsSnacks: "https://images.pexels.com/photos/9568318/pexels-photo-9568318.jpeg?auto=compress&cs=tinysrgb&w=1800",
-  pizza: "https://images.pexels.com/photos/34275219/pexels-photo-34275219/free-photo-of-delicious-mini-pizzas-with-toppings-on-tray.jpeg?auto=compress&dpr=1&h=1100&w=1800",
-  pizzaPrep: "https://images.pexels.com/photos/7322629/pexels-photo-7322629.jpeg?auto=compress&cs=tinysrgb&w=1800",
-  muffins: "https://images.pexels.com/photos/4051588/pexels-photo-4051588.jpeg?auto=compress&cs=tinysrgb&w=1800",
-  cheeseSticks: "https://images.pexels.com/photos/9568318/pexels-photo-9568318.jpeg?auto=compress&cs=tinysrgb&w=1800",
-  pancakeAlt: "https://images.pexels.com/photos/17751916/pexels-photo-17751916.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  pancakeAltTwo: "https://images.pexels.com/photos/17751910/pexels-photo-17751910.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  miniPizzaRecipe: "https://images.pexels.com/photos/4203043/pexels-photo-4203043.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  pizzaCloseup: "https://images.pexels.com/photos/5953574/pexels-photo-5953574.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  muffinsAlt: "https://images.pexels.com/photos/30388621/pexels-photo-30388621.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  muffinsAltTwo: "https://images.pexels.com/photos/10815917/pexels-photo-10815917.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  savoryMuffins: "https://images.pexels.com/photos/34501162/pexels-photo-34501162.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  spinachMiniPizza: "https://images.pexels.com/photos/37182338/pexels-photo-37182338.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  cheeseSticksAlt: "https://images.pexels.com/photos/10065184/pexels-photo-10065184.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  lunchboxFruitAlt: "https://images.pexels.com/photos/5852322/pexels-photo-5852322.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  lunchboxAltOne: "https://images.pexels.com/photos/5852330/pexels-photo-5852330.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  lunchboxAltTwo: "https://images.pexels.com/photos/5852329/pexels-photo-5852329.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  lunchboxAltThree: "https://images.pexels.com/photos/5852279/pexels-photo-5852279.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  lunchboxAltFour: "https://images.pexels.com/photos/5852287/pexels-photo-5852287.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  lunchboxAltFive: "https://images.pexels.com/photos/5852319/pexels-photo-5852319.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  fruitBlue: "https://images.pexels.com/photos/35439982/pexels-photo-35439982.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  familyKitchen: "https://images.pexels.com/photos/8657194/pexels-photo-8657194.jpeg?auto=compress&cs=tinysrgb&w=2000",
-} as const;;
-
+  lunchboxes:
+    "https://images.pexels.com/photos/5852270/pexels-photo-5852270.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxDetail:
+    "https://images.pexels.com/photos/34275219/pexels-photo-34275219.jpeg?auto=compress&cs=tinysrgb&w=1800",
+  lunchboxHands:
+    "https://images.pexels.com/photos/7322629/pexels-photo-7322629.jpeg?auto=compress&cs=tinysrgb&w=1800",
+  schoolBoys:
+    "https://images.pexels.com/photos/4051588/pexels-photo-4051588.jpeg?auto=compress&cs=tinysrgb&w=1800",
+  bentoModern:
+    "https://images.pexels.com/photos/35211816/pexels-photo-35211816.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxModern:
+    "https://images.pexels.com/photos/5905680/pexels-photo-5905680.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxColorful:
+    "https://images.pexels.com/photos/5852270/pexels-photo-5852270.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxFruit:
+    "https://images.pexels.com/photos/5852332/pexels-photo-5852332.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxMix:
+    "https://images.pexels.com/photos/5852335/pexels-photo-5852335.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxTop:
+    "https://images.pexels.com/photos/5852285/pexels-photo-5852285.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  proofLunchboxOne:
+    "https://images.pexels.com/photos/5852326/pexels-photo-5852326.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  proofLunchboxTwo:
+    "https://images.pexels.com/photos/5852457/pexels-photo-5852457.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  lunchboxBlue:
+    "https://images.pexels.com/photos/5852341/pexels-photo-5852341.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  freshLunch:
+    "https://images.pexels.com/photos/8617558/pexels-photo-8617558.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  freshFruit:
+    "https://images.pexels.com/photos/35439983/pexels-photo-35439983.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  miniPancakes:
+    "https://images.pexels.com/photos/36564998/pexels-photo-36564998.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  snackTable:
+    "https://images.pexels.com/photos/34227785/pexels-photo-34227785.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxAlt:
+    "https://images.pexels.com/photos/5852457/pexels-photo-5852457.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  fruitPlate:
+    "https://images.pexels.com/photos/5852331/pexels-photo-5852331.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  pancakePlate:
+    "https://images.pexels.com/photos/12833165/pexels-photo-12833165.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxPurple:
+    "https://images.pexels.com/photos/5971998/pexels-photo-5971998.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxVibrant:
+    "https://images.pexels.com/photos/7182999/pexels-photo-7182999.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  kidsSnacks:
+    "https://images.pexels.com/photos/9568318/pexels-photo-9568318.jpeg?auto=compress&cs=tinysrgb&w=1800",
+  pizza:
+    "https://images.pexels.com/photos/34275219/pexels-photo-34275219/free-photo-of-delicious-mini-pizzas-with-toppings-on-tray.jpeg?auto=compress&dpr=1&h=1100&w=1800",
+  pizzaPrep:
+    "https://images.pexels.com/photos/7322629/pexels-photo-7322629.jpeg?auto=compress&cs=tinysrgb&w=1800",
+  muffins:
+    "https://images.pexels.com/photos/4051588/pexels-photo-4051588.jpeg?auto=compress&cs=tinysrgb&w=1800",
+  cheeseSticks:
+    "https://images.pexels.com/photos/9568318/pexels-photo-9568318.jpeg?auto=compress&cs=tinysrgb&w=1800",
+  pancakeAlt:
+    "https://images.pexels.com/photos/17751916/pexels-photo-17751916.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  pancakeAltTwo:
+    "https://images.pexels.com/photos/17751910/pexels-photo-17751910.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  miniPizzaRecipe:
+    "https://images.pexels.com/photos/4203043/pexels-photo-4203043.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  pizzaCloseup:
+    "https://images.pexels.com/photos/5953574/pexels-photo-5953574.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  muffinsAlt:
+    "https://images.pexels.com/photos/30388621/pexels-photo-30388621.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  muffinsAltTwo:
+    "https://images.pexels.com/photos/10815917/pexels-photo-10815917.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  savoryMuffins:
+    "https://images.pexels.com/photos/34501162/pexels-photo-34501162.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  spinachMiniPizza:
+    "https://images.pexels.com/photos/37182338/pexels-photo-37182338.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  cheeseSticksAlt:
+    "https://images.pexels.com/photos/10065184/pexels-photo-10065184.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxFruitAlt:
+    "https://images.pexels.com/photos/5852322/pexels-photo-5852322.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxAltOne:
+    "https://images.pexels.com/photos/5852330/pexels-photo-5852330.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxAltTwo:
+    "https://images.pexels.com/photos/5852329/pexels-photo-5852329.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxAltThree:
+    "https://images.pexels.com/photos/5852279/pexels-photo-5852279.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxAltFour:
+    "https://images.pexels.com/photos/5852287/pexels-photo-5852287.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  lunchboxAltFive:
+    "https://images.pexels.com/photos/5852319/pexels-photo-5852319.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  fruitBlue:
+    "https://images.pexels.com/photos/35439982/pexels-photo-35439982.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  familyKitchen:
+    "https://images.pexels.com/photos/8657194/pexels-photo-8657194.jpeg?auto=compress&cs=tinysrgb&w=2000",
+} as const;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -111,7 +175,13 @@ const TERMS_URL = "/terminos-y-condiciones";
 const REFUND_URL = "/politica-de-reembolso";
 
 /* ---------- Shared UI ---------- */
-function CtaToPlans({ children, variant = "primary" }: { children: ReactNode; variant?: "primary" | "coral" }) {
+function CtaToPlans({
+  children,
+  variant = "primary",
+}: {
+  children: ReactNode;
+  variant?: "primary" | "coral";
+}) {
   const cls =
     variant === "coral"
       ? "bg-coral text-coral-foreground hover:brightness-95"
@@ -126,7 +196,15 @@ function CtaToPlans({ children, variant = "primary" }: { children: ReactNode; va
   );
 }
 
-function Section({ id, className = "", children }: { id?: string; className?: string; children: ReactNode }) {
+function Section({
+  id,
+  className = "",
+  children,
+}: {
+  id?: string;
+  className?: string;
+  children: ReactNode;
+}) {
   return (
     <section id={id} className={`px-5 py-16 md:py-24 ${className}`}>
       <div className="mx-auto max-w-6xl">{children}</div>
@@ -134,19 +212,45 @@ function Section({ id, className = "", children }: { id?: string; className?: st
   );
 }
 
-function Heading({ eyebrow, title, children, center = true }: { eyebrow?: string; title: string; children?: ReactNode; center?: boolean }) {
+function Heading({
+  eyebrow,
+  title,
+  children,
+  center = true,
+}: {
+  eyebrow?: string;
+  title: string;
+  children?: ReactNode;
+  center?: boolean;
+}) {
   return (
     <div className={`${center ? "mx-auto text-center" : ""} max-w-3xl`}>
       {eyebrow && <p className="eyebrow">{eyebrow}</p>}
-      <h2 className="mt-3 text-3xl font-extrabold leading-[1.1] text-primary md:text-5xl">{title}</h2>
-      {children && <div className="mt-5 space-y-3 text-lg leading-relaxed text-muted-foreground">{children}</div>}
+      <h2 className="mt-3 text-3xl font-extrabold leading-[1.1] text-primary md:text-5xl">
+        {title}
+      </h2>
+      {children && (
+        <div className="mt-5 space-y-3 text-lg leading-relaxed text-muted-foreground">
+          {children}
+        </div>
+      )}
     </div>
   );
 }
 
-function PhotoSlot({ label, src, className = "" }: { label: string; src: string; className?: string }) {
+function PhotoSlot({
+  label,
+  src,
+  className = "",
+}: {
+  label: string;
+  src: string;
+  className?: string;
+}) {
   return (
-    <figure className={`group relative overflow-hidden rounded-[1.6rem] bg-secondary shadow-card ${className}`}>
+    <figure
+      className={`group relative overflow-hidden rounded-[1.6rem] bg-secondary shadow-card ${className}`}
+    >
       <img
         src={src}
         alt={label}
@@ -154,7 +258,10 @@ function PhotoSlot({ label, src, className = "" }: { label: string; src: string;
         decoding="async"
         className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" aria-hidden />
+      <div
+        className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent"
+        aria-hidden
+      />
       <figcaption className="absolute bottom-3 left-3 rounded-full border border-white/30 bg-white/90 px-3 py-1.5 text-xs font-extrabold text-primary shadow-card">
         {label}
       </figcaption>
@@ -169,25 +276,53 @@ function HeroVisual() {
       <div className="absolute inset-8 rotate-3 rounded-[3rem] bg-secondary" aria-hidden />
       <div className="hero-visual-grid relative grid grid-cols-[0.9fr_1.1fr] items-center gap-3 sm:gap-5 max-sm:grid-cols-1 max-sm:gap-4">
         <div className="relative z-10 order-1 overflow-hidden rounded-[1.65rem] border-4 border-white bg-primary p-3 shadow-[0_24px_55px_rgba(25,55,42,0.24)] sm:order-none sm:-rotate-3 sm:rounded-[2rem] sm:p-4">
-          <p className="text-center text-[9px] font-extrabold uppercase tracking-[0.2em] text-white/85 sm:text-xs">Buen Bocado</p>
+          <p className="text-center text-[9px] font-extrabold uppercase tracking-[0.2em] text-white/85 sm:text-xs">
+            Buen Bocado
+          </p>
           <div className="mt-3 overflow-hidden rounded-xl border border-white/20">
-            <img src={FOOD_PHOTOS.pizza} alt="Mini pizzas caseras para las loncheras" loading="eager" decoding="async" className="aspect-[4/3] w-full object-cover" />
+            <img
+              src={FOOD_PHOTOS.pizza}
+              alt="Mini pizzas caseras para las loncheras"
+              loading="eager"
+              decoding="async"
+              className="aspect-[4/3] w-full object-cover"
+            />
           </div>
-          <h3 className="mt-3 text-center font-display text-lg font-extrabold leading-tight text-white sm:text-2xl">60 recetas para loncheras escolares</h3>
-          <p className="mt-2 text-center text-[9px] font-bold uppercase tracking-wide text-white/80 sm:text-[11px]">Ideas dulces y saladas en Air Fryer</p>
-          <div className="mt-3 rounded-lg bg-white px-2 py-1.5 text-center text-[9px] font-extrabold uppercase tracking-wider text-primary sm:text-[10px]">Guía digital en PDF</div>
+          <h3 className="mt-3 text-center font-display text-lg font-extrabold leading-tight text-white sm:text-2xl">
+            60 recetas para loncheras escolares
+          </h3>
+          <p className="mt-2 text-center text-[9px] font-bold uppercase tracking-wide text-white/80 sm:text-[11px]">
+            Ideas dulces y saladas en Air Fryer
+          </p>
+          <div className="mt-3 rounded-lg bg-white px-2 py-1.5 text-center text-[9px] font-extrabold uppercase tracking-wider text-primary sm:text-[10px]">
+            Guía digital en PDF
+          </div>
         </div>
         <div className="hero-child-card relative order-2 aspect-[16/9] min-h-0 overflow-hidden rounded-[1.5rem] border-4 border-white bg-card shadow-soft sm:order-none sm:aspect-[3/2] sm:rounded-[2.2rem]">
-          <img src="https://images.pexels.com/photos/5593170/pexels-photo-5593170.jpeg?auto=compress&cs=tinysrgb&w=2000" alt="Niña acercándose a una pizza casera recién preparada en la cocina" loading="eager" decoding="async" className="h-full w-full object-cover object-center" />
+          <img
+            src="https://images.pexels.com/photos/5593170/pexels-photo-5593170.jpeg?auto=compress&cs=tinysrgb&w=2000"
+            alt="Niña acercándose a una pizza casera recién preparada en la cocina"
+            loading="eager"
+            decoding="async"
+            className="h-full w-full object-cover object-center"
+          />
           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/85 to-transparent px-3 pb-4 pt-12 text-white sm:px-5 sm:pb-5">
-            <p className="text-[9px] font-extrabold uppercase tracking-[0.16em] sm:text-xs">Más variedad, menos improvisación</p>
-            <p className="mt-1 font-display text-base font-extrabold leading-tight sm:text-xl">Ideas para cada día</p>
+            <p className="text-[9px] font-extrabold uppercase tracking-[0.16em] sm:text-xs">
+              Más variedad, menos improvisación
+            </p>
+            <p className="mt-1 font-display text-base font-extrabold leading-tight sm:text-xl">
+              Ideas para cada día
+            </p>
           </div>
         </div>
       </div>
       <div className="relative ml-auto mt-4 w-fit rounded-2xl border border-primary/10 bg-card px-4 py-3 shadow-card">
-        <p className="font-display text-2xl font-extrabold leading-none text-primary sm:text-3xl">6 × 10</p>
-        <p className="mt-1 text-[9px] font-extrabold uppercase tracking-wide text-muted-foreground sm:text-[10px]">categorías y recetas</p>
+        <p className="font-display text-2xl font-extrabold leading-none text-primary sm:text-3xl">
+          6 × 10
+        </p>
+        <p className="mt-1 text-[9px] font-extrabold uppercase tracking-wide text-muted-foreground sm:text-[10px]">
+          categorías y recetas
+        </p>
       </div>
     </div>
   );
@@ -196,29 +331,61 @@ function HeroVisual() {
 /* ---------- Data ---------- */
 const RECIPES: Recipe[] = [
   {
-    page: 12, category: "Loncheras", image: FOOD_PHOTOS.miniPizzaRecipe, imageAlt: "Mini pizzas recién preparadas", title: "Mini pizzas para la lonchera", prep: "15 min", temp: "180 °C", fryer: "8 min", tone: "coral",
+    page: 12,
+    category: "Loncheras",
+    image: FOOD_PHOTOS.miniPizzaRecipe,
+    imageAlt: "Mini pizzas recién preparadas",
+    title: "Mini pizzas para la lonchera",
+    prep: "15 min",
+    temp: "180 °C",
+    fryer: "8 min",
+    tone: "coral",
     ingredients: [
       { kind: "bread", text: "4 panes pequeños o masa base" },
       { kind: "tomato", text: "4 cdas. de salsa de tomate" },
       { kind: "cheese", text: "1 taza de queso rallado" },
       { kind: "leaf", text: "Orégano al gusto" },
     ],
-    steps: ["Cubre cada base con salsa.", "Agrega el queso y el orégano.", "Cocina en la Air Fryer hasta gratinar."],
+    steps: [
+      "Cubre cada base con salsa.",
+      "Agrega el queso y el orégano.",
+      "Cocina en la Air Fryer hasta gratinar.",
+    ],
     tip: "Déjalas enfriar antes de guardarlas para que no se humedezcan.",
   },
   {
-    page: 24, category: "Desayunos", image: FOOD_PHOTOS.muffins, imageAlt: "Muffins caseros con frutos rojos", title: "Muffins de banana y avena", prep: "10 min", temp: "160 °C", fryer: "12 min", tone: "butter",
+    page: 24,
+    category: "Desayunos",
+    image: FOOD_PHOTOS.muffins,
+    imageAlt: "Muffins caseros con frutos rojos",
+    title: "Muffins de banana y avena",
+    prep: "10 min",
+    temp: "160 °C",
+    fryer: "12 min",
+    tone: "butter",
     ingredients: [
       { kind: "banana", text: "2 bananas maduras" },
       { kind: "oat", text: "1 taza de avena" },
       { kind: "egg", text: "2 huevos" },
       { kind: "flour", text: "1 cdta. de polvo de hornear" },
     ],
-    steps: ["Tritura las bananas.", "Mezcla con los demás ingredientes.", "Distribuye en moldes y cocina."],
+    steps: [
+      "Tritura las bananas.",
+      "Mezcla con los demás ingredientes.",
+      "Distribuye en moldes y cocina.",
+    ],
     tip: "Usa moldes de silicona para desmoldar con facilidad.",
   },
   {
-    page: 31, category: "Snacks salados", image: FOOD_PHOTOS.cheeseSticks, imageAlt: "Bastones de queso dorados con salsa", title: "Palitos de queso", prep: "12 min", temp: "190 °C", fryer: "6 min", tone: "sage",
+    page: 31,
+    category: "Snacks salados",
+    image: FOOD_PHOTOS.cheeseSticks,
+    imageAlt: "Bastones de queso dorados con salsa",
+    title: "Palitos de queso",
+    prep: "12 min",
+    temp: "190 °C",
+    fryer: "6 min",
+    tone: "sage",
     ingredients: [
       { kind: "cheese", text: "200 g de queso en bastones" },
       { kind: "egg", text: "1 huevo batido" },
@@ -228,7 +395,15 @@ const RECIPES: Recipe[] = [
     tip: "Congélalos 15 min antes de cocinar para que mantengan la forma.",
   },
   {
-    page: 45, category: "Para compartir", image: FOOD_PHOTOS.lunchboxFruit, imageAlt: "Lonchera con sándwiches y frutas", title: "Sándwiches y bocadillos", prep: "10 min", temp: "175 °C", fryer: "5 min", tone: "butter",
+    page: 45,
+    category: "Para compartir",
+    image: FOOD_PHOTOS.lunchboxFruit,
+    imageAlt: "Lonchera con sándwiches y frutas",
+    title: "Sándwiches y bocadillos",
+    prep: "10 min",
+    temp: "175 °C",
+    fryer: "5 min",
+    tone: "butter",
     ingredients: [
       { kind: "bread", text: "4 rebanadas de pan" },
       { kind: "cheese", text: "4 lonchas de queso" },
@@ -240,23 +415,83 @@ const RECIPES: Recipe[] = [
 ];
 
 const CATEGORIES = [
-  { n: "01", t: "Desayunos para comenzar el día", photo: FOOD_PHOTOS.miniPancakes, alt: "Mini pancakes dorados para el desayuno", school: false },
-  { n: "02", t: "Pequeños momentos de merienda", photo: FOOD_PHOTOS.pancakeAlt, alt: "Mini pancakes caseros para la merienda", school: false },
-  { n: "03", t: "Snacks salados para cualquier momento", photo: FOOD_PHOTOS.snackTable, alt: "Variedad de snacks frescos y coloridos", school: true },
-  { n: "04", t: "Preparaciones con mucho sabor", photo: FOOD_PHOTOS.lunchboxTop, alt: "Loncheras variadas con sándwiches y vegetales", school: true },
-  { n: "05", t: "Pequeños momentos dulces", photo: FOOD_PHOTOS.muffinsAlt, alt: "Muffins caseros para una merienda dulce", school: false },
-  { n: "06", t: "Favoritos para compartir", photo: FOOD_PHOTOS.lunchboxColorful, alt: "Lonchera moderna con compartimentos y variedad de bocadillos", school: false },
+  {
+    n: "01",
+    t: "Desayunos para comenzar el día",
+    photo: FOOD_PHOTOS.miniPancakes,
+    alt: "Mini pancakes dorados para el desayuno",
+    school: false,
+  },
+  {
+    n: "02",
+    t: "Pequeños momentos de merienda",
+    photo: FOOD_PHOTOS.pancakeAlt,
+    alt: "Mini pancakes caseros para la merienda",
+    school: false,
+  },
+  {
+    n: "03",
+    t: "Snacks salados para cualquier momento",
+    photo: FOOD_PHOTOS.snackTable,
+    alt: "Variedad de snacks frescos y coloridos",
+    school: true,
+  },
+  {
+    n: "04",
+    t: "Preparaciones con mucho sabor",
+    photo: FOOD_PHOTOS.lunchboxTop,
+    alt: "Loncheras variadas con sándwiches y vegetales",
+    school: true,
+  },
+  {
+    n: "05",
+    t: "Pequeños momentos dulces",
+    photo: FOOD_PHOTOS.muffinsAlt,
+    alt: "Muffins caseros para una merienda dulce",
+    school: false,
+  },
+  {
+    n: "06",
+    t: "Favoritos para compartir",
+    photo: FOOD_PHOTOS.lunchboxColorful,
+    alt: "Lonchera moderna con compartimentos y variedad de bocadillos",
+    school: false,
+  },
 ];
 
 const FAQ = [
-  ["¿Qué es Buen Bocado?", "Buen Bocado es una guía digital con 60 recetas para preparar en Air Fryer, especialmente pensada para ayudarte a encontrar nuevas ideas para las loncheras escolares."],
-  ["¿Qué incluye el producto?", "Incluye 60 recetas con ingredientes, cantidades, instrucciones y orientaciones de preparación. El Plan Premium suma además dos materiales extra: “15 Snacks para Niños con Paladar Selectivo” y la “Guía de Cambios y Sustituciones”."],
-  ["¿Las recetas son solo para la escuela?", "No. Aunque la guía está enfocada en las loncheras escolares, también encontrarás ideas que puedes aprovechar para desayunos y meriendas en casa."],
-  ["¿Necesito una Air Fryer?", "Sí. Las recetas están diseñadas para prepararse utilizando una Air Fryer."],
-  ["¿Cómo recibiré el producto?", "Después de la confirmación del pago, recibirás las instrucciones para acceder al contenido a través de la plataforma de Cakto."],
-  ["¿Puedo consultarlo desde mi celular?", "Sí. Puedes acceder al material desde dispositivos compatibles, como celulares, tablets y computadoras."],
-  ["¿Cuál es la diferencia entre los planes?", "El Plan Premium incluye todo el contenido del Básico, acceso ilimitado, futuras actualizaciones cuando estén disponibles y los dos materiales extra. El Plan Básico tiene el período de acceso indicado en las condiciones de compra."],
-  ["¿Las recetas garantizan resultados nutricionales?", "No. Buen Bocado es una guía de ideas culinarias y no sustituye la orientación individual de profesionales de salud o nutrición."],
+  [
+    "¿Qué es Buen Bocado?",
+    "Buen Bocado es una guía digital con 60 recetas para preparar en Air Fryer, especialmente pensada para ayudarte a encontrar nuevas ideas para las loncheras escolares.",
+  ],
+  [
+    "¿Qué incluye el producto?",
+    "Incluye 60 recetas con ingredientes, cantidades, instrucciones y orientaciones de preparación. El Plan Premium suma además dos materiales extra: “15 Snacks para Niños con Paladar Selectivo” y la “Guía de Cambios y Sustituciones”.",
+  ],
+  [
+    "¿Las recetas son solo para la escuela?",
+    "No. Aunque la guía está enfocada en las loncheras escolares, también encontrarás ideas que puedes aprovechar para desayunos y meriendas en casa.",
+  ],
+  [
+    "¿Necesito una Air Fryer?",
+    "Sí. Las recetas están diseñadas para prepararse utilizando una Air Fryer.",
+  ],
+  [
+    "¿Cómo recibiré el producto?",
+    "Después de la confirmación del pago, recibirás las instrucciones para acceder al contenido a través de la plataforma de Cakto.",
+  ],
+  [
+    "¿Puedo consultarlo desde mi celular?",
+    "Sí. Puedes acceder al material desde dispositivos compatibles, como celulares, tablets y computadoras.",
+  ],
+  [
+    "¿Cuál es la diferencia entre los planes?",
+    "El Plan Premium incluye todo el contenido del Básico, acceso ilimitado, futuras actualizaciones cuando estén disponibles y los dos materiales extra. El Plan Básico tiene el período de acceso indicado en las condiciones de compra.",
+  ],
+  [
+    "¿Las recetas garantizan resultados nutricionales?",
+    "No. Buen Bocado es una guía de ideas culinarias y no sustituye la orientación individual de profesionales de salud o nutrición.",
+  ],
 ];
 
 /* ---------- Page ---------- */
@@ -271,7 +506,10 @@ function Index() {
       <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
           <Logo />
-          <a href="#planes" className="rounded-full bg-primary px-4 py-2 text-sm font-bold text-primary-foreground">
+          <a
+            href="#planes"
+            className="rounded-full bg-primary px-4 py-2 text-sm font-bold text-primary-foreground"
+          >
             Ver planes
           </a>
         </div>
@@ -287,22 +525,32 @@ function Index() {
                 ¿Otra vez volvió la lonchera casi intacta? ¡Se acabó improvisar cada mañana!
               </h1>
               <p className="mt-5 font-display text-xl font-bold text-foreground md:text-2xl">
-                Deja de pelear con la rutina y de quedarte sin ideas. Prepara bocados caseros que despierten su curiosidad y hagan que la lonchera vuelva a ser emocionante.
+                Deja de pelear con la rutina y de quedarte sin ideas. Prepara bocados caseros que
+                despierten su curiosidad y hagan que la lonchera vuelva a ser emocionante.
               </p>
               <p className="mt-3 max-w-xl text-lg leading-relaxed text-muted-foreground">
-                Si ya probaste de todo y sientes que siempre terminas preparando lo mismo, esta guía te ayuda a cambiar el menú: 60 ideas dulces y saladas para Air Fryer, pensadas para las loncheras, meriendas y pequeños antojos de tus hijos.
+                Si ya probaste de todo y sientes que siempre terminas preparando lo mismo, esta guía
+                te ayuda a cambiar el menú: 60 ideas dulces y saladas para Air Fryer, pensadas para
+                las loncheras, meriendas y pequeños antojos de tus hijos.
               </p>
               <ul className="mt-6 flex flex-wrap gap-2">
-                {["Más variedad cada semana", "Ideas dulces y saladas", "Fáciles en Air Fryer"].map((t) => (
-                  <li key={t} className="inline-flex items-center gap-1.5 rounded-full border border-primary/15 bg-card px-3 py-1.5 text-sm font-bold uppercase tracking-wide text-primary">
-                    <Check className="h-4 w-4 text-coral" aria-hidden /> {t}
-                  </li>
-                ))}
+                {["Más variedad cada semana", "Ideas dulces y saladas", "Fáciles en Air Fryer"].map(
+                  (t) => (
+                    <li
+                      key={t}
+                      className="inline-flex items-center gap-1.5 rounded-full border border-primary/15 bg-card px-3 py-1.5 text-sm font-bold uppercase tracking-wide text-primary"
+                    >
+                      <Check className="h-4 w-4 text-coral" aria-hidden /> {t}
+                    </li>
+                  ),
+                )}
               </ul>
               <div className="mt-8 flex flex-col items-start gap-3">
                 <CtaToPlans>Quiero dejar de improvisar</CtaToPlans>
                 <p className="text-sm text-muted-foreground">
-                  A partir de <strong className="font-display text-lg text-primary">US$ 9,90</strong> · Producto digital en PDF
+                  A partir de{" "}
+                  <strong className="font-display text-lg text-primary">US$ 9,90</strong> · Producto
+                  digital en PDF
                 </p>
               </div>
             </div>
@@ -314,17 +562,37 @@ function Index() {
         <Section>
           <div className="grid items-center gap-10 md:grid-cols-2">
             <div className="grid grid-cols-2 gap-3">
-              <PhotoSlot label="Mini pizzas caseras para la merienda" src={FOOD_PHOTOS.pizzaPrep} className="col-span-2 aspect-[16/10]" />
-              <PhotoSlot label="Merienda fresca" src={FOOD_PHOTOS.freshFruit} className="aspect-square" />
-              <PhotoSlot label="Bento para el recreo" src={FOOD_PHOTOS.bentoModern} className="aspect-square" />
+              <PhotoSlot
+                label="Mini pizzas caseras para la merienda"
+                src={FOOD_PHOTOS.pizzaPrep}
+                className="col-span-2 aspect-[16/10]"
+              />
+              <PhotoSlot
+                label="Merienda fresca"
+                src={FOOD_PHOTOS.freshFruit}
+                className="aspect-square"
+              />
+              <PhotoSlot
+                label="Bento para el recreo"
+                src={FOOD_PHOTOS.bentoModern}
+                className="aspect-square"
+              />
             </div>
             <div>
-              <Heading center={false} eyebrow="La rutina de cada mañana" title="¿Qué poner hoy en la lonchera?">
+              <Heading
+                center={false}
+                eyebrow="La rutina de cada mañana"
+                title="¿Qué poner hoy en la lonchera?"
+              >
                 <p>Cada mañana llega el mismo desafío.</p>
-                <p>Pensar qué preparar, buscar nuevas ideas y evitar que los pequeños lleven siempre los mismos bocadillos a la escuela.</p>
+                <p>
+                  Pensar qué preparar, buscar nuevas ideas y evitar que los pequeños lleven siempre
+                  los mismos bocadillos a la escuela.
+                </p>
                 <p>A veces parece que las opciones se terminan y la creatividad también.</p>
                 <p className="font-semibold text-foreground">
-                  Por eso reunimos 60 recetas en una sola guía: para que tengas opciones a mano y puedas elegir qué preparar sin empezar desde cero cada mañana.
+                  Por eso reunimos 60 recetas en una sola guía: para que tengas opciones a mano y
+                  puedas elegir qué preparar sin empezar desde cero cada mañana.
                 </p>
               </Heading>
             </div>
@@ -335,16 +603,32 @@ function Index() {
         <Section className="bg-primary text-primary-foreground">
           <div className="mx-auto max-w-3xl text-center">
             <p className="eyebrow">La solución</p>
-            <h2 className="mt-3 text-3xl font-extrabold leading-tight md:text-5xl">¡Dile adiós a la falta de ideas para la lonchera!</h2>
+            <h2 className="mt-3 text-3xl font-extrabold leading-tight md:text-5xl">
+              ¡Dile adiós a la falta de ideas para la lonchera!
+            </h2>
             <p className="mt-5 text-lg leading-relaxed opacity-90">
-              Con Buen Bocado tendrás una colección organizada de 60 recetas para descubrir nuevas preparaciones y variar las opciones que acompañan a los pequeños en la escuela. Ideas dulces, saladas y prácticas para preparar con tu Air Fryer.
+              Con Buen Bocado tendrás una colección organizada de 60 recetas para descubrir nuevas
+              preparaciones y variar las opciones que acompañan a los pequeños en la escuela. Ideas
+              dulces, saladas y prácticas para preparar con tu Air Fryer.
             </p>
           </div>
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {[
-              { i: CalendarDays, t: "Más ideas para cada día", d: "Encuentra nuevas opciones para salir de la rutina de repetir siempre los mismos bocadillos." },
-              { i: Shuffle, t: "Loncheras más variadas", d: "Descubre diferentes combinaciones de preparaciones dulces y saladas." },
-              { i: BookOpen, t: "Todo organizado en un solo lugar", d: "Consulta las recetas con ingredientes, cantidades e instrucciones paso a paso." },
+              {
+                i: CalendarDays,
+                t: "Más ideas para cada día",
+                d: "Encuentra nuevas opciones para salir de la rutina de repetir siempre los mismos bocadillos.",
+              },
+              {
+                i: Shuffle,
+                t: "Loncheras más variadas",
+                d: "Descubre diferentes combinaciones de preparaciones dulces y saladas.",
+              },
+              {
+                i: BookOpen,
+                t: "Todo organizado en un solo lugar",
+                d: "Consulta las recetas con ingredientes, cantidades e instrucciones paso a paso.",
+              },
             ].map(({ i: Icon, t, d }, k) => (
               <div key={t} className="rounded-2xl bg-card p-6 text-card-foreground">
                 <div className="flex items-center justify-between">
@@ -362,10 +646,19 @@ function Index() {
 
         {/* 4. POR DENTRO */}
         <Section id="por-dentro">
-          <Heading eyebrow="Así es por dentro" title="¡Mira lo que encontrarás dentro de Buen Bocado!">
+          <Heading
+            eyebrow="Así es por dentro"
+            title="¡Mira lo que encontrarás dentro de Buen Bocado!"
+          >
             <p>No recibirás una simple lista de ideas.</p>
-            <p>Tendrás una guía digital organizada, con recetas presentadas de forma visual, ingredientes, cantidades y preparación paso a paso.</p>
-            <p>Cada ficha está pensada para que encuentres fácilmente lo que necesitas y puedas elegir nuevas opciones para las loncheras escolares.</p>
+            <p>
+              Tendrás una guía digital organizada, con recetas presentadas de forma visual,
+              ingredientes, cantidades y preparación paso a paso.
+            </p>
+            <p>
+              Cada ficha está pensada para que encuentres fácilmente lo que necesitas y puedas
+              elegir nuevas opciones para las loncheras escolares.
+            </p>
           </Heading>
           <div className="-mx-5 mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 md:mx-0 md:grid md:grid-cols-2 md:overflow-visible md:px-0 lg:grid-cols-4">
             {RECIPES.map((r) => (
@@ -378,17 +671,37 @@ function Index() {
 
         {/* 5. 60 RECEITAS */}
         <Section className="bg-secondary">
-          <Heading eyebrow="6 categorías · 10 recetas cada una" title="60 recetas para renovar las loncheras escolares." />
+          <Heading
+            eyebrow="6 categorías · 10 recetas cada una"
+            title="60 recetas para renovar las loncheras escolares."
+          />
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {CATEGORIES.map((c) => (
-              <article key={c.n} className="group overflow-hidden rounded-[1.6rem] bg-card shadow-card transition-transform duration-300 hover:-translate-y-1">
+              <article
+                key={c.n}
+                className="group overflow-hidden rounded-[1.6rem] bg-card shadow-card transition-transform duration-300 hover:-translate-y-1"
+              >
                 <div className="relative h-48 overflow-hidden sm:h-56">
-                  <img src={c.photo} alt={c.alt} loading="lazy" decoding="async" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  {c.school && <span className="absolute left-4 top-4 rounded-full bg-butter px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider text-primary">Ideal para lonchera</span>}
-                  <span className="absolute bottom-3 right-3 rounded-full bg-white/90 px-3 py-1 text-xs font-extrabold text-primary">{c.n} / 06</span>
+                  <img
+                    src={c.photo}
+                    alt={c.alt}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  {c.school && (
+                    <span className="absolute left-4 top-4 rounded-full bg-butter px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider text-primary">
+                      Ideal para lonchera
+                    </span>
+                  )}
+                  <span className="absolute bottom-3 right-3 rounded-full bg-white/90 px-3 py-1 text-xs font-extrabold text-primary">
+                    {c.n} / 06
+                  </span>
                 </div>
                 <div className="p-5">
-                  <p className="font-display text-xs font-extrabold uppercase tracking-widest text-coral">10 recetas</p>
+                  <p className="font-display text-xs font-extrabold uppercase tracking-widest text-coral">
+                    10 recetas
+                  </p>
                   <h3 className="mt-2 text-lg font-extrabold leading-snug text-primary">{c.t}</h3>
                 </div>
               </article>
@@ -399,7 +712,10 @@ function Index() {
         {/* 7. MOMENTOS */}
         <Section className="bg-muted">
           <Heading eyebrow="Y además…" title="Más ideas para disfrutar en diferentes momentos.">
-            <p>Aunque Buen Bocado está pensada para ayudarte con las loncheras escolares, sus recetas también pueden inspirarte para otros momentos del día.</p>
+            <p>
+              Aunque Buen Bocado está pensada para ayudarte con las loncheras escolares, sus recetas
+              también pueden inspirarte para otros momentos del día.
+            </p>
           </Heading>
           <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
             {[
@@ -419,7 +735,11 @@ function Index() {
         {/* 8. PARA QUIÉN */}
         <Section>
           <div className="grid items-center gap-10 md:grid-cols-2">
-            <Heading center={false} eyebrow="¿Para quién es?" title="Una guía pensada para la rutina de las familias." />
+            <Heading
+              center={false}
+              eyebrow="¿Para quién es?"
+              title="Una guía pensada para la rutina de las familias."
+            />
             <ul className="space-y-3">
               {[
                 "Madres que buscan nuevas ideas para las loncheras escolares.",
@@ -440,24 +760,42 @@ function Index() {
 
         {/* INSPIRACIÓN PARA MAMÁS — contenido editorial, no reseñas atribuidas */}
         <Section className="bg-secondary">
-          <Heading eyebrow="Pensado para la rutina de mamá" title="Pequeñas recetas que hacen más especiales las meriendas.">
-            <p>Ideas dulces y saladas para sumar variedad a la lonchera y disfrutar preparando algo rico para los peques.</p>
+          <Heading
+            eyebrow="Pensado para la rutina de mamá"
+            title="Pequeñas recetas que hacen más especiales las meriendas."
+          >
+            <p>
+              Ideas dulces y saladas para sumar variedad a la lonchera y disfrutar preparando algo
+              rico para los peques.
+            </p>
           </Heading>
           <div className="mx-auto mt-10 grid max-w-5xl gap-5 md:grid-cols-3">
             <article className="rounded-3xl border border-primary/10 bg-card p-6 shadow-card">
-              <span className="text-3xl" aria-hidden="true">🍕</span>
+              <span className="text-3xl" aria-hidden="true">
+                🍕
+              </span>
               <h3 className="mt-4 text-xl font-extrabold text-primary">Mini pizzas caseras</h3>
-              <p className="mt-2 leading-relaxed text-muted-foreground">Una idea salada, divertida y fácil de adaptar para compartir con los niños.</p>
+              <p className="mt-2 leading-relaxed text-muted-foreground">
+                Una idea salada, divertida y fácil de adaptar para compartir con los niños.
+              </p>
             </article>
             <article className="rounded-3xl border border-primary/10 bg-card p-6 shadow-card">
-              <span className="text-3xl" aria-hidden="true">🧁</span>
+              <span className="text-3xl" aria-hidden="true">
+                🧁
+              </span>
               <h3 className="mt-4 text-xl font-extrabold text-primary">Meriendas para variar</h3>
-              <p className="mt-2 leading-relaxed text-muted-foreground">Recetas dulces y saladas para salir de la rutina y descubrir nuevas combinaciones.</p>
+              <p className="mt-2 leading-relaxed text-muted-foreground">
+                Recetas dulces y saladas para salir de la rutina y descubrir nuevas combinaciones.
+              </p>
             </article>
             <article className="rounded-3xl border border-primary/10 bg-card p-6 shadow-card">
-              <span className="text-3xl" aria-hidden="true">🍓</span>
+              <span className="text-3xl" aria-hidden="true">
+                🍓
+              </span>
               <h3 className="mt-4 text-xl font-extrabold text-primary">Loncheras con color</h3>
-              <p className="mt-2 leading-relaxed text-muted-foreground">Inspiración para combinar frutas, bocaditos y preparaciones en porciones prácticas.</p>
+              <p className="mt-2 leading-relaxed text-muted-foreground">
+                Inspiración para combinar frutas, bocaditos y preparaciones en porciones prácticas.
+              </p>
             </article>
           </div>
         </Section>
@@ -466,9 +804,19 @@ function Index() {
         <Section className="bg-muted">
           <div className="grid items-center gap-10 md:grid-cols-[0.9fr_1.1fr]">
             <div>
-              <Heading center={false} eyebrow="Un vistazo al contenido" title="Todo organizado para que elegir sea más sencillo.">
-                <p>Buen Bocado reúne recetas dulces y saladas en una guía digital que puedes consultar cuando estés organizando las comidas de la semana.</p>
-                <p>En cada receta encontrarás ingredientes, cantidades y una secuencia de preparación, además de tiempos y temperatura orientativos para Air Fryer.</p>
+              <Heading
+                center={false}
+                eyebrow="Un vistazo al contenido"
+                title="Todo organizado para que elegir sea más sencillo."
+              >
+                <p>
+                  Buen Bocado reúne recetas dulces y saladas en una guía digital que puedes
+                  consultar cuando estés organizando las comidas de la semana.
+                </p>
+                <p>
+                  En cada receta encontrarás ingredientes, cantidades y una secuencia de
+                  preparación, además de tiempos y temperatura orientativos para Air Fryer.
+                </p>
               </Heading>
               <ul className="mt-7 space-y-3">
                 {[
@@ -477,7 +825,10 @@ function Index() {
                   "Fichas visuales con ingredientes y preparación paso a paso.",
                   "Acceso digital para consultar desde tus dispositivos.",
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 rounded-xl bg-card px-4 py-3 text-sm font-semibold text-foreground shadow-sm">
+                  <li
+                    key={item}
+                    className="flex items-start gap-3 rounded-xl bg-card px-4 py-3 text-sm font-semibold text-foreground shadow-sm"
+                  >
                     <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden />
                     {item}
                   </li>
@@ -486,40 +837,113 @@ function Index() {
             </div>
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
               <figure className="col-span-2 overflow-hidden rounded-[1.7rem] bg-card shadow-card">
-                <img src={FOOD_PHOTOS.pizzaCloseup} alt="Mini pizzas caseras recién preparadas" loading="lazy" decoding="async" className="h-52 w-full object-cover sm:h-64" />
+                <img
+                  src={FOOD_PHOTOS.pizzaCloseup}
+                  alt="Mini pizzas caseras recién preparadas"
+                  loading="lazy"
+                  decoding="async"
+                  className="h-52 w-full object-cover sm:h-64"
+                />
                 <figcaption className="p-4">
-                  <p className="text-xs font-extrabold uppercase tracking-widest text-coral">Ideas saladas</p>
-                  <p className="mt-1 font-display text-lg font-extrabold text-primary">Opciones para variar la lonchera</p>
+                  <p className="text-xs font-extrabold uppercase tracking-widest text-coral">
+                    Ideas saladas
+                  </p>
+                  <p className="mt-1 font-display text-lg font-extrabold text-primary">
+                    Opciones para variar la lonchera
+                  </p>
                 </figcaption>
               </figure>
               <figure className="overflow-hidden rounded-[1.5rem] bg-card shadow-card">
-                <img src={FOOD_PHOTOS.pancakeAltTwo} alt="Mini pancakes para desayunos y meriendas" loading="lazy" decoding="async" className="h-36 w-full object-cover sm:h-44" />
+                <img
+                  src={FOOD_PHOTOS.pancakeAltTwo}
+                  alt="Mini pancakes para desayunos y meriendas"
+                  loading="lazy"
+                  decoding="async"
+                  className="h-36 w-full object-cover sm:h-44"
+                />
                 <figcaption className="p-3">
-                  <p className="text-[10px] font-extrabold uppercase tracking-widest text-coral">Ideas dulces</p>
+                  <p className="text-[10px] font-extrabold uppercase tracking-widest text-coral">
+                    Ideas dulces
+                  </p>
                   <p className="mt-1 text-sm font-extrabold text-primary">Desayunos y meriendas</p>
                 </figcaption>
               </figure>
               <figure className="overflow-hidden rounded-[1.5rem] bg-card shadow-card">
-                <img src={FOOD_PHOTOS.savoryMuffins} alt="Muffins caseros de banana y avena" loading="lazy" decoding="async" className="h-36 w-full object-cover sm:h-44" />
+                <img
+                  src={FOOD_PHOTOS.savoryMuffins}
+                  alt="Muffins caseros de banana y avena"
+                  loading="lazy"
+                  decoding="async"
+                  className="h-36 w-full object-cover sm:h-44"
+                />
                 <figcaption className="p-3">
-                  <p className="text-[10px] font-extrabold uppercase tracking-widest text-coral">Para compartir</p>
+                  <p className="text-[10px] font-extrabold uppercase tracking-widest text-coral">
+                    Para compartir
+                  </p>
                   <p className="mt-1 text-sm font-extrabold text-primary">Preparaciones caseras</p>
                 </figcaption>
               </figure>
             </div>
           </div>
-          <p className="mt-7 text-center text-xs text-muted-foreground">Fotografías ilustrativas de alimentos. El producto adquirido es una guía digital en PDF.</p>
+          <p className="mt-7 text-center text-xs text-muted-foreground">
+            Fotografías ilustrativas de alimentos. El producto adquirido es una guía digital en PDF.
+          </p>
         </Section>
-
-
 
         {/* BONOS PREMIUM */}
         <Section className="bg-background">
-          <Heading eyebrow="Material extra exclusivo del Premium" title="Dos recursos complementarios para ampliar tus ideas."><p>El Plan Premium incluye estos dos bonos, además de las 60 recetas principales.</p></Heading>
+          <Heading
+            eyebrow="Material extra exclusivo del Premium"
+            title="Dos recursos complementarios para ampliar tus ideas."
+          >
+            <p>El Plan Premium incluye estos dos bonos, además de las 60 recetas principales.</p>
+          </Heading>
           <div className="mx-auto mt-10 grid max-w-5xl gap-5 md:grid-cols-2">
-            <article className="overflow-hidden rounded-[1.75rem] border border-primary/10 bg-card shadow-card"><img src={FOOD_PHOTOS.lunchboxAltTwo} alt="Muffins caseros como inspiración para snacks infantiles" loading="lazy" className="h-56 w-full object-cover" /><div className="p-6"><p className="text-xs font-extrabold uppercase tracking-widest text-coral">Bono Premium 01</p><h3 className="mt-2 text-2xl font-extrabold text-primary">15 Snacks para Niños con Paladar Selectivo</h3><p className="mt-3 leading-relaxed text-muted-foreground">Un recurso adicional con ideas de snacks para niños con preferencias alimentarias selectivas.</p></div></article>
-            <article className="overflow-hidden rounded-[1.75rem] border border-primary/10 bg-card shadow-card"><img src={FOOD_PHOTOS.cheeseSticksAlt} alt="Bocadillos caseros para inspirar cambios y sustituciones" loading="lazy" className="h-56 w-full object-cover" /><div className="p-6"><p className="text-xs font-extrabold uppercase tracking-widest text-coral">Bono Premium 02</p><h3 className="mt-2 text-2xl font-extrabold text-primary">Guía de Cambios y Sustituciones</h3><p className="mt-3 leading-relaxed text-muted-foreground">Una guía complementaria para consultar alternativas al organizar tus preparaciones.</p></div></article>
-          </div><p className="mt-5 text-center text-xs text-muted-foreground">Los dos bonos son exclusivos del Plan Premium y no forman parte de las 60 recetas principales.</p>
+            <article className="overflow-hidden rounded-[1.75rem] border border-primary/10 bg-card shadow-card">
+              <img
+                src={FOOD_PHOTOS.lunchboxAltTwo}
+                alt="Muffins caseros como inspiración para snacks infantiles"
+                loading="lazy"
+                className="h-56 w-full object-cover"
+              />
+              <div className="p-6">
+                <p className="text-xs font-extrabold uppercase tracking-widest text-coral">
+                  Bono Premium 01
+                </p>
+                <h3 className="mt-2 text-2xl font-extrabold text-primary">
+                  15 Snacks para Niños con Paladar Selectivo
+                </h3>
+                <p className="mt-3 leading-relaxed text-muted-foreground">
+                  Un recurso adicional con ideas de snacks para niños con preferencias alimentarias
+                  selectivas.
+                </p>
+              </div>
+            </article>
+            <article className="overflow-hidden rounded-[1.75rem] border border-primary/10 bg-card shadow-card">
+              <img
+                src={FOOD_PHOTOS.cheeseSticksAlt}
+                alt="Bocadillos caseros para inspirar cambios y sustituciones"
+                loading="lazy"
+                className="h-56 w-full object-cover"
+              />
+              <div className="p-6">
+                <p className="text-xs font-extrabold uppercase tracking-widest text-coral">
+                  Bono Premium 02
+                </p>
+                <h3 className="mt-2 text-2xl font-extrabold text-primary">
+                  Guía de Cambios y Sustituciones
+                </h3>
+                <p className="mt-3 leading-relaxed text-muted-foreground">
+                  Una guía complementaria para consultar alternativas al organizar tus
+                  preparaciones.
+                </p>
+              </div>
+            </article>
+          </div>
+          <p className="mt-5 text-center text-xs text-muted-foreground">
+            Los dos bonos son exclusivos del Plan Premium y no forman parte de las 60 recetas
+            principales.
+          </p>
         </Section>
 
         {/* 10. PLANES */}
@@ -552,36 +976,81 @@ function Index() {
                 "Acceso ilimitado al material adquirido.",
                 "Actualizaciones futuras cuando estén disponibles.",
               ]}
-              bonus={["15 Snacks para Niños con Paladar Selectivo", "Guía de Cambios y Sustituciones"]}
+              bonus={[
+                "15 Snacks para Niños con Paladar Selectivo",
+                "Guía de Cambios y Sustituciones",
+              ]}
             />
           </div>
           <div className="mx-auto mt-8 flex max-w-3xl flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
-            <span className="inline-flex items-center gap-1.5"><FileText className="h-4 w-4" aria-hidden /> Producto digital en PDF</span>
-            <span className="inline-flex items-center gap-1.5"><Lock className="h-4 w-4" aria-hidden /> Pago procesado por Cakto</span>
-            <span className="inline-flex items-center gap-1.5"><Smartphone className="h-4 w-4" aria-hidden /> Celular, tablet y computadora</span>
+            <span className="inline-flex items-center gap-1.5">
+              <FileText className="h-4 w-4" aria-hidden /> Producto digital en PDF
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <Lock className="h-4 w-4" aria-hidden /> Pago procesado por Cakto
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <Smartphone className="h-4 w-4" aria-hidden /> Celular, tablet y computadora
+            </span>
           </div>
           <p className="mx-auto mt-3 max-w-2xl text-center text-xs text-muted-foreground">
-            El material se entrega en el área de miembros de Cakto después de la confirmación del pago. Los medios de pago disponibles dependen de tu país.
+            El material se entrega en el área de miembros de Cakto después de la confirmación del
+            pago. Los medios de pago disponibles dependen de tu país.
           </p>
         </Section>
 
         {/* GARANTÍA DE 7 DÍAS */}
-        <Section className="bg-secondary"><div className="mx-auto flex max-w-4xl flex-col items-center gap-5 rounded-[2rem] border border-primary/10 bg-card px-6 py-10 text-center shadow-card md:px-12">
-          <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-primary-foreground"><ShieldCheck className="h-8 w-8" aria-hidden /></span>
-          <p className="eyebrow">Compra con tranquilidad</p><h2 className="max-w-2xl text-3xl font-extrabold leading-tight text-primary md:text-4xl">Tienes 7 días para solicitar el reembolso.</h2>
-          <p className="max-w-2xl leading-relaxed text-muted-foreground">Puedes solicitarlo dentro de los 7 días siguientes a la compra mediante los canales de soporte de Cakto asociados a tu pedido. Consulta las condiciones completas en nuestra política.</p>
-          <a href={REFUND_URL} className="inline-flex min-h-11 items-center justify-center rounded-full border border-primary/20 px-6 py-3 text-sm font-extrabold text-primary hover:bg-secondary">Leer política de reembolso</a>
-        </div></Section>
+        <Section className="bg-secondary">
+          <div className="mx-auto flex max-w-4xl flex-col items-center gap-5 rounded-[2rem] border border-primary/10 bg-card px-6 py-10 text-center shadow-card md:px-12">
+            <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+              <ShieldCheck className="h-8 w-8" aria-hidden />
+            </span>
+            <p className="eyebrow">Compra con tranquilidad</p>
+            <h2 className="max-w-2xl text-3xl font-extrabold leading-tight text-primary md:text-4xl">
+              Tienes 7 días para solicitar el reembolso.
+            </h2>
+            <p className="max-w-2xl leading-relaxed text-muted-foreground">
+              Puedes solicitarlo dentro de los 7 días siguientes a la compra mediante los canales de
+              soporte de Cakto asociados a tu pedido. Consulta las condiciones completas en nuestra
+              política.
+            </p>
+            <a
+              href={REFUND_URL}
+              className="inline-flex min-h-11 items-center justify-center rounded-full border border-primary/20 px-6 py-3 text-sm font-extrabold text-primary hover:bg-secondary"
+            >
+              Leer política de reembolso
+            </a>
+          </div>
+        </Section>
 
         {/* 12. CONFIANZA */}
         <Section>
-          <Heading eyebrow="Compra con claridad" title="Conoce lo que estás a punto de descubrir." />
+          <Heading
+            eyebrow="Compra con claridad"
+            title="Conoce lo que estás a punto de descubrir."
+          />
           <div className="mt-12 grid gap-x-10 gap-y-7 sm:grid-cols-2">
             {[
-              { i: BookOpen, t: "Fichas visuales", d: "Cada receta en su propia ficha, con foto, tiempos y temperatura." },
-              { i: Sparkles, t: "Material organizado", d: "6 categorías con 10 recetas cada una, fáciles de encontrar." },
-              { i: FileText, t: "Qué recibes", d: "Una guía digital en PDF con ingredientes, cantidades y pasos." },
-              { i: Smartphone, t: "Acceso digital", d: "Consulta desde tu celular a través del área de miembros de Cakto." },
+              {
+                i: BookOpen,
+                t: "Fichas visuales",
+                d: "Cada receta en su propia ficha, con foto, tiempos y temperatura.",
+              },
+              {
+                i: Sparkles,
+                t: "Material organizado",
+                d: "6 categorías con 10 recetas cada una, fáciles de encontrar.",
+              },
+              {
+                i: FileText,
+                t: "Qué recibes",
+                d: "Una guía digital en PDF con ingredientes, cantidades y pasos.",
+              },
+              {
+                i: Smartphone,
+                t: "Acceso digital",
+                d: "Consulta desde tu celular a través del área de miembros de Cakto.",
+              },
             ].map(({ i: Icon, t, d }) => (
               <div key={t} className="flex gap-4 border-b border-primary/10 pb-5">
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-secondary">
@@ -601,9 +1070,17 @@ function Index() {
           <Heading eyebrow="Preguntas frecuentes" title="¿Tienes alguna duda?" />
           <Accordion type="single" collapsible className="mx-auto mt-10 max-w-3xl space-y-3">
             {FAQ.map(([q, a], i) => (
-              <AccordionItem key={q} value={`q${i}`} className="rounded-2xl border-none bg-card px-5">
-                <AccordionTrigger className="text-left font-display text-base font-extrabold text-primary hover:no-underline">{q}</AccordionTrigger>
-                <AccordionContent className="text-base leading-relaxed text-muted-foreground">{a}</AccordionContent>
+              <AccordionItem
+                key={q}
+                value={`q${i}`}
+                className="rounded-2xl border-none bg-card px-5"
+              >
+                <AccordionTrigger className="text-left font-display text-base font-extrabold text-primary hover:no-underline">
+                  {q}
+                </AccordionTrigger>
+                <AccordionContent className="text-base leading-relaxed text-muted-foreground">
+                  {a}
+                </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
@@ -612,11 +1089,16 @@ function Index() {
         {/* 14. CTA FINAL */}
         <Section className="bg-primary text-center text-primary-foreground">
           <div className="mx-auto max-w-3xl">
-            <h2 className="text-3xl font-extrabold leading-tight md:text-5xl">¡Que la lonchera deje de ser un desafío cada mañana!</h2>
+            <h2 className="text-3xl font-extrabold leading-tight md:text-5xl">
+              ¡Que la lonchera deje de ser un desafío cada mañana!
+            </h2>
             <p className="mt-5 text-lg opacity-90">
-              Reúne nuevas ideas para desayunos, meriendas y loncheras en una guía práctica, visual y fácil de consultar. Elige tu plan y descubre todo lo que incluye Buen Bocado.
+              Reúne nuevas ideas para desayunos, meriendas y loncheras en una guía práctica, visual
+              y fácil de consultar. Elige tu plan y descubre todo lo que incluye Buen Bocado.
             </p>
-            <div className="mt-8"><CtaToPlans variant="coral">¡Quiero Buen Bocado!</CtaToPlans></div>
+            <div className="mt-8">
+              <CtaToPlans variant="coral">¡Quiero Buen Bocado!</CtaToPlans>
+            </div>
           </div>
         </Section>
       </main>
@@ -626,16 +1108,22 @@ function Index() {
         <div className="mx-auto flex max-w-6xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div>
             <Logo />
-            <p className="mt-2 text-sm text-muted-foreground">Guía digital · 60 recetas para loncheras escolares en Air Fryer</p>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Guía digital · 60 recetas para loncheras escolares en Air Fryer
+            </p>
           </div>
-          <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-primary" aria-label="Legal">
+          <nav
+            className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-primary"
+            aria-label="Legal"
+          >
             <a href={PRIVACY_URL}>Política de privacidad</a>
             <a href={TERMS_URL}>Términos y condiciones</a>
             <a href={REFUND_URL}>Política de reembolso</a>
           </nav>
         </div>
         <p className="mx-auto mt-6 max-w-6xl text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Buen Bocado. Todos los derechos reservados. Este producto no sustituye la orientación de profesionales de salud o nutrición.
+          © {new Date().getFullYear()} Buen Bocado. Todos los derechos reservados. Este producto no
+          sustituye la orientación de profesionales de salud o nutrición.
         </p>
       </footer>
     </div>
@@ -647,13 +1135,37 @@ function Logo() {
     <a href="/" className="flex items-center gap-3" aria-label="Buen Bocado, inicio">
       <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary shadow-soft">
         <svg viewBox="0 0 48 48" className="h-9 w-9" aria-hidden="true">
-          <path d="M10 18.5c0-5 3.8-8.5 9-8.5h10c5.2 0 9 3.5 9 8.5v13c0 4.2-3.3 7.5-7.5 7.5h-13c-4.2 0-7.5-3.3-7.5-7.5v-13Z" fill="#FFF8ED"/>
-          <path d="M10.5 20h27" stroke="#F28A70" strokeWidth="3" strokeLinecap="round"/>
-          <path d="M18 26v.2M30 26v.2" stroke="#285B48" strokeWidth="3.4" strokeLinecap="round"/>
-          <path d="M19.5 31c2.7 2.8 6.3 2.8 9 0" fill="none" stroke="#285B48" strokeWidth="2.4" strokeLinecap="round"/>
-          <path d="M24 10c.2-4.5 3.5-7 8.2-6.8-.7 4.2-3.7 6.7-8.2 6.8Z" fill="#DDEBDD" stroke="#FFF8ED" strokeWidth="1"/>
-          <path d="M24 10c-3.6-3.4-7.2-3.1-9.6-.3 2.8 2.6 6.1 2.8 9.6.3Z" fill="#F5D985" stroke="#FFF8ED" strokeWidth="1"/>
-          <path d="M35 34.5c0-2.2 1.7-3.7 3.7-3.7 2 0 3.3 1.5 3.3 3.7 0 2.5-3.3 4.9-3.3 4.9s-3.7-2.4-3.7-4.9Z" fill="#F28A70" stroke="#FFF8ED" strokeWidth="1.2"/>
+          <path
+            d="M10 18.5c0-5 3.8-8.5 9-8.5h10c5.2 0 9 3.5 9 8.5v13c0 4.2-3.3 7.5-7.5 7.5h-13c-4.2 0-7.5-3.3-7.5-7.5v-13Z"
+            fill="#FFF8ED"
+          />
+          <path d="M10.5 20h27" stroke="#F28A70" strokeWidth="3" strokeLinecap="round" />
+          <path d="M18 26v.2M30 26v.2" stroke="#285B48" strokeWidth="3.4" strokeLinecap="round" />
+          <path
+            d="M19.5 31c2.7 2.8 6.3 2.8 9 0"
+            fill="none"
+            stroke="#285B48"
+            strokeWidth="2.4"
+            strokeLinecap="round"
+          />
+          <path
+            d="M24 10c.2-4.5 3.5-7 8.2-6.8-.7 4.2-3.7 6.7-8.2 6.8Z"
+            fill="#DDEBDD"
+            stroke="#FFF8ED"
+            strokeWidth="1"
+          />
+          <path
+            d="M24 10c-3.6-3.4-7.2-3.1-9.6-.3 2.8 2.6 6.1 2.8 9.6.3Z"
+            fill="#F5D985"
+            stroke="#FFF8ED"
+            strokeWidth="1"
+          />
+          <path
+            d="M35 34.5c0-2.2 1.7-3.7 3.7-3.7 2 0 3.3 1.5 3.3 3.7 0 2.5-3.3 4.9-3.3 4.9s-3.7-2.4-3.7-4.9Z"
+            fill="#F28A70"
+            stroke="#FFF8ED"
+            strokeWidth="1.2"
+          />
         </svg>
       </span>
       <span className="font-display text-[1.35rem] font-extrabold leading-none tracking-tight text-primary">
@@ -664,12 +1176,28 @@ function Logo() {
 }
 
 function PlanCard({
-  name, price, plan, cta, features, note, bonus, featured = false,
+  name,
+  price,
+  plan,
+  cta,
+  features,
+  note,
+  bonus,
+  featured = false,
 }: {
-  name: string; price: string; plan: "basic" | "premium"; cta: string; features: string[]; note?: string; bonus?: string[]; featured?: boolean;
+  name: string;
+  price: string;
+  plan: "basic" | "premium";
+  cta: string;
+  features: string[];
+  note?: string;
+  bonus?: string[];
+  featured?: boolean;
 }) {
   return (
-    <div className={`relative flex flex-col rounded-3xl bg-card p-7 ${featured ? "border-2 border-primary shadow-soft" : "border shadow-card"}`}>
+    <div
+      className={`relative flex flex-col rounded-3xl bg-card p-7 ${featured ? "border-2 border-primary shadow-soft" : "border shadow-card"}`}
+    >
       {featured && (
         <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-coral px-4 py-1 text-xs font-extrabold uppercase tracking-widest text-coral-foreground">
           Más completo
@@ -695,7 +1223,9 @@ function PlanCard({
           </p>
           <ul className="mt-2 space-y-1.5 text-sm font-semibold">
             {bonus.map((b) => (
-              <li key={b} className="flex gap-2"><Check className="h-4 w-4 shrink-0 text-coral" aria-hidden /> {b}</li>
+              <li key={b} className="flex gap-2">
+                <Check className="h-4 w-4 shrink-0 text-coral" aria-hidden /> {b}
+              </li>
             ))}
           </ul>
         </div>
@@ -706,7 +1236,9 @@ function PlanCard({
         onClick={() => goToCheckout(plan)}
         rel="noopener"
         className={`mt-auto inline-flex min-h-14 items-center justify-center rounded-full px-6 py-4 text-center font-display font-extrabold uppercase tracking-wide transition ${
-          featured ? "bg-primary text-primary-foreground hover:brightness-110" : "bg-secondary text-primary hover:bg-accent"
+          featured
+            ? "bg-primary text-primary-foreground hover:brightness-110"
+            : "bg-secondary text-primary hover:bg-accent"
         } ${note ? "mt-6" : "mt-8"}`}
       >
         {cta}

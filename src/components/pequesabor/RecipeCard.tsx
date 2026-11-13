@@ -33,7 +33,10 @@ export function RecipeCard({ r }: { r: Recipe }) {
           decoding="async"
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" aria-hidden />
+        <div
+          className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent"
+          aria-hidden
+        />
         <span className="absolute left-3 top-3 rounded-full border border-white/40 bg-white/90 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-widest text-primary shadow-card">
           {r.category}
         </span>
@@ -50,13 +53,17 @@ export function RecipeCard({ r }: { r: Recipe }) {
           ].map(({ icon: Icon, label, v }) => (
             <div key={label} className="min-w-0 rounded-xl bg-muted px-1.5 py-2">
               <Icon className="mx-auto h-4 w-4 text-coral" aria-hidden />
-              <dt className="mt-1 break-words text-[9px] leading-tight uppercase tracking-normal text-muted-foreground sm:text-[10px] sm:tracking-wide">{label}</dt>
+              <dt className="mt-1 break-words text-[9px] leading-tight uppercase tracking-normal text-muted-foreground sm:text-[10px] sm:tracking-wide">
+                {label}
+              </dt>
               <dd className="break-words text-sm font-bold leading-tight text-primary">{v}</dd>
             </div>
           ))}
         </dl>
 
-        <h4 className="mt-5 text-xs font-extrabold uppercase tracking-widest text-muted-foreground">Ingredientes</h4>
+        <h4 className="mt-5 text-xs font-extrabold uppercase tracking-widest text-muted-foreground">
+          Ingredientes
+        </h4>
         <ul className="mt-2 space-y-1.5">
           {r.ingredients.map((i) => (
             <li key={i.text} className="flex min-w-0 items-start gap-2 text-sm leading-snug">
@@ -66,7 +73,9 @@ export function RecipeCard({ r }: { r: Recipe }) {
           ))}
         </ul>
 
-        <h4 className="mt-5 text-xs font-extrabold uppercase tracking-widest text-muted-foreground">Preparación</h4>
+        <h4 className="mt-5 text-xs font-extrabold uppercase tracking-widest text-muted-foreground">
+          Preparación
+        </h4>
         <ol className="mt-2 space-y-2">
           {r.steps.map((s, k) => (
             <li key={k} className="flex min-w-0 items-start gap-3 text-sm leading-snug">
@@ -85,7 +94,9 @@ export function RecipeCard({ r }: { r: Recipe }) {
               <strong className="text-primary">Tip Buen Bocado:</strong> {r.tip}
             </p>
           </div>
-          <p className="mt-3 text-right text-[10px] font-semibold text-muted-foreground">Buen Bocado · pág. {r.page}</p>
+          <p className="mt-3 text-right text-[10px] font-semibold text-muted-foreground">
+            Buen Bocado · pág. {r.page}
+          </p>
         </div>
       </div>
     </article>
