@@ -403,3 +403,103 @@ footer { border-top: 3px solid color-mix(in oklab, var(--kid-peach) 75%, white) 
   header a[href="#planes"], main section a[href="#planes"],
   main section a[href^="https://pay.cakto.com.br"] { transition: none; }
 }
+
+
+/* ---------- Ajuste de precisión: nada invade textos ni componentes ---------- */
+/* Se eliminan los stickers flotantes del hero: la identidad infantil queda en la paleta y el contenido. */
+main > section:first-child::before,
+main > section:first-child::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Hero sin inclinaciones ni etiquetas flotantes: todo ocupa su propio espacio. */
+main > section:first-child .aspect-\\[3\\/2\\] {
+  transform: none !important;
+}
+main > section:first-child .absolute.-bottom-1 {
+  position: relative !important;
+  inset: auto !important;
+  margin: 1rem 0 0 auto;
+  width: fit-content;
+  transform: none !important;
+}
+
+/* Tarjetas rectas y con medidas consistentes en todas las secciones. */
+main section article,
+main > section:nth-of-type(3) article,
+main > section:nth-of-type(3) article:nth-child(n) {
+  transform: none !important;
+}
+main section article:hover { transform: translateY(-2px) !important; }
+
+/* Evita que palabras largas, títulos o etiquetas salgan de su caja. */
+main, main * {
+  min-width: 0;
+}
+main p, main li, main h1, main h2, main h3, main h4, main dt, main dd {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+main a, main button {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.25;
+}
+main a[href="#planes"],
+main section a[href^="https://pay.cakto.com.br"] {
+  height: auto;
+  min-height: 3.5rem;
+  padding-block: .85rem;
+  text-align: center;
+}
+main section article img {
+  max-width: 100%;
+}
+
+/* Receita: grid de metadados e listas com quebra real, sem texto escapando. */
+dl.grid > div { min-width: 0; }
+dl.grid dt, dl.grid dd {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  line-height: 1.2;
+}
+main section article ol,
+main section article ul { min-width: 0; }
+main section article li {
+  min-width: 0;
+  align-items: flex-start;
+}
+main section article li > span,
+main section article li > p {
+  min-width: 0;
+  flex: 1 1 0%;
+  overflow-wrap: anywhere;
+}
+main section article h3,
+main section article h4 { overflow-wrap: anywhere; }
+
+/* Mantém espaçamento regular e alinhamento visual sem elementos inclinados. */
+main > section {
+  overflow: clip;
+}
+main > section > div {
+  width: 100%;
+}
+@media (max-width: 767px) {
+  main > section:first-child .grid {
+    gap: 2.25rem;
+  }
+  main section article {
+    border-radius: 1.35rem;
+  }
+  main section article .p-5,
+  main section article .md\\:p-6 {
+    padding: 1.1rem;
+  }
+  main a[href="#planes"],
+  main section a[href^="https://pay.cakto.com.br"] {
+    width: 100%;
+  }
+}
