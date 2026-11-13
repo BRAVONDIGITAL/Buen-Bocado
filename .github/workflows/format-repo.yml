@@ -3,8 +3,6 @@ name: Format and validate Buen Bocado
 on:
   push:
     branches: [main]
-    paths:
-      - ".github/workflows/format-repo.yml"
   workflow_dispatch:
 
 permissions:
