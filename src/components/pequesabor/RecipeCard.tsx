@@ -24,8 +24,9 @@ const toneBg = {
 
 export function RecipeCard({ r }: { r: Recipe }) {
   return (
-    <article className="flex h-full flex-col overflow-hidden rounded-[1.6rem] border border-primary/10 bg-card shadow-card transition-shadow duration-300 hover:shadow-soft">
+    <article className="recipe-card flex h-full flex-col overflow-hidden rounded-[1.8rem] border-2 border-white bg-card shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-soft">
       <div className={`group relative aspect-[16/10] overflow-hidden ${toneBg[r.tone]}`}>
+        <span className="absolute right-3 top-3 z-10 rounded-full border-2 border-white bg-background/95 px-2.5 py-1 text-base shadow-card" aria-hidden="true">😋</span>
         <img
           src={r.image}
           alt={r.imageAlt}

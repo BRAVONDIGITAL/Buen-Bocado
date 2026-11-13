@@ -105,3 +105,410 @@
 @utility blob {
   border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
 }
+
+
+/* Warm, playful food-world details — visual only. */
+.bg-hero {
+  position: relative;
+  isolation: isolate;
+}
+.bg-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .42;
+  background-image:
+    radial-gradient(circle at 18px 18px, color-mix(in oklab, var(--coral) 32%, transparent) 2px, transparent 2.8px),
+    radial-gradient(circle at 58px 52px, color-mix(in oklab, var(--primary) 18%, transparent) 2px, transparent 3px);
+  background-size: 76px 76px;
+  mask-image: linear-gradient(90deg, black, transparent 78%);
+}
+section.bg-secondary {
+  background-image:
+    radial-gradient(ellipse at 8% 12%, color-mix(in oklab, var(--butter) 28%, transparent), transparent 34%),
+    radial-gradient(ellipse at 94% 88%, color-mix(in oklab, var(--coral) 12%, transparent), transparent 30%);
+}
+.photo-slot {
+  outline: 5px solid color-mix(in oklab, white 80%, transparent);
+  outline-offset: -5px;
+}
+
+
+/* =========================================================
+   BUEN BOCADO — VISUAL REFRESH 2026
+   Presentational layer only. No copy, pricing, links,
+   checkout, tracking, events, routes or product data changed.
+   ========================================================= */
+
+:root {
+  --bb-ink: #254b3d;
+  --bb-leaf: #3f7457;
+  --bb-coral: #ed866e;
+  --bb-butter: #f5d985;
+  --bb-paper: #fffaf1;
+  --bb-line: rgba(40, 91, 72, .12);
+}
+
+body {
+  background: var(--bb-paper);
+  background-image:
+    radial-gradient(ellipse at 8% 6%, rgba(245, 217, 133, .13), transparent 27rem),
+    radial-gradient(ellipse at 95% 34%, rgba(221, 235, 221, .3), transparent 30rem);
+}
+
+header.sticky {
+  border-color: rgba(40, 91, 72, .09);
+  background: rgba(255, 250, 241, .9);
+  box-shadow: 0 8px 28px rgba(37, 75, 61, .055);
+  backdrop-filter: blur(18px);
+}
+header.sticky > div {
+  min-height: 76px;
+}
+header.sticky nav a,
+header.sticky > div > a:last-child {
+  box-shadow: 0 8px 18px rgba(40, 91, 72, .15);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+header.sticky > div > a:last-child:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(40, 91, 72, .2);
+}
+
+main > section {
+  position: relative;
+  isolation: isolate;
+}
+main > section:not(.bg-primary) {
+  overflow: hidden;
+}
+main > section:not(.bg-primary) > div,
+main > section:not(.bg-primary) > h2,
+main > section:not(.bg-primary) > p {
+  position: relative;
+  z-index: 1;
+}
+main > section:nth-of-type(even):not(.bg-primary)::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 18rem;
+  height: 18rem;
+  right: -9rem;
+  top: 12%;
+  border: 1px solid rgba(237, 134, 110, .13);
+  border-radius: 44% 56% 63% 37% / 42% 44% 56% 58%;
+  transform: rotate(24deg);
+  pointer-events: none;
+}
+
+.bg-hero {
+  background:
+    radial-gradient(ellipse at 80% 15%, rgba(221, 235, 221, .95), transparent 34%),
+    radial-gradient(ellipse at 8% 90%, rgba(245, 217, 133, .34), transparent 31%),
+    linear-gradient(135deg, #fffaf1 0%, #fffdf8 48%, #f6f8ed 100%);
+}
+.bg-hero::before {
+  opacity: .55;
+  background-size: 64px 64px;
+  mask-image: linear-gradient(110deg, black, transparent 88%);
+}
+.bg-hero::after {
+  content: "🍓";
+  position: absolute;
+  right: 4%;
+  bottom: 4%;
+  z-index: 0;
+  font-size: clamp(3rem, 8vw, 7rem);
+  opacity: .09;
+  transform: rotate(-18deg);
+  pointer-events: none;
+}
+main > section.bg-hero:first-child {
+  padding-top: clamp(3.5rem, 7vw, 6.5rem);
+  padding-bottom: clamp(5rem, 9vw, 8rem);
+}
+main > section.bg-hero:first-child > div {
+  gap: clamp(2.5rem, 5vw, 5rem);
+}
+main > section.bg-hero:first-child h1 {
+  max-width: 12ch;
+  font-size: clamp(2.55rem, 5.2vw, 4.6rem);
+  line-height: .99;
+  letter-spacing: -.055em;
+  text-wrap: balance;
+}
+main > section.bg-hero:first-child .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  padding: .55rem .9rem;
+  border: 1px solid rgba(237, 134, 110, .24);
+  border-radius: 999px;
+  background: rgba(255,255,255,.72);
+  letter-spacing: .11em;
+}
+main > section.bg-hero:first-child .eyebrow::before {
+  content: "✦";
+  color: var(--bb-coral);
+  font-size: 1rem;
+}
+main > section.bg-hero:first-child .mt-5.font-display {
+  max-width: 37rem;
+  line-height: 1.35;
+}
+main > section.bg-hero:first-child ul li {
+  border-color: rgba(40, 91, 72, .1);
+  box-shadow: 0 5px 16px rgba(37, 75, 61, .045);
+  text-transform: none;
+  letter-spacing: 0;
+}
+main > section.bg-hero:first-child a[href="#planes"] {
+  min-height: 58px;
+  padding-inline: 2rem;
+  border: 2px solid rgba(255,255,255,.35);
+  box-shadow: 0 13px 28px rgba(40, 91, 72, .22);
+}
+main > section.bg-hero:first-child a[href="#planes"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 32px rgba(40, 91, 72, .25);
+}
+
+.eyebrow {
+  letter-spacing: .14em;
+}
+h2.text-3xl {
+  letter-spacing: -.04em;
+  text-wrap: balance;
+}
+main > section:not(:first-child) h2 {
+  line-height: 1.06;
+}
+main > section:not(:first-child) .eyebrow {
+  display: inline-block;
+  margin-bottom: .2rem;
+}
+
+figure.group,
+figure.relative,
+article,
+.recipe-card {
+  transform: translateZ(0);
+}
+figure.group {
+  border-radius: 1.7rem;
+  box-shadow: 0 15px 34px rgba(37, 75, 61, .12);
+}
+figure.group img,
+figure.relative img {
+  transition: transform .65s cubic-bezier(.2,.7,.2,1), filter .4s ease;
+}
+figure.group:hover img,
+figure.relative:hover img {
+  transform: scale(1.045);
+}
+figure.group figcaption {
+  border: 1px solid rgba(255,255,255,.7);
+  box-shadow: 0 5px 16px rgba(37, 75, 61, .12);
+}
+
+main > section.bg-primary {
+  background:
+    radial-gradient(circle at 8% 8%, rgba(255,255,255,.12), transparent 22rem),
+    radial-gradient(circle at 92% 90%, rgba(245,217,133,.15), transparent 24rem),
+    linear-gradient(135deg, #285b48 0%, #356b50 55%, #244d3d 100%);
+}
+main > section.bg-primary .eyebrow {
+  color: #f7d98a;
+}
+main > section.bg-primary > div > div > div,
+main > section.bg-primary .rounded-2xl.bg-card {
+  border: 1px solid rgba(255,255,255,.55);
+  border-radius: 1.5rem;
+  box-shadow: 0 15px 34px rgba(16, 47, 34, .16);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+main > section.bg-primary .rounded-2xl.bg-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 42px rgba(16, 47, 34, .22);
+}
+
+main > section.bg-secondary {
+  background-color: #f0f4e9;
+  background-image:
+    radial-gradient(ellipse at 7% 13%, rgba(245,217,133,.32), transparent 30%),
+    radial-gradient(ellipse at 95% 88%, rgba(237,134,110,.13), transparent 28%);
+}
+main > section.bg-muted {
+  background-color: #f8f4e9;
+  background-image: radial-gradient(ellipse at 90% 10%, rgba(221,235,221,.55), transparent 34%);
+}
+
+#por-dentro .recipe-card {
+  border: 1px solid rgba(40,91,72,.09);
+  border-radius: 1.6rem;
+  box-shadow: 0 12px 30px rgba(37,75,61,.09);
+}
+#por-dentro .recipe-card > div:first-child {
+  border-bottom: 4px solid white;
+}
+#por-dentro .recipe-card h3 {
+  letter-spacing: -.025em;
+}
+#por-dentro .recipe-card dl > div {
+  border: 1px solid rgba(40,91,72,.06);
+  background: #f7f6ef;
+}
+#por-dentro .recipe-card ul li {
+  color: #46564b;
+}
+#por-dentro .recipe-card ol li > span {
+  box-shadow: 0 3px 8px rgba(40,91,72,.16);
+}
+
+main > section .grid > article.group,
+main > section .grid > article:not(.recipe-card) {
+  border: 1px solid rgba(40,91,72,.08);
+  box-shadow: 0 12px 28px rgba(37,75,61,.08);
+}
+main > section .grid > article.group {
+  border-radius: 1.65rem;
+}
+main > section .grid > article.group:hover {
+  box-shadow: 0 18px 38px rgba(37,75,61,.14);
+}
+main > section .grid > article.group img {
+  transition: transform .7s cubic-bezier(.2,.7,.2,1);
+}
+main > section .grid > article.group:hover img {
+  transform: scale(1.06);
+}
+
+main > section.bg-secondary .rounded-3xl.border,
+main > section.bg-background .rounded-\[1\.75rem\] {
+  border-color: rgba(40,91,72,.1);
+  box-shadow: 0 13px 32px rgba(37,75,61,.075);
+}
+main > section.bg-secondary .rounded-3xl.border:hover,
+main > section.bg-background .rounded-\[1\.75rem\]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 38px rgba(37,75,61,.12);
+}
+
+#planes {
+  scroll-margin-top: 6rem;
+}
+#planes .grid.max-w-4xl > div {
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border-radius: 1.8rem;
+  border-color: rgba(40,91,72,.12);
+  box-shadow: 0 16px 40px rgba(37,75,61,.1);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+#planes .grid.max-w-4xl > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 48px rgba(37,75,61,.15);
+}
+#planes .grid.max-w-4xl > div.border-2 {
+  border: 2px solid var(--bb-leaf);
+  background: linear-gradient(180deg, #fff 0%, #fbfff8 100%);
+}
+#planes .grid.max-w-4xl > div > p:nth-of-type(1) {
+  padding-bottom: .7rem;
+  border-bottom: 1px solid var(--bb-line);
+}
+#planes .grid.max-w-4xl > div > a {
+  box-shadow: 0 10px 22px rgba(40,91,72,.15);
+}
+#planes .grid.max-w-4xl > div > a:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.04);
+}
+
+main > section.bg-secondary > div.rounded-\[2rem\] {
+  border-radius: 2rem;
+  box-shadow: 0 15px 36px rgba(37,75,61,.1);
+}
+main > section .flex.gap-4.border-b {
+  padding: 1.1rem;
+  border: 1px solid rgba(40,91,72,.08);
+  border-radius: 1.2rem;
+  background: rgba(255,255,255,.64);
+}
+main > section .flex.gap-4.border-b > span {
+  border-radius: 1rem;
+}
+
+main > section .max-w-3xl.mt-10,
+main > section .max-w-3xl.mx-auto.mt-10 {
+  filter: drop-shadow(0 8px 18px rgba(37,75,61,.035));
+}
+main > section [data-orientation="vertical"] {
+  border: 1px solid rgba(40,91,72,.08);
+  border-radius: 1.1rem;
+  background: rgba(255,255,255,.9);
+  box-shadow: 0 6px 18px rgba(37,75,61,.045);
+}
+main > section [data-orientation="vertical"] button {
+  padding-block: 1.1rem;
+}
+
+footer {
+  background: #fffaf1;
+  border-color: rgba(40,91,72,.12);
+}
+footer nav a {
+  transition: color .2s ease;
+}
+footer nav a:hover {
+  color: var(--bb-coral);
+}
+
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+a:focus-visible, button:focus-visible {
+  outline: 3px solid rgba(237,134,110,.65);
+  outline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+  header.sticky > div {
+    min-height: 66px;
+  }
+  header.sticky > div > a:last-child {
+    padding: .65rem 1rem;
+    font-size: .8rem;
+  }
+  main > section.bg-hero:first-child {
+    padding-top: 2.8rem;
+    padding-bottom: 4.5rem;
+  }
+  main > section.bg-hero:first-child h1 {
+    max-width: 13ch;
+    font-size: clamp(2.35rem, 10vw, 3.3rem);
+  }
+  main > section.bg-hero:first-child .mt-5.font-display {
+    font-size: 1.12rem;
+  }
+  main > section:not(:first-child) {
+    padding-top: 3.7rem;
+    padding-bottom: 3.7rem;
+  }
+  #por-dentro .recipe-card {
+    min-height: 100%;
+  }
+  #planes .grid.max-w-4xl > div {
+    padding: 1.45rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

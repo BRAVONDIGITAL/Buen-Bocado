@@ -165,10 +165,13 @@ function PhotoSlot({ label, src, className = "" }: { label: string; src: string;
 /* ---------- Hero visual: product mockup + high-resolution food photography ---------- */
 function HeroVisual() {
   return (
-    <div className="relative mx-auto w-full max-w-xl px-3 pb-9 pt-4">
-      <div className="absolute inset-8 rotate-3 rounded-[3rem] bg-secondary" aria-hidden />
+    <div className="relative mx-auto w-full max-w-xl px-3 pb-10 pt-5">
+      <div className="absolute inset-7 rotate-3 rounded-[3rem] bg-secondary/90" aria-hidden />
+      <div className="absolute -right-1 top-0 z-20 flex h-14 w-14 rotate-12 items-center justify-center rounded-full border-4 border-background bg-butter text-3xl shadow-card sm:-right-3 sm:h-16 sm:w-16" aria-hidden="true">🍓</div>
+      <div className="absolute -left-1 top-1/2 z-20 flex h-12 w-12 -rotate-12 items-center justify-center rounded-full border-4 border-background bg-coral text-2xl shadow-card sm:-left-4 sm:h-14 sm:w-14" aria-hidden="true">🥑</div>
       <div className="relative grid grid-cols-[0.9fr_1.1fr] items-center gap-3 sm:gap-5">
         <div className="relative z-10 -rotate-3 overflow-hidden rounded-[1.65rem] border-4 border-white bg-primary p-3 shadow-[0_24px_55px_rgba(25,55,42,0.24)] sm:rounded-[2rem] sm:p-4">
+          <div className="mb-2 flex items-center justify-center gap-1 text-base" aria-hidden="true">🥕 🍓 🥪</div>
           <p className="text-center text-[9px] font-extrabold uppercase tracking-[0.2em] text-white/85 sm:text-xs">Buen Bocado</p>
           <div className="mt-3 overflow-hidden rounded-xl border border-white/20">
             <img src={FOOD_PHOTOS.pizza} alt="Mini pizzas caseras para las loncheras" loading="eager" decoding="async" className="aspect-[4/3] w-full object-cover" />
@@ -183,12 +186,14 @@ function HeroVisual() {
             <p className="text-[9px] font-extrabold uppercase tracking-[0.16em] sm:text-xs">Más variedad, menos improvisación</p>
             <p className="mt-1 font-display text-base font-extrabold leading-tight sm:text-xl">Ideas para cada día</p>
           </div>
+          <span className="absolute right-3 top-3 rounded-full border-2 border-white bg-butter px-3 py-1 text-xs font-extrabold text-primary shadow-card">😋 ¡Qué rico!</span>
         </div>
       </div>
-      <div className="absolute -bottom-1 right-0 rounded-2xl border border-primary/10 bg-card px-4 py-3 shadow-card sm:right-2">
+      <div className="absolute -bottom-1 right-0 z-20 rounded-2xl border border-primary/10 bg-card px-4 py-3 shadow-card sm:right-2">
         <p className="font-display text-2xl font-extrabold leading-none text-primary sm:text-3xl">6 × 10</p>
         <p className="mt-1 text-[9px] font-extrabold uppercase tracking-wide text-muted-foreground sm:text-[10px]">categorías y recetas</p>
       </div>
+      <div className="absolute -bottom-4 left-5 z-20 -rotate-3 rounded-full border-2 border-white bg-coral px-4 py-2 text-xs font-extrabold text-white shadow-card sm:left-8">Hecho con cariño 💚</div>
     </div>
   );
 }
@@ -419,7 +424,13 @@ function Index() {
         {/* 8. PARA QUIÉN */}
         <Section>
           <div className="grid items-center gap-10 md:grid-cols-2">
-            <Heading center={false} eyebrow="¿Para quién es?" title="Una guía pensada para la rutina de las familias." />
+            <div>
+              <Heading center={false} eyebrow="¿Para quién es?" title="Una guía pensada para la rutina de las familias." />
+              <figure className="relative mt-7 overflow-hidden rounded-[2rem] border-[6px] border-white bg-secondary shadow-card">
+                <img src={FOOD_PHOTOS.familyKitchen} alt="Familia compartiendo un momento de preparación de alimentos en la cocina" loading="lazy" decoding="async" className="h-64 w-full object-cover sm:h-80" />
+                <figcaption className="absolute bottom-4 left-4 rounded-full border border-white/70 bg-background/95 px-4 py-2 text-sm font-extrabold text-primary shadow-card">Pequeños momentos, grandes recuerdos 💚</figcaption>
+              </figure>
+            </div>
             <ul className="space-y-3">
               {[
                 "Madres que buscan nuevas ideas para las loncheras escolares.",
@@ -427,8 +438,8 @@ function Index() {
                 "Familias que quieren descubrir nuevas preparaciones con Air Fryer.",
                 "Personas que necesitan inspiración para organizar las meriendas.",
               ].map((t) => (
-                <li key={t} className="flex gap-3 rounded-2xl border bg-card p-4 text-lg">
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-secondary">
+                <li key={t} className="flex gap-3 rounded-2xl border border-primary/10 bg-card p-4 text-lg shadow-sm">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-secondary">
                     <Check className="h-4 w-4 text-primary" aria-hidden />
                   </span>
                   {t}
