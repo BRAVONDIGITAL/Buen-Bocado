@@ -48,10 +48,10 @@ export function RecipeCard({ r }: { r: Recipe }) {
             { icon: Thermometer, label: "Temperatura", v: r.temp },
             { icon: Timer, label: "Air Fryer", v: r.fryer },
           ].map(({ icon: Icon, label, v }) => (
-            <div key={label} className="rounded-xl bg-muted px-1 py-2">
+            <div key={label} className="min-w-0 rounded-xl bg-muted px-1.5 py-2">
               <Icon className="mx-auto h-4 w-4 text-coral" aria-hidden />
-              <dt className="mt-1 text-[10px] uppercase tracking-wide text-muted-foreground">{label}</dt>
-              <dd className="text-sm font-bold text-primary">{v}</dd>
+              <dt className="mt-1 break-words text-[9px] leading-tight uppercase tracking-normal text-muted-foreground sm:text-[10px] sm:tracking-wide">{label}</dt>
+              <dd className="break-words text-sm font-bold leading-tight text-primary">{v}</dd>
             </div>
           ))}
         </dl>
@@ -59,9 +59,9 @@ export function RecipeCard({ r }: { r: Recipe }) {
         <h4 className="mt-5 text-xs font-extrabold uppercase tracking-widest text-muted-foreground">Ingredientes</h4>
         <ul className="mt-2 space-y-1.5">
           {r.ingredients.map((i) => (
-            <li key={i.text} className="flex items-center gap-2 text-sm">
+            <li key={i.text} className="flex min-w-0 items-start gap-2 text-sm leading-snug">
               <Ingredient kind={i.kind} className="h-5 w-5 shrink-0" />
-              {i.text}
+              <span className="min-w-0 flex-1 break-words [overflow-wrap:anywhere]">{i.text}</span>
             </li>
           ))}
         </ul>
@@ -69,19 +69,19 @@ export function RecipeCard({ r }: { r: Recipe }) {
         <h4 className="mt-5 text-xs font-extrabold uppercase tracking-widest text-muted-foreground">Preparación</h4>
         <ol className="mt-2 space-y-2">
           {r.steps.map((s, k) => (
-            <li key={k} className="flex gap-3 text-sm leading-snug">
+            <li key={k} className="flex min-w-0 items-start gap-3 text-sm leading-snug">
               <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
                 {k + 1}
               </span>
-              {s}
+              <span className="min-w-0 flex-1 break-words [overflow-wrap:anywhere]">{s}</span>
             </li>
           ))}
         </ol>
 
         <div className="mt-auto pt-5">
-          <div className="flex gap-2 rounded-xl bg-accent/45 p-3 text-sm">
+          <div className="flex min-w-0 items-start gap-2 rounded-xl bg-accent/45 p-3 text-sm leading-relaxed">
             <Lightbulb className="h-4 w-4 shrink-0 text-primary" aria-hidden />
-            <p>
+            <p className="min-w-0 flex-1 break-words [overflow-wrap:anywhere]">
               <strong className="text-primary">Tip Buen Bocado:</strong> {r.tip}
             </p>
           </div>
