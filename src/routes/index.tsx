@@ -1039,7 +1039,7 @@ function Index() {
               {
                 i: Sparkles,
                 t: "Material organizado",
-                d: "6 categorías con 10 recetas cada una, fáciles de encontrar.",
+                d: "5 categorías con 12 recetas cada una, fáciles de encontrar.",
               },
               {
                 i: FileText,
