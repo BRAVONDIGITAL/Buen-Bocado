@@ -450,13 +450,6 @@ const CATEGORIES = [
     alt: "Muffins caseros para una merienda dulce",
     school: false,
   },
-  {
-    n: "06",
-    t: "Favoritos para compartir",
-    photo: FOOD_PHOTOS.lunchboxColorful,
-    alt: "Lonchera moderna con compartimentos y variedad de bocadillos",
-    school: false,
-  },
 ];
 
 const FAQ = [
@@ -672,7 +665,7 @@ function Index() {
         {/* 5. 60 RECEITAS */}
         <Section className="bg-secondary">
           <Heading
-            eyebrow="6 categorías · 10 recetas cada una"
+            eyebrow="5 categorías · 12 recetas cada una"
             title="60 recetas para renovar las loncheras escolares."
           />
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -695,12 +688,12 @@ function Index() {
                     </span>
                   )}
                   <span className="absolute bottom-3 right-3 rounded-full bg-white/90 px-3 py-1 text-xs font-extrabold text-primary">
-                    {c.n} / 06
+                    {c.n} / 05
                   </span>
                 </div>
                 <div className="p-5">
                   <p className="font-display text-xs font-extrabold uppercase tracking-widest text-coral">
-                    10 recetas
+                    12 recetas
                   </p>
                   <h3 className="mt-2 text-lg font-extrabold leading-snug text-primary">{c.t}</h3>
                 </div>
@@ -820,8 +813,8 @@ function Index() {
               </Heading>
               <ul className="mt-7 space-y-3">
                 {[
-                  "60 recetas distribuidas en 6 categorías.",
-                  "10 ideas en cada categoría para encontrar variedad.",
+                  "60 recetas distribuidas en 5 categorías.",
+                  "12 ideas en cada categoría para encontrar variedad.",
                   "Fichas visuales con ingredientes y preparación paso a paso.",
                   "Acceso digital para consultar desde tus dispositivos.",
                 ].map((item) => (
