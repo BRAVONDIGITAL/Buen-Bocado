@@ -25,6 +25,26 @@ import {
 import { RecipeCard, type Recipe } from "@/components/pequesabor/RecipeCard";
 import { CHECKOUT, goToCheckout, track } from "@/lib/tracking";
 
+import pizzaCover from "@/assets/lunchboxes/pizza-cover.webp.asset.json";
+import pizzaPacking from "@/assets/lunchboxes/pizza-packing.webp.asset.json";
+import fruitSnack from "@/assets/lunchboxes/fruit-snack.webp.asset.json";
+import schoolBento from "@/assets/lunchboxes/school-bento.webp.asset.json";
+import pizzaRecipe from "@/assets/lunchboxes/pizza-recipe.webp.asset.json";
+import bananaMuffins from "@/assets/lunchboxes/banana-muffins.webp.asset.json";
+import cheeseSticksPhoto from "@/assets/lunchboxes/cheese-sticks.webp.asset.json";
+import sandwichesPhoto from "@/assets/lunchboxes/sandwiches.webp.asset.json";
+import categoryBreakfast from "@/assets/lunchboxes/category-breakfast.webp.asset.json";
+import categorySnack from "@/assets/lunchboxes/category-snack.webp.asset.json";
+import categorySavory from "@/assets/lunchboxes/category-savory.webp.asset.json";
+import categoryFlavor from "@/assets/lunchboxes/category-flavor.webp.asset.json";
+import categorySweet from "@/assets/lunchboxes/category-sweet.webp.asset.json";
+import pizzaContent from "@/assets/lunchboxes/pizza-content.webp.asset.json";
+import pancakesContent from "@/assets/lunchboxes/pancakes-content.webp.asset.json";
+import muffinsContent from "@/assets/lunchboxes/muffins-content.webp.asset.json";
+import bonusSelective from "@/assets/lunchboxes/bonus-selective.webp.asset.json";
+import bonusSubstitutions from "@/assets/lunchboxes/bonus-substitutions.webp.asset.json";
+import schoolPreparation from "@/assets/lunchboxes/school-preparation.webp.asset.json";
+
 const TITLE = "Buen Bocado | 60 recetas para renovar la lonchera de tu peque";
 const DESC =
   "¿Tu peque se aburre de la lonchera? Encuentra inspiración para preparar meriendas y comidas caseras que den ganas de probar.";
@@ -61,7 +81,7 @@ const DESC =
    Elena Leya: https://www.pexels.com/photo/cooked-food-on-blue-ceramic-plate-9568318/ */
 const FOOD_PHOTOS = {
   lunchboxes:
-    "https://images.pexels.com/photos/5852270/pexels-photo-5852270.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    `https://buenbocado.lovable.app${pizzaCover.url}`,
   lunchboxDetail:
     "https://images.pexels.com/photos/34275219/pexels-photo-34275219.jpeg?auto=compress&cs=tinysrgb&w=1800",
   lunchboxHands:
@@ -69,17 +89,17 @@ const FOOD_PHOTOS = {
   schoolBoys:
     "https://images.pexels.com/photos/4051588/pexels-photo-4051588.jpeg?auto=compress&cs=tinysrgb&w=1800",
   bentoModern:
-    "https://images.pexels.com/photos/35211816/pexels-photo-35211816.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    schoolBento.url,
   lunchboxModern:
     "https://images.pexels.com/photos/5905680/pexels-photo-5905680.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxColorful:
     "https://images.pexels.com/photos/5852270/pexels-photo-5852270.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxFruit:
-    "https://images.pexels.com/photos/5852332/pexels-photo-5852332.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    sandwichesPhoto.url,
   lunchboxMix:
     "https://images.pexels.com/photos/5852335/pexels-photo-5852335.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxTop:
-    "https://images.pexels.com/photos/5852285/pexels-photo-5852285.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    categoryFlavor.url,
   proofLunchboxOne:
     "https://images.pexels.com/photos/5852326/pexels-photo-5852326.jpeg?auto=compress&cs=tinysrgb&w=1200",
   proofLunchboxTwo:
@@ -89,11 +109,11 @@ const FOOD_PHOTOS = {
   freshLunch:
     "https://images.pexels.com/photos/8617558/pexels-photo-8617558.jpeg?auto=compress&cs=tinysrgb&w=2000",
   freshFruit:
-    "https://images.pexels.com/photos/35439983/pexels-photo-35439983.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    fruitSnack.url,
   miniPancakes:
-    "https://images.pexels.com/photos/36564998/pexels-photo-36564998.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    categoryBreakfast.url,
   snackTable:
-    "https://images.pexels.com/photos/34227785/pexels-photo-34227785.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    categorySavory.url,
   lunchboxAlt:
     "https://images.pexels.com/photos/5852457/pexels-photo-5852457.jpeg?auto=compress&cs=tinysrgb&w=2000",
   fruitPlate:
@@ -107,37 +127,37 @@ const FOOD_PHOTOS = {
   kidsSnacks:
     "https://images.pexels.com/photos/9568318/pexels-photo-9568318.jpeg?auto=compress&cs=tinysrgb&w=1800",
   pizza:
-    "https://images.pexels.com/photos/34275219/pexels-photo-34275219/free-photo-of-delicious-mini-pizzas-with-toppings-on-tray.jpeg?auto=compress&dpr=1&h=1100&w=1800",
+    pizzaCover.url,
   pizzaPrep:
-    "https://images.pexels.com/photos/7322629/pexels-photo-7322629.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    pizzaPacking.url,
   muffins:
-    "https://images.pexels.com/photos/4051588/pexels-photo-4051588.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    bananaMuffins.url,
   cheeseSticks:
-    "https://images.pexels.com/photos/9568318/pexels-photo-9568318.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    cheeseSticksPhoto.url,
   pancakeAlt:
-    "https://images.pexels.com/photos/17751916/pexels-photo-17751916.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    categorySnack.url,
   pancakeAltTwo:
-    "https://images.pexels.com/photos/17751910/pexels-photo-17751910.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    pancakesContent.url,
   miniPizzaRecipe:
-    "https://images.pexels.com/photos/4203043/pexels-photo-4203043.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    pizzaRecipe.url,
   pizzaCloseup:
-    "https://images.pexels.com/photos/5953574/pexels-photo-5953574.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    pizzaContent.url,
   muffinsAlt:
-    "https://images.pexels.com/photos/30388621/pexels-photo-30388621.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    categorySweet.url,
   muffinsAltTwo:
     "https://images.pexels.com/photos/10815917/pexels-photo-10815917.jpeg?auto=compress&cs=tinysrgb&w=2000",
   savoryMuffins:
-    "https://images.pexels.com/photos/34501162/pexels-photo-34501162.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    muffinsContent.url,
   spinachMiniPizza:
     "https://images.pexels.com/photos/37182338/pexels-photo-37182338.jpeg?auto=compress&cs=tinysrgb&w=2000",
   cheeseSticksAlt:
-    "https://images.pexels.com/photos/10065184/pexels-photo-10065184.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    bonusSubstitutions.url,
   lunchboxFruitAlt:
     "https://images.pexels.com/photos/5852322/pexels-photo-5852322.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxAltOne:
     "https://images.pexels.com/photos/5852330/pexels-photo-5852330.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxAltTwo:
-    "https://images.pexels.com/photos/5852329/pexels-photo-5852329.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    bonusSelective.url,
   lunchboxAltThree:
     "https://images.pexels.com/photos/5852279/pexels-photo-5852279.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxAltFour:
@@ -300,7 +320,7 @@ function HeroVisual() {
         </div>
         <div className="hero-child-card relative order-2 aspect-[16/9] min-h-0 overflow-hidden rounded-[1.5rem] border-4 border-white bg-card shadow-soft sm:order-none sm:aspect-[3/2] sm:rounded-[2.2rem]">
           <img
-            src="https://images.pexels.com/photos/5593170/pexels-photo-5593170.jpeg?auto=compress&cs=tinysrgb&w=2000"
+            src={schoolPreparation.url}
             alt="Niña acercándose a una pizza casera recién preparada en la cocina"
             loading="eager"
             decoding="async"
