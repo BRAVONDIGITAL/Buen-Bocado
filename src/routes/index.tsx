@@ -80,26 +80,22 @@ const DESC =
    alleksana: https://www.pexels.com/photo/close-up-photo-of-delicious-muffins-4051588/
    Elena Leya: https://www.pexels.com/photo/cooked-food-on-blue-ceramic-plate-9568318/ */
 const FOOD_PHOTOS = {
-  lunchboxes:
-    `https://buenbocado.lovable.app${pizzaCover.url}`,
+  lunchboxes: `https://buenbocado.lovable.app${pizzaCover.url}`,
   lunchboxDetail:
     "https://images.pexels.com/photos/34275219/pexels-photo-34275219.jpeg?auto=compress&cs=tinysrgb&w=1800",
   lunchboxHands:
     "https://images.pexels.com/photos/7322629/pexels-photo-7322629.jpeg?auto=compress&cs=tinysrgb&w=1800",
   schoolBoys:
     "https://images.pexels.com/photos/4051588/pexels-photo-4051588.jpeg?auto=compress&cs=tinysrgb&w=1800",
-  bentoModern:
-    schoolBento.url,
+  bentoModern: schoolBento.url,
   lunchboxModern:
     "https://images.pexels.com/photos/5905680/pexels-photo-5905680.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxColorful:
     "https://images.pexels.com/photos/5852270/pexels-photo-5852270.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  lunchboxFruit:
-    sandwichesPhoto.url,
+  lunchboxFruit: sandwichesPhoto.url,
   lunchboxMix:
     "https://images.pexels.com/photos/5852335/pexels-photo-5852335.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  lunchboxTop:
-    categoryFlavor.url,
+  lunchboxTop: categoryFlavor.url,
   proofLunchboxOne:
     "https://images.pexels.com/photos/5852326/pexels-photo-5852326.jpeg?auto=compress&cs=tinysrgb&w=1200",
   proofLunchboxTwo:
@@ -108,12 +104,9 @@ const FOOD_PHOTOS = {
     "https://images.pexels.com/photos/5852341/pexels-photo-5852341.jpeg?auto=compress&cs=tinysrgb&w=2000",
   freshLunch:
     "https://images.pexels.com/photos/8617558/pexels-photo-8617558.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  freshFruit:
-    fruitSnack.url,
-  miniPancakes:
-    categoryBreakfast.url,
-  snackTable:
-    categorySavory.url,
+  freshFruit: fruitSnack.url,
+  miniPancakes: categoryBreakfast.url,
+  snackTable: categorySavory.url,
   lunchboxAlt:
     "https://images.pexels.com/photos/5852457/pexels-photo-5852457.jpeg?auto=compress&cs=tinysrgb&w=2000",
   fruitPlate:
@@ -126,38 +119,26 @@ const FOOD_PHOTOS = {
     "https://images.pexels.com/photos/7182999/pexels-photo-7182999.jpeg?auto=compress&cs=tinysrgb&w=2000",
   kidsSnacks:
     "https://images.pexels.com/photos/9568318/pexels-photo-9568318.jpeg?auto=compress&cs=tinysrgb&w=1800",
-  pizza:
-    pizzaCover.url,
-  pizzaPrep:
-    pizzaPacking.url,
-  muffins:
-    bananaMuffins.url,
-  cheeseSticks:
-    cheeseSticksPhoto.url,
-  pancakeAlt:
-    categorySnack.url,
-  pancakeAltTwo:
-    pancakesContent.url,
-  miniPizzaRecipe:
-    pizzaRecipe.url,
-  pizzaCloseup:
-    pizzaContent.url,
-  muffinsAlt:
-    categorySweet.url,
+  pizza: pizzaCover.url,
+  pizzaPrep: pizzaPacking.url,
+  muffins: bananaMuffins.url,
+  cheeseSticks: cheeseSticksPhoto.url,
+  pancakeAlt: categorySnack.url,
+  pancakeAltTwo: pancakesContent.url,
+  miniPizzaRecipe: pizzaRecipe.url,
+  pizzaCloseup: pizzaContent.url,
+  muffinsAlt: categorySweet.url,
   muffinsAltTwo:
     "https://images.pexels.com/photos/10815917/pexels-photo-10815917.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  savoryMuffins:
-    muffinsContent.url,
+  savoryMuffins: muffinsContent.url,
   spinachMiniPizza:
     "https://images.pexels.com/photos/37182338/pexels-photo-37182338.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  cheeseSticksAlt:
-    bonusSubstitutions.url,
+  cheeseSticksAlt: bonusSubstitutions.url,
   lunchboxFruitAlt:
     "https://images.pexels.com/photos/5852322/pexels-photo-5852322.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxAltOne:
     "https://images.pexels.com/photos/5852330/pexels-photo-5852330.jpeg?auto=compress&cs=tinysrgb&w=2000",
-  lunchboxAltTwo:
-    bonusSelective.url,
+  lunchboxAltTwo: bonusSelective.url,
   lunchboxAltThree:
     "https://images.pexels.com/photos/5852279/pexels-photo-5852279.jpeg?auto=compress&cs=tinysrgb&w=2000",
   lunchboxAltFour:
