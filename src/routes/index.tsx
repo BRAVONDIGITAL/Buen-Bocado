@@ -668,11 +668,11 @@ function Index() {
             eyebrow="5 categorías · 12 recetas cada una"
             title="60 recetas para renovar las loncheras escolares."
           />
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
             {CATEGORIES.map((c) => (
               <article
                 key={c.n}
-                className="group overflow-hidden rounded-[1.6rem] bg-card shadow-card transition-transform duration-300 hover:-translate-y-1"
+                className={`group overflow-hidden rounded-[1.6rem] bg-card shadow-card transition-transform duration-300 hover:-translate-y-1 lg:col-span-2 ${c.n === "04" ? "lg:col-start-2" : c.n === "05" ? "lg:col-start-4" : ""}`}
               >
                 <div className="relative h-48 overflow-hidden sm:h-56">
                   <img
